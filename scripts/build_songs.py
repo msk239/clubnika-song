@@ -49,7 +49,6 @@ def read_dom_table_rows(page):
                 const plays = playsMatch ? parseInt(playsMatch[0], 10) : 0;
                 if (title) rows.push({ title, artist: artist || 'Неизвестный исполнитель', timesPlayed: plays });
             } else {
-                // Запасной вариант, если строки рендерятся не в tr, а в блоках со ссылкой на /songs/
                 const link = tr.querySelector ? tr.querySelector('a[href*="/songs/"]') : null;
                 if (link) {
                     const title = (link.innerText || '').trim();
@@ -76,6 +75,7 @@ def get_ssl_songs():
     from playwright.sync_api import sync_playwright
 
     all_dom_rows = []
+    max_seen = 0
 
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
@@ -87,31 +87,45 @@ def get_ssl_songs():
         page.goto(SSL_URL, wait_until="domcontentloaded", timeout=60000)
         page.wait_for_timeout(2000)
 
-        prev_count = 0
         stall_rounds = 0
-
-        # Листаем вниз до тех пор, пока подгружаются новые песни при скролле
-        for step in range(80):
+        for _ in range(100):
             rows = read_dom_table_rows(page)
             all_dom_rows.extend(rows)
             cur_count = len(rows)
 
-            if cur_count > prev_count:
-                prev_count = cur_count
+            if cur_count > max_seen:
+                max_seen = cur_count
                 stall_rounds = 0
             else:
                 stall_rounds += 1
 
-            # Если 5 проходов подряд число строк не выросло — значит дошли до конца списка
-            if stall_rounds >= 5:
+            if stall_rounds >= 4:
                 break
 
+            # Скроллим до последнего элемента песни и всех прокручиваемых контейнеров
             page.evaluate("""() => {
+                const links = document.querySelectorAll('a[href*="/songs/"]');
+                const last = links.length ? links[links.length - 1] : null;
+                if (last) last.scrollIntoView({ behavior: 'instant', block: 'end' });
                 window.scrollTo(0, document.documentElement.scrollHeight);
-                const main = document.querySelector('main, [role="main"], .overflow-auto, .overflow-y-auto');
-                if (main) main.scrollTop = main.scrollHeight;
+                for (const el of document.querySelectorAll('*')) {
+                    if (el.scrollHeight > el.clientHeight + 20) {
+                        el.scrollTop = el.scrollHeight;
+                    }
+                }
             }""")
-            page.wait_for_timeout(900)
+
+            # Ждём появления новых строк (до 4.5 сек)
+            grew = False
+            for _ in range(9):
+                page.wait_for_timeout(500)
+                after_count = page.evaluate("() => document.querySelectorAll('a[href*=\"/songs/\"]').length")
+                if after_count > cur_count:
+                    grew = True
+                    break
+
+            if not grew and cur_count == max_seen:
+                continue
 
         browser.close()
 
@@ -134,7 +148,7 @@ def get_ssl_songs():
             merged_ssl[key]["timesPlayed"] = r["timesPlayed"]
 
     songs = list(merged_ssl.values())
-    print(f"SSL loaded: max_dom_rows={prev_count}, unique={len(songs)}")
+    print(f"SSL loaded: max_dom_rows={max_seen}, unique={len(songs)}")
     if not songs:
         raise RuntimeError("SSL songs list is empty after page render")
     return songs
