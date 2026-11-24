@@ -1,7 +1,7 @@
 {
-  "sslCount": 105,
+  "sslCount": 50,
   "sheetCount": 734,
-  "totalUnique": 739,
+  "totalUnique": 733,
   "songs": [
     {
       "title": "Босая",
@@ -354,391 +354,6 @@
       "inSheet": true
     },
     {
-      "title": "Мама Люба",
-      "artist": "SEREBRO",
-      "timesPlayed": 0,
-      "inSsl": true,
-      "inSheet": true
-    },
-    {
-      "title": "Между нами любовь",
-      "artist": "SEREBRO",
-      "timesPlayed": 1,
-      "inSsl": true,
-      "inSheet": true
-    },
-    {
-      "title": "Черная смородина",
-      "artist": "SEVENROSE",
-      "timesPlayed": 3,
-      "inSsl": true,
-      "inSheet": true
-    },
-    {
-      "title": "Все пройдёт",
-      "artist": "SONA",
-      "timesPlayed": 0,
-      "inSsl": true,
-      "inSheet": false
-    },
-    {
-      "title": "Zombie",
-      "artist": "The Cranberries",
-      "timesPlayed": 0,
-      "inSsl": true,
-      "inSheet": true
-    },
-    {
-      "title": "Why Do You Cry?",
-      "artist": "Thomas Anders",
-      "timesPlayed": 4,
-      "inSsl": true,
-      "inSheet": false
-    },
-    {
-      "title": "Tavasis Bučinys",
-      "artist": "Viktorija feat. Vasha",
-      "timesPlayed": 0,
-      "inSsl": true,
-      "inSheet": false
-    },
-    {
-      "title": "Ля ты какая",
-      "artist": "ZELENO",
-      "timesPlayed": 1,
-      "inSsl": true,
-      "inSheet": true
-    },
-    {
-      "title": "Credo",
-      "artist": "Zivert",
-      "timesPlayed": 1,
-      "inSsl": true,
-      "inSheet": true
-    },
-    {
-      "title": "ЯТЛ",
-      "artist": "Zivert",
-      "timesPlayed": 0,
-      "inSsl": true,
-      "inSheet": true
-    },
-    {
-      "title": "Я буду жить для тебя",
-      "artist": "А. Агурбаш",
-      "timesPlayed": 2,
-      "inSsl": true,
-      "inSheet": true
-    },
-    {
-      "title": "Бабочка луна",
-      "artist": "А. Айвазов",
-      "timesPlayed": 0,
-      "inSsl": true,
-      "inSheet": true
-    },
-    {
-      "title": "Городок",
-      "artist": "А. Варум",
-      "timesPlayed": 1,
-      "inSsl": true,
-      "inSheet": true
-    },
-    {
-      "title": "Зимняя вишня",
-      "artist": "А. Варум",
-      "timesPlayed": 0,
-      "inSsl": true,
-      "inSheet": true
-    },
-    {
-      "title": "Колыбельная",
-      "artist": "А. Варум",
-      "timesPlayed": 0,
-      "inSsl": true,
-      "inSheet": true
-    },
-    {
-      "title": "Все в твоих руках",
-      "artist": "А. Варум, Л. Агутин",
-      "timesPlayed": 2,
-      "inSsl": true,
-      "inSheet": true
-    },
-    {
-      "title": "Все равно ты будешь мой",
-      "artist": "А. Ведищева",
-      "timesPlayed": 2,
-      "inSsl": true,
-      "inSheet": true
-    },
-    {
-      "title": "Лесной олень",
-      "artist": "А. Ведищева",
-      "timesPlayed": 0,
-      "inSsl": true,
-      "inSheet": false
-    },
-    {
-      "title": "Песенка о медведях",
-      "artist": "А. Ведищева",
-      "timesPlayed": 2,
-      "inSsl": true,
-      "inSheet": true
-    },
-    {
-      "title": "Помоги мне",
-      "artist": "А. Ведищева Из к/ф «Бриллиантовая рука»",
-      "timesPlayed": 0,
-      "inSsl": true,
-      "inSheet": true
-    },
-    {
-      "title": "А он мне нравится",
-      "artist": "А. Герман",
-      "timesPlayed": 3,
-      "inSsl": true,
-      "inSheet": true
-    },
-    {
-      "title": "Весеннее танго",
-      "artist": "А. Герман",
-      "timesPlayed": 0,
-      "inSsl": true,
-      "inSheet": true
-    },
-    {
-      "title": "Гори, гори, моя звезда",
-      "artist": "А. Герман",
-      "timesPlayed": 0,
-      "inSsl": true,
-      "inSheet": true
-    },
-    {
-      "title": "Город влюбленных людей",
-      "artist": "А. Герман",
-      "timesPlayed": 3,
-      "inSsl": true,
-      "inSheet": true
-    },
-    {
-      "title": "Колыбельная",
-      "artist": "А. Герман",
-      "timesPlayed": 1,
-      "inSsl": true,
-      "inSheet": true
-    },
-    {
-      "title": "Надежда",
-      "artist": "А. Герман",
-      "timesPlayed": 0,
-      "inSsl": true,
-      "inSheet": true
-    },
-    {
-      "title": "Один раз в год",
-      "artist": "А. Герман",
-      "timesPlayed": 0,
-      "inSsl": true,
-      "inSheet": true
-    },
-    {
-      "title": "Эхо любви",
-      "artist": "А. Герман. Из к/ф «Судьба».",
-      "timesPlayed": 1,
-      "inSsl": true,
-      "inSheet": true
-    },
-    {
-      "title": "Зимний сад",
-      "artist": "А. Глызин",
-      "timesPlayed": 0,
-      "inSsl": true,
-      "inSheet": true
-    },
-    {
-      "title": "Дом родной",
-      "artist": "А. Гоман",
-      "timesPlayed": 3,
-      "inSsl": true,
-      "inSheet": true
-    },
-    {
-      "title": "Облака",
-      "artist": "А. Гоман",
-      "timesPlayed": 0,
-      "inSsl": true,
-      "inSheet": true
-    },
-    {
-      "title": "Пообещай",
-      "artist": "А. Джанабаева",
-      "timesPlayed": 2,
-      "inSsl": true,
-      "inSheet": true
-    },
-    {
-      "title": "А я теряю голову",
-      "artist": "А. Егорова",
-      "timesPlayed": 2,
-      "inSsl": true,
-      "inSheet": true
-    },
-    {
-      "title": "Чёрные глаза",
-      "artist": "Айдамир Мугу",
-      "timesPlayed": 0,
-      "inSsl": true,
-      "inSheet": true
-    },
-    {
-      "title": "Город золотой",
-      "artist": "Аквариум",
-      "timesPlayed": 0,
-      "inSsl": true,
-      "inSheet": true
-    },
-    {
-      "title": "Мало",
-      "artist": "Акула",
-      "timesPlayed": 1,
-      "inSsl": true,
-      "inSheet": true
-    },
-    {
-      "title": "Где же ты",
-      "artist": "Алекса",
-      "timesPlayed": 0,
-      "inSsl": true,
-      "inSheet": true
-    },
-    {
-      "title": "Генералы песчаных карьеров",
-      "artist": "Алексей Кортнев. Из к/ф «Генералы песчаных карьеров»",
-      "timesPlayed": 0,
-      "inSsl": true,
-      "inSheet": true
-    },
-    {
-      "title": "Узелки (Узелок)",
-      "artist": "Алена‌ Апина",
-      "timesPlayed": 0,
-      "inSsl": true,
-      "inSheet": true
-    },
-    {
-      "title": "Ксюша",
-      "artist": "Алена Апина",
-      "timesPlayed": 0,
-      "inSsl": true,
-      "inSheet": true
-    },
-    {
-      "title": "Электричка",
-      "artist": "Алена Апина",
-      "timesPlayed": 1,
-      "inSsl": true,
-      "inSheet": true
-    },
-    {
-      "title": "Заплутали мишки",
-      "artist": "Алёна Апина",
-      "timesPlayed": 0,
-      "inSsl": true,
-      "inSheet": true
-    },
-    {
-      "title": "Вижу тебя",
-      "artist": "Алёна Высоцкая",
-      "timesPlayed": 0,
-      "inSsl": true,
-      "inSheet": true
-    },
-    {
-      "title": "Рябина стучит в моё окно",
-      "artist": "Алёна Петровская",
-      "timesPlayed": 0,
-      "inSsl": true,
-      "inSheet": true
-    },
-    {
-      "title": "Холодно на морозе песни петь",
-      "artist": "Алина",
-      "timesPlayed": 0,
-      "inSsl": true,
-      "inSheet": true
-    },
-    {
-      "title": "Подорожник",
-      "artist": "Алиса Мон",
-      "timesPlayed": 2,
-      "inSsl": true,
-      "inSheet": true
-    },
-    {
-      "title": "А у моей любви",
-      "artist": "Алсу",
-      "timesPlayed": 0,
-      "inSsl": true,
-      "inSheet": true
-    },
-    {
-      "title": "Весна",
-      "artist": "Алсу",
-      "timesPlayed": 0,
-      "inSsl": true,
-      "inSheet": true
-    },
-    {
-      "title": "Вчера",
-      "artist": "Алсу",
-      "timesPlayed": 0,
-      "inSsl": true,
-      "inSheet": true
-    },
-    {
-      "title": "Зимний сон",
-      "artist": "Алсу",
-      "timesPlayed": 5,
-      "inSsl": true,
-      "inSheet": true
-    },
-    {
-      "title": "#5",
-      "artist": "Not recorded",
-      "timesPlayed": 0,
-      "inSsl": true,
-      "inSheet": false
-    },
-    {
-      "title": "#4",
-      "artist": "Not recorded",
-      "timesPlayed": 0,
-      "inSsl": true,
-      "inSheet": false
-    },
-    {
-      "title": "#3",
-      "artist": "Katya",
-      "timesPlayed": 0,
-      "inSsl": true,
-      "inSheet": false
-    },
-    {
-      "title": "#2",
-      "artist": "Anonim",
-      "timesPlayed": 0,
-      "inSsl": true,
-      "inSheet": false
-    },
-    {
-      "title": "#1",
-      "artist": "Not recorded",
-      "timesPlayed": 0,
-      "inSsl": true,
-      "inSheet": false
-    },
-    {
       "title": "Ай диги дай",
       "artist": "DJ SLON",
       "timesPlayed": 0,
@@ -753,8 +368,36 @@
       "inSheet": true
     },
     {
+      "title": "Мама Люба",
+      "artist": "SEREBRO",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
+      "title": "Между нами любовь",
+      "artist": "SEREBRO",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
+      "title": "Черная смородина",
+      "artist": "SEVENROSE",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
       "title": "Все пройдёт",
       "artist": "SONA",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
+      "title": "Zombie",
+      "artist": "The Cranberries",
       "timesPlayed": 0,
       "inSsl": false,
       "inSheet": true
@@ -774,8 +417,295 @@
       "inSheet": true
     },
     {
+      "title": "Ля ты какая",
+      "artist": "ZELENO",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
+      "title": "Credo",
+      "artist": "Zivert",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
+      "title": "ЯТЛ",
+      "artist": "Zivert",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
+      "title": "Я буду жить для тебя",
+      "artist": "А. Агурбаш",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
+      "title": "Бабочка луна",
+      "artist": "А. Айвазов",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
+      "title": "Городок",
+      "artist": "А. Варум",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
+      "title": "Зимняя вишня",
+      "artist": "А. Варум",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
+      "title": "Колыбельная",
+      "artist": "А. Варум",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
+      "title": "Все в твоих руках",
+      "artist": "А. Варум, Л. Агутин",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
+      "title": "Все равно ты будешь мой",
+      "artist": "А. Ведищева",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
       "title": "Лесной олень",
       "artist": "А. Ведищева",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
+      "title": "Помоги мне",
+      "artist": "А. Ведищева. Из к/ф «Бриллиантовая рука»",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
+      "title": "Песенка о медведях",
+      "artist": "А. Ведищева",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
+      "title": "А он мне нравится",
+      "artist": "А. Герман",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
+      "title": "Весеннее танго",
+      "artist": "А. Герман",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
+      "title": "Гори, гори, моя звезда",
+      "artist": "А. Герман",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
+      "title": "Город влюбленных людей",
+      "artist": "А. Герман",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
+      "title": "Колыбельная",
+      "artist": "А. Герман",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
+      "title": "Надежда",
+      "artist": "А. Герман",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
+      "title": "Один раз в год",
+      "artist": "А. Герман",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
+      "title": "Эхо любви",
+      "artist": "А. Герман. Из к/ф «Судьба».",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
+      "title": "Зимний сад",
+      "artist": "А. Глызин",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
+      "title": "Дом родной",
+      "artist": "А. Гоман",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
+      "title": "Облака",
+      "artist": "А. Гоман",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
+      "title": "Пообещай",
+      "artist": "А. Джанабаева",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
+      "title": "А я теряю голову",
+      "artist": "А. Егорова",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
+      "title": "Чёрные глаза",
+      "artist": "Айдамир Мугу",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
+      "title": "Город золотой",
+      "artist": "Аквариум",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
+      "title": "Мало",
+      "artist": "Акула",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
+      "title": "Где же ты",
+      "artist": "Алекса",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
+      "title": "Узелки (Узелок)",
+      "artist": "Алена‌ Апина",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
+      "title": "Ксюша",
+      "artist": "Алена Апина",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
+      "title": "Электричка",
+      "artist": "Алена Апина",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
+      "title": "Заплутали мишки",
+      "artist": "Алёна Апина",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
+      "title": "Вижу тебя",
+      "artist": "Алёна Высоцкая",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
+      "title": "Рябина стучит в моё окно",
+      "artist": "Алёна Петровская",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
+      "title": "Холодно на морозе песни петь",
+      "artist": "Алина",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
+      "title": "Подорожник",
+      "artist": "Алиса Мон",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
+      "title": "А у моей любви",
+      "artist": "Алсу",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
+      "title": "Весна",
+      "artist": "Алсу",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
+      "title": "Вчера",
+      "artist": "Алсу",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
+      "title": "Зимний сон",
+      "artist": "Алсу",
       "timesPlayed": 0,
       "inSsl": false,
       "inSheet": true
@@ -2895,6 +2825,13 @@
       "inSheet": true
     },
     {
+      "title": "Облака",
+      "artist": "К. Румянова",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
       "title": "Песенка мамонтенка",
       "artist": "К. Румянова",
       "timesPlayed": 0,
@@ -3728,6 +3665,13 @@
       "inSheet": true
     },
     {
+      "title": "Облака",
+      "artist": "Натали",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
       "title": "Платье на брителях",
       "artist": "Натали",
       "timesPlayed": 0,
@@ -3870,6 +3814,13 @@
     {
       "title": "Прекрасное далеко",
       "artist": "Непоседы",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
+      "title": "🆕 Генералы песчаных карьеров",
+      "artist": "🆕 Алексей Кортнев. Из к/ф «Генералы песчаных карьеров»",
       "timesPlayed": 0,
       "inSsl": false,
       "inSheet": true
@@ -4597,6 +4548,13 @@
     },
     {
       "title": "Молоко",
+      "artist": "С. Лобода",
+      "timesPlayed": 0,
+      "inSsl": false,
+      "inSheet": true
+    },
+    {
+      "title": "Облака",
       "artist": "С. Лобода",
       "timesPlayed": 0,
       "inSsl": false,
