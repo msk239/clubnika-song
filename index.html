@@ -200,6 +200,34 @@
       .song-item { flex-direction: column; align-items: flex-start; }
       .song-meta { justify-content: flex-start; }
     }
+  
+    .donate-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      justify-content: flex-end;
+    }
+    .donate-btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 10px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      color: #fff;
+      background: #2c2438;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      transition: transform 0.12s ease, filter 0.12s ease;
+    }
+    .donate-btn:hover {
+      filter: brightness(1.15);
+      transform: translateY(-1px);
+    }
+    .donate-da { background: #6b21a8; }
+    .donate-dp { background: #9d174d; }
+    .donate-ds { background: #1d4ed8; }
+
   </style>
 </head>
 <body>
@@ -306,10 +334,10 @@
             <div class="song-title">${escapeHtml(s.title)}</div>
             <div class="song-artist">${escapeHtml(s.artist)}</div>
           </div>
-          <div class="song-meta">
-            ${s.inSsl ? '<span class="tag tag-ssl">SSL</span>' : ''}
-            ${s.inSheet ? '<span class="tag tag-sheet">Таблица</span>' : ''}
-            ${(s.timesPlayed || 0) > 0 ? `<span class="tag tag-plays">Пела: ${s.timesPlayed}</span>` : ''}
+          <div class="song-meta donate-actions">
+            <a class="donate-btn donate-da" href="https://www.donationalerts.com/r/nikaclub" target="_blank" rel="noopener noreferrer">DonationAlerts</a>
+            <a class="donate-btn donate-dp" href="https://new.donatepay.ru/@nikamoiseeva" target="_blank" rel="noopener noreferrer">DonatePay</a>
+            <a class="donate-btn donate-ds" href="https://destream.net/live/nikaclub/donatee" target="_blank" rel="noopener noreferrer">Destream</a>
           </div>
         </div>
       `).join('');
