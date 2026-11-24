@@ -1,4 +1,4 @@
-import csv, html, io, json, re, urllib.request
+import csv, html, io, json, re, unicodedata, urllib.request
 
 SSL_URL = "https://streamersonglist.com/t/nikaclub/songs"
 SHEET_ID = "1-ADetubVcKM3FZUtfURoKnuKE4NODFRcPlroKk5dvl8"
@@ -24,10 +24,24 @@ def clean_label(s: str) -> str:
     return re.sub(r"\s+", " ", s).strip()
 
 
+def strip_diacritics(s: str) -> str:
+    # Убираем диакритику (č -> c, š -> s и т.д.), сохраняя кириллицу и ё/е
+    normed = unicodedata.normalize("NFKD", s)
+    return "".join(ch for ch in normed if not unicodedata.combining(ch))
+
+
 def norm(s: str) -> str:
     s = clean_label(s).lower().replace("ё", "е")
+    s = strip_diacritics(s)
     s = re.sub(r"\(.*?\)|\[.*?\]", "", s)
     s = re.sub(r"[^a-zа-я0-9]", "", s)
+    return s.strip()
+
+
+def norm_artist_core(s: str) -> str:
+    # Убираем "feat." / "ft." / "и " и лишние хвосты для более мягкого сравнения артиста
+    s = norm(s)
+    s = re.split(r"(?:feat|ft|prod|remix)", s)[0]
     return s.strip()
 
 
@@ -102,7 +116,6 @@ def get_ssl_songs():
             if stall_rounds >= 4:
                 break
 
-            # Скроллим до последнего элемента песни и всех прокручиваемых контейнеров
             page.evaluate("""() => {
                 const links = document.querySelectorAll('a[href*="/songs/"]');
                 const last = links.length ? links[links.length - 1] : null;
@@ -115,7 +128,6 @@ def get_ssl_songs():
                 }
             }""")
 
-            # Ждём появления новых строк (до 4.5 сек)
             grew = False
             for _ in range(9):
                 page.wait_for_timeout(500)
@@ -211,6 +223,18 @@ def get_sheet_songs():
     raise RuntimeError(f"Sheet failed: {last}")
 
 
+def similar_enough(a: str, b: str) -> bool:
+    if not a or not b or a == b:
+        return a == b
+    if min(len(a), len(b)) >= 5 and (a in b or b in a):
+        return True
+    # Проверка на 1-2 отличия для коротких/опечаточных строк (например cru vs cry)
+    if abs(len(a) - len(b)) <= 2 and max(len(a), len(b)) >= 6:
+        diffs = sum(1 for x, y in zip(a, b) if x != y) + abs(len(a) - len(b))
+        return diffs <= 2
+    return False
+
+
 def main():
     merged = {}
     by_title = {}
@@ -234,13 +258,26 @@ def main():
         sheet_c = len(sh_s)
         for s in sh_s:
             na, nt = norm(s["artist"]), norm(s["title"])
+            ac = norm_artist_core(s["artist"])
             k1, k2 = f"{na}|{nt}", f"{nt}|{na}"
+
+            matched_keys = []
             if k1 in merged:
-                merged[k1]["inSheet"] = True
+                matched_keys.append(k1)
             elif k2 in merged:
-                merged[k2]["inSheet"] = True
+                matched_keys.append(k2)
             elif nt in by_title:
-                for mk in by_title[nt]:
+                matched_keys.extend(by_title[nt])
+            else:
+                # Ищем среди существующих записей совпадение по артисту и близкое название
+                for mk, existing in merged.items():
+                    ea_core = norm_artist_core(existing["artist"])
+                    et = norm(existing["title"])
+                    if ac and ea_core and ac == ea_core and similar_enough(nt, et):
+                        matched_keys.append(mk)
+
+            if matched_keys:
+                for mk in matched_keys:
                     merged[mk]["inSheet"] = True
             else:
                 merged[k1] = s
