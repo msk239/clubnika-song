@@ -83,6 +83,7 @@ def get_ssl_songs():
 
     captured = []
     all_dom_rows = []
+    api_urls = []
 
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
@@ -92,8 +93,12 @@ def get_ssl_songs():
         page = context.new_page()
 
         def handle_response(resp):
+            url = resp.url
             ctype = (resp.headers.get("content-type") or "").lower()
-            if "json" in ctype or "song" in resp.url.lower():
+            if "streamersonglist" in url and ("api" in url or "json" in ctype or "song" in url.lower()):
+                if len(api_urls) < 15 and url not in api_urls:
+                    api_urls.append(url)
+            if "json" in ctype or "song" in url.lower():
                 try:
                     data = resp.json()
                     extract_songs_from_json_obj(data, captured)
@@ -104,58 +109,55 @@ def get_ssl_songs():
         page.goto(SSL_URL, wait_until="networkidle", timeout=60000)
         page.wait_for_timeout(1500)
 
-        # Пробуем переключить размер страницы на максимум (например 100 / 250 / 500 / All), если есть select
-        try:
-            selects = page.locator("select")
-            for i in range(selects.count()):
-                sel = selects.nth(i)
-                opts = sel.locator("option")
-                best_val = None
-                best_num = 0
-                for j in range(opts.count()):
-                    val = (opts.nth(j).get_attribute("value") or "").strip()
-                    txt = (opts.nth(j).inner_text() or "").strip()
-                    m = re.search(r"\d+", txt + " " + val)
-                    if m and int(m.group(0)) > best_num:
-                        best_num = int(m.group(0))
-                        best_val = val
-                if best_val is not None and best_num >= 100:
-                    sel.select_option(best_val)
-                    page.wait_for_timeout(1500)
-                    break
-        except Exception:
-            pass
+        # Прокручиваем вниз, чтобы прогрузился футер и пагинация
+        page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
+        page.wait_for_timeout(800)
 
-        # Листаем страницы таблицы, пока появляется кнопка "Next" / ">" и меняются строки
+        # Собираем подсказки о кнопках пагинации внизу страницы
+        pag_hints = page.evaluate("""() => {
+            const els = Array.from(document.querySelectorAll('button, a, [role="button"]'));
+            return els
+              .map(el => ({
+                tag: el.tagName.toLowerCase(),
+                text: (el.innerText || '').trim().slice(0, 30),
+                aria: el.getAttribute('aria-label') || '',
+                cls: (el.className || '').toString().slice(0, 60)
+              }))
+              .filter(x => /next|prev|page|pagin|›|»|chevron|right|2/i.test(x.text + ' ' + x.aria + ' ' + x.cls))
+              .slice(0, 20);
+        }""")
+        print("SSL api_urls:", api_urls)
+        print("SSL pagination hints:", pag_hints)
+
         seen_pages = set()
-        for _ in range(40):
-            last_height = 0
-            for _ in range(10):
-                page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
-                page.wait_for_timeout(400)
-                nh = page.evaluate("document.body.scrollHeight")
-                if nh == last_height:
-                    break
-                last_height = nh
-
+        for page_num in range(1, 25):
             rows = read_dom_table_rows(page)
             sig = tuple((r["title"], r["artist"]) for r in rows[:5])
             all_dom_rows.extend(rows)
 
-            if sig in seen_pages:
+            if sig in seen_pages and page_num > 1:
                 break
             seen_pages.add(sig)
 
-            next_btn = page.locator(
-                'button:has-text("Next"), a:has-text("Next"), button[aria-label*="next" i], button[aria-label*="Next" i], li.next button, li.next a'
-            ).first
-            try:
-                if next_btn.count() > 0 and next_btn.is_enabled():
-                    next_btn.click()
-                    page.wait_for_timeout(1000)
-                else:
-                    break
-            except Exception:
+            # Пробуем найти кнопку следующей страницы по aria-label или тексту
+            clicked = False
+            candidates = page.locator(
+                'button[aria-label*="next" i], a[aria-label*="next" i], button[aria-label*="Next" i], a[aria-label*="Next" i], button:has-text("›"), a:has-text("›"), button:has-text("»"), a:has-text("»")'
+            )
+            for idx in range(candidates.count()):
+                btn = candidates.nth(idx)
+                try:
+                    if btn.is_visible() and btn.is_enabled():
+                        txt = (btn.inner_text() or "").strip()
+                        if txt in ("", "›", "»", ">", "Next"):
+                            btn.click()
+                            page.wait_for_timeout(1200)
+                            clicked = True
+                            break
+                except Exception:
+                    continue
+
+            if not clicked:
                 break
 
         browser.close()
