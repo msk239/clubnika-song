@@ -31,30 +31,6 @@ def norm(s: str) -> str:
     return s.strip()
 
 
-def extract_songs_from_json_obj(obj, out: list):
-    if isinstance(obj, dict):
-        title = obj.get("title") or obj.get("songTitle")
-        artist = obj.get("artist") or obj.get("artistName")
-        if isinstance(title, str) and title.strip() and isinstance(artist, str) and artist.strip():
-            plays = obj.get("timesPlayed") or obj.get("plays") or 0
-            try:
-                plays_int = int(plays)
-            except Exception:
-                plays_int = 0
-            out.append({
-                "title": clean_label(title),
-                "artist": clean_label(artist),
-                "timesPlayed": plays_int,
-                "inSsl": True,
-                "inSheet": False,
-            })
-        for v in obj.values():
-            extract_songs_from_json_obj(v, out)
-    elif isinstance(obj, list):
-        for item in obj:
-            extract_songs_from_json_obj(item, out)
-
-
 def read_dom_table_rows(page):
     return page.evaluate("""() => {
         const rows = [];
@@ -81,9 +57,8 @@ def read_dom_table_rows(page):
 def get_ssl_songs():
     from playwright.sync_api import sync_playwright
 
-    captured = []
     all_dom_rows = []
-    api_urls = []
+    controls_near_table = []
 
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
@@ -91,43 +66,40 @@ def get_ssl_songs():
             user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
         )
         page = context.new_page()
-
-        def handle_response(resp):
-            url = resp.url
-            ctype = (resp.headers.get("content-type") or "").lower()
-            if "streamersonglist" in url and ("api" in url or "json" in ctype or "song" in url.lower()):
-                if len(api_urls) < 15 and url not in api_urls:
-                    api_urls.append(url)
-            if "json" in ctype or "song" in url.lower():
-                try:
-                    data = resp.json()
-                    extract_songs_from_json_obj(data, captured)
-                except Exception:
-                    pass
-
-        page.on("response", handle_response)
-        page.goto(SSL_URL, wait_until="networkidle", timeout=60000)
+        page.goto(SSL_URL, wait_until="domcontentloaded", timeout=60000)
+        page.wait_for_selector("table tbody tr", timeout=30000)
         page.wait_for_timeout(1500)
 
-        # Прокручиваем вниз, чтобы прогрузился футер и пагинация
-        page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
-        page.wait_for_timeout(800)
-
-        # Собираем подсказки о кнопках пагинации внизу страницы
-        pag_hints = page.evaluate("""() => {
-            const els = Array.from(document.querySelectorAll('button, a, [role="button"]'));
-            return els
-              .map(el => ({
-                tag: el.tagName.toLowerCase(),
-                text: (el.innerText || '').trim().slice(0, 30),
-                aria: el.getAttribute('aria-label') || '',
-                cls: (el.className || '').toString().slice(0, 60)
-              }))
-              .filter(x => /next|prev|page|pagin|›|»|chevron|right|2/i.test(x.text + ' ' + x.aria + ' ' + x.cls))
-              .slice(0, 20);
+        # Прокручиваем до таблицы / низа страницы
+        page.evaluate("""() => {
+            const tbl = document.querySelector('table');
+            if (tbl) tbl.scrollIntoView({ behavior: 'instant', block: 'end' });
+            window.scrollTo(0, document.body.scrollHeight);
         }""")
-        print("SSL api_urls:", api_urls)
-        print("SSL pagination hints:", pag_hints)
+        page.wait_for_timeout(1000)
+
+        # Ищем кнопки и ссылки рядом с таблицей или в нижней части страницы (исключая боковое/верхнее меню)
+        controls_near_table = page.evaluate("""() => {
+            const tbl = document.querySelector('table');
+            const tblRect = tbl ? tbl.getBoundingClientRect() : null;
+            const out = [];
+            for (const el of document.querySelectorAll('button, a, [role="button"]')) {
+                const r = el.getBoundingClientRect();
+                if (r.width === 0 || r.height === 0) continue;
+                const nearBottom = tblRect ? (r.top >= tblRect.bottom - 120 && r.top <= tblRect.bottom + 260) : true;
+                if (!nearBottom) continue;
+                out.push({
+                    tag: el.tagName.toLowerCase(),
+                    text: (el.innerText || '').trim().replace(/\\s+/g, ' ').slice(0, 30),
+                    aria: el.getAttribute('aria-label') || '',
+                    disabled: el.disabled || el.getAttribute('aria-disabled') === 'true',
+                    top: Math.round(r.top),
+                    left: Math.round(r.left)
+                });
+            }
+            return out.slice(0, 30);
+        }""")
+        print("SSL table bottom controls:", controls_near_table)
 
         seen_pages = set()
         for page_num in range(1, 25):
@@ -139,36 +111,37 @@ def get_ssl_songs():
                 break
             seen_pages.add(sig)
 
-            # Пробуем найти кнопку следующей страницы по aria-label или тексту
-            clicked = False
-            candidates = page.locator(
-                'button[aria-label*="next" i], a[aria-label*="next" i], button[aria-label*="Next" i], a[aria-label*="Next" i], button:has-text("›"), a:has-text("›"), button:has-text("»"), a:has-text("»")'
-            )
-            for idx in range(candidates.count()):
-                btn = candidates.nth(idx)
-                try:
-                    if btn.is_visible() and btn.is_enabled():
-                        txt = (btn.inner_text() or "").strip()
-                        if txt in ("", "›", "»", ">", "Next"):
-                            btn.click()
-                            page.wait_for_timeout(1200)
-                            clicked = True
-                            break
-                except Exception:
-                    continue
+            # Пробуем кликнуть кнопку следующей страницы под таблицей (обычно самая правая кнопка у низа таблицы)
+            moved = page.evaluate("""() => {
+                const tbl = document.querySelector('table');
+                if (!tbl) return false;
+                const tblRect = tbl.getBoundingClientRect();
+                const btns = Array.from(document.querySelectorAll('button, a, [role="button"]')).filter(el => {
+                    const r = el.getBoundingClientRect();
+                    if (r.width === 0 || r.height === 0) return false;
+                    const dis = el.disabled || el.getAttribute('aria-disabled') === 'true';
+                    if (dis) return false;
+                    return r.top >= tblRect.bottom - 80 && r.top <= tblRect.bottom + 220;
+                });
+                if (!btns.length) return false;
+                // Ищем кнопку со стрелкой / next / последней кнопкой правее номеров страниц
+                const arrowBtn = btns.find(b => {
+                    const t = (b.innerText || '').trim();
+                    const a = (b.getAttribute('aria-label') || '').toLowerCase();
+                    return t === '>' || t === '›' || t === '»' || /next/i.test(t + ' ' + a);
+                }) || btns[btns.length - 1];
+                if (!arrowBtn) return false;
+                arrowBtn.click();
+                return true;
+            }""")
 
-            if not clicked:
+            if not moved:
                 break
+            page.wait_for_timeout(1200)
 
         browser.close()
 
     merged_ssl = {}
-    for s in captured:
-        if s["title"]:
-            k = f"{norm(s['artist'])}|{norm(s['title'])}"
-            if k not in merged_ssl:
-                merged_ssl[k] = s
-
     for r in all_dom_rows:
         t = clean_label(r["title"])
         a = clean_label(r["artist"]) or "Неизвестный исполнитель"
@@ -187,7 +160,7 @@ def get_ssl_songs():
             merged_ssl[key]["timesPlayed"] = r["timesPlayed"]
 
     songs = list(merged_ssl.values())
-    print(f"SSL loaded: captured={len(captured)}, dom_rows={len(all_dom_rows)}, unique={len(songs)}")
+    print(f"SSL loaded: dom_rows={len(all_dom_rows)}, unique={len(songs)}")
     if not songs:
         raise RuntimeError("SSL songs list is empty after page render")
     return songs
