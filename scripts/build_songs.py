@@ -27,8 +27,8 @@ def clean_label(s: str) -> str:
 def norm(s: str) -> str:
     s = clean_label(s).lower().replace("ё", "е")
     s = re.sub(r"\(.*?\)|\[.*?\]", "", s)
-    s = re.sub(r"[^a-zа-я0-9\s]", " ", s)
-    return re.sub(r"\s+", " ", s).strip()
+    s = re.sub(r"[^a-zа-я0-9]", "", s)
+    return s.strip()
 
 
 def extract_songs_from_json_obj(obj, out: list):
@@ -55,11 +55,34 @@ def extract_songs_from_json_obj(obj, out: list):
             extract_songs_from_json_obj(item, out)
 
 
+def read_dom_table_rows(page):
+    return page.evaluate("""() => {
+        const rows = [];
+        const trs = document.querySelectorAll('table tbody tr');
+        for (const tr of trs) {
+            const cells = Array.from(tr.querySelectorAll('td')).map(td => td.innerText.trim());
+            if (cells.length >= 2) {
+                const link = tr.querySelector('a[href*="/songs/"]');
+                const title = (link ? link.innerText : cells[0] || '').trim();
+                let artist = (cells[1] || '').trim();
+                if (link && artist.startsWith(title)) {
+                    artist = artist.slice(title.length).trim();
+                }
+                const lastCell = cells[cells.length - 1] || '0';
+                const playsMatch = lastCell.match(/\\d+/);
+                const plays = playsMatch ? parseInt(playsMatch[0], 10) : 0;
+                if (title) rows.push({ title, artist: artist || 'Неизвестный исполнитель', timesPlayed: plays });
+            }
+        }
+        return rows;
+    }""")
+
+
 def get_ssl_songs():
     from playwright.sync_api import sync_playwright
 
     captured = []
-    dom_rows = []
+    all_dom_rows = []
 
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
@@ -79,45 +102,72 @@ def get_ssl_songs():
 
         page.on("response", handle_response)
         page.goto(SSL_URL, wait_until="networkidle", timeout=60000)
+        page.wait_for_timeout(1500)
 
-        last_height = 0
-        for _ in range(15):
-            page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
-            page.wait_for_timeout(700)
-            new_height = page.evaluate("document.body.scrollHeight")
-            if new_height == last_height:
+        # Пробуем переключить размер страницы на максимум (например 100 / 250 / 500 / All), если есть select
+        try:
+            selects = page.locator("select")
+            for i in range(selects.count()):
+                sel = selects.nth(i)
+                opts = sel.locator("option")
+                best_val = None
+                best_num = 0
+                for j in range(opts.count()):
+                    val = (opts.nth(j).get_attribute("value") or "").strip()
+                    txt = (opts.nth(j).inner_text() or "").strip()
+                    m = re.search(r"\d+", txt + " " + val)
+                    if m and int(m.group(0)) > best_num:
+                        best_num = int(m.group(0))
+                        best_val = val
+                if best_val is not None and best_num >= 100:
+                    sel.select_option(best_val)
+                    page.wait_for_timeout(1500)
+                    break
+        except Exception:
+            pass
+
+        # Листаем страницы таблицы, пока появляется кнопка "Next" / ">" и меняются строки
+        seen_pages = set()
+        for _ in range(40):
+            last_height = 0
+            for _ in range(10):
+                page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
+                page.wait_for_timeout(400)
+                nh = page.evaluate("document.body.scrollHeight")
+                if nh == last_height:
+                    break
+                last_height = nh
+
+            rows = read_dom_table_rows(page)
+            sig = tuple((r["title"], r["artist"]) for r in rows[:5])
+            all_dom_rows.extend(rows)
+
+            if sig in seen_pages:
                 break
-            last_height = new_height
+            seen_pages.add(sig)
 
-        dom_rows = page.evaluate("""() => {
-            const rows = [];
-            const trs = document.querySelectorAll('table tbody tr');
-            for (const tr of trs) {
-                const cells = Array.from(tr.querySelectorAll('td')).map(td => td.innerText.trim());
-                if (cells.length >= 2) {
-                    const link = tr.querySelector('a[href*="/songs/"]');
-                    const title = (link ? link.innerText : cells[0] || '').trim();
-                    let artist = (cells[1] || '').trim();
-                    if (link && artist.startsWith(title)) {
-                        artist = artist.slice(title.length).trim();
-                    }
-                    const lastCell = cells[cells.length - 1] || '0';
-                    const playsMatch = lastCell.match(/\\d+/);
-                    const plays = playsMatch ? parseInt(playsMatch[0], 10) : 0;
-                    if (title) rows.push({ title, artist: artist || 'Неизвестный исполнитель', timesPlayed: plays });
-                }
-            }
-            return rows;
-        }""")
+            next_btn = page.locator(
+                'button:has-text("Next"), a:has-text("Next"), button[aria-label*="next" i], button[aria-label*="Next" i], li.next button, li.next a'
+            ).first
+            try:
+                if next_btn.count() > 0 and next_btn.is_enabled():
+                    next_btn.click()
+                    page.wait_for_timeout(1000)
+                else:
+                    break
+            except Exception:
+                break
 
         browser.close()
 
     merged_ssl = {}
     for s in captured:
         if s["title"]:
-            merged_ssl[f"{norm(s['artist'])}|{norm(s['title'])}"] = s
+            k = f"{norm(s['artist'])}|{norm(s['title'])}"
+            if k not in merged_ssl:
+                merged_ssl[k] = s
 
-    for r in dom_rows:
+    for r in all_dom_rows:
         t = clean_label(r["title"])
         a = clean_label(r["artist"]) or "Неизвестный исполнитель"
         if not t:
@@ -135,7 +185,7 @@ def get_ssl_songs():
             merged_ssl[key]["timesPlayed"] = r["timesPlayed"]
 
     songs = list(merged_ssl.values())
-    print(f"SSL loaded: captured={len(captured)}, dom={len(dom_rows)}, unique={len(songs)}")
+    print(f"SSL loaded: captured={len(captured)}, dom_rows={len(all_dom_rows)}, unique={len(songs)}")
     if not songs:
         raise RuntimeError("SSL songs list is empty after page render")
     return songs
