@@ -1,95 +1,361 @@
 {
-  "sslCount": 0,
+  "sslCount": 50,
   "sheetCount": 734,
-  "totalUnique": 734,
+  "totalUnique": 738,
   "songs": [
     {
       "title": "Босая",
-      "artist": "2Маши",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
+      "artist": "2 Маши",
+      "timesPlayed": 7,
+      "inSsl": true,
+      "inSheet": false
     },
     {
       "title": "Let The Rhythm Take Control",
       "artist": "Activate",
-      "timesPlayed": 0,
-      "inSsl": false,
+      "timesPlayed": 1,
+      "inSsl": true,
       "inSheet": true
     },
     {
       "title": "Lovesong",
       "artist": "Adel",
-      "timesPlayed": 0,
-      "inSsl": false,
+      "timesPlayed": 2,
+      "inSsl": true,
       "inSheet": true
     },
     {
       "title": "This is your Night",
       "artist": "Amber",
-      "timesPlayed": 0,
-      "inSsl": false,
+      "timesPlayed": 1,
+      "inSsl": true,
       "inSheet": true
     },
     {
       "title": "Три полоски",
       "artist": "Animal Джаz",
-      "timesPlayed": 0,
-      "inSsl": false,
+      "timesPlayed": 4,
+      "inSsl": true,
       "inSheet": true
     },
     {
       "title": "Любимый человек",
       "artist": "ANIVAR",
-      "timesPlayed": 0,
-      "inSsl": false,
+      "timesPlayed": 3,
+      "inSsl": true,
       "inSheet": true
     },
     {
       "title": "По барам",
       "artist": "ANNA ASTI",
-      "timesPlayed": 0,
-      "inSsl": false,
+      "timesPlayed": 3,
+      "inSsl": true,
       "inSheet": true
     },
     {
       "title": "Царица",
       "artist": "ANNA ASTI",
       "timesPlayed": 0,
-      "inSsl": false,
+      "inSsl": true,
       "inSheet": true
     },
     {
       "title": "Roses Are Red",
       "artist": "Aqua",
       "timesPlayed": 0,
-      "inSsl": false,
+      "inSsl": true,
       "inSheet": true
     },
     {
       "title": "Юность",
       "artist": "Dabro",
       "timesPlayed": 0,
-      "inSsl": false,
+      "inSsl": true,
       "inSheet": true
     },
     {
       "title": "Бесприданница",
       "artist": "Dead Blonde",
       "timesPlayed": 0,
-      "inSsl": false,
+      "inSsl": true,
       "inSheet": true
     },
     {
       "title": "Мальчик на девятке",
       "artist": "Dead Blonde",
       "timesPlayed": 0,
-      "inSsl": false,
+      "inSsl": true,
       "inSheet": true
     },
     {
       "title": "Снег растаял на плечах",
       "artist": "Dead Blonde",
+      "timesPlayed": 0,
+      "inSsl": true,
+      "inSheet": true
+    },
+    {
+      "title": "Ай диги дай",
+      "artist": "DJ SLON",
+      "timesPlayed": 0,
+      "inSsl": true,
+      "inSheet": false
+    },
+    {
+      "title": "Дельфины",
+      "artist": "DJ SLON, К. Замолодчикова",
+      "timesPlayed": 0,
+      "inSsl": true,
+      "inSheet": true
+    },
+    {
+      "title": "Позвони мне",
+      "artist": "DJ Smash, Nevesta",
+      "timesPlayed": 9,
+      "inSsl": true,
+      "inSheet": true
+    },
+    {
+      "title": "Avatar",
+      "artist": "DJ Unix, Anna",
+      "timesPlayed": 5,
+      "inSsl": true,
+      "inSheet": true
+    },
+    {
+      "title": "Почему же",
+      "artist": "DJ ДОЖДИК",
+      "timesPlayed": 0,
+      "inSsl": true,
+      "inSheet": true
+    },
+    {
+      "title": "Вите надо выйти",
+      "artist": "Estradarada",
+      "timesPlayed": 0,
+      "inSsl": true,
+      "inSheet": false
+    },
+    {
+      "title": "Лирика",
+      "artist": "Filatov & Karas (feat Masha)",
+      "timesPlayed": 0,
+      "inSsl": true,
+      "inSheet": true
+    },
+    {
+      "title": "Малиновая Лада",
+      "artist": "Gayazovs Brothers",
+      "timesPlayed": 0,
+      "inSsl": true,
+      "inSheet": false
+    },
+    {
+      "title": "Птичка",
+      "artist": "Hammali Navai",
+      "timesPlayed": 2,
+      "inSsl": true,
+      "inSheet": true
+    },
+    {
+      "title": "140",
+      "artist": "IOWA",
+      "timesPlayed": 0,
+      "inSsl": true,
+      "inSheet": true
+    },
+    {
+      "title": "Бьет бит",
+      "artist": "IOWA",
+      "timesPlayed": 3,
+      "inSsl": true,
+      "inSheet": true
+    },
+    {
+      "title": "Маршрутка",
+      "artist": "IOWA",
+      "timesPlayed": 3,
+      "inSsl": true,
+      "inSheet": true
+    },
+    {
+      "title": "Песня простая",
+      "artist": "IOWA",
+      "timesPlayed": 0,
+      "inSsl": true,
+      "inSheet": true
+    },
+    {
+      "title": "Улыбайся",
+      "artist": "IOWA",
+      "timesPlayed": 0,
+      "inSsl": true,
+      "inSheet": true
+    },
+    {
+      "title": "Одно и тоже",
+      "artist": "IOWA",
+      "timesPlayed": 0,
+      "inSsl": true,
+      "inSheet": true
+    },
+    {
+      "title": "Дарите женщинам цветы",
+      "artist": "Jazzdauren",
+      "timesPlayed": 2,
+      "inSsl": true,
+      "inSheet": true
+    },
+    {
+      "title": "Casablanca",
+      "artist": "Jessica Jay",
+      "timesPlayed": 0,
+      "inSsl": true,
+      "inSheet": true
+    },
+    {
+      "title": "Say you'll never",
+      "artist": "Lian Rosse",
+      "timesPlayed": 0,
+      "inSsl": true,
+      "inSheet": true
+    },
+    {
+      "title": "Потому что люблю",
+      "artist": "LINNA",
+      "timesPlayed": 0,
+      "inSsl": true,
+      "inSheet": true
+    },
+    {
+      "title": "Красавица",
+      "artist": "Lx24",
+      "timesPlayed": 3,
+      "inSsl": true,
+      "inSheet": true
+    },
+    {
+      "title": "Уголек",
+      "artist": "Lx24",
+      "timesPlayed": 2,
+      "inSsl": true,
+      "inSheet": true
+    },
+    {
+      "title": "La isla bonita",
+      "artist": "Madonna",
+      "timesPlayed": 3,
+      "inSsl": true,
+      "inSheet": true
+    },
+    {
+      "title": "Mister Feeling",
+      "artist": "Masterboy",
+      "timesPlayed": 0,
+      "inSsl": true,
+      "inSheet": true
+    },
+    {
+      "title": "Mother, How Are You Today",
+      "artist": "Maywood",
+      "timesPlayed": 0,
+      "inSsl": true,
+      "inSheet": true
+    },
+    {
+      "title": "А он такой",
+      "artist": "MIA Boyka",
+      "timesPlayed": 0,
+      "inSsl": true,
+      "inSheet": true
+    },
+    {
+      "title": "Богатырская",
+      "artist": "MIA Boyka",
+      "timesPlayed": 0,
+      "inSsl": true,
+      "inSheet": true
+    },
+    {
+      "title": "Есть у берега река",
+      "artist": "MIA Boyka",
+      "timesPlayed": 0,
+      "inSsl": true,
+      "inSheet": true
+    },
+    {
+      "title": "Саламандра",
+      "artist": "MIA Boyka, T-killah",
+      "timesPlayed": 2,
+      "inSsl": true,
+      "inSheet": true
+    },
+    {
+      "title": "Гуляй",
+      "artist": "MIROLYBOVA",
+      "timesPlayed": 0,
+      "inSsl": true,
+      "inSheet": true
+    },
+    {
+      "title": "Лето",
+      "artist": "MIROLYBOVA",
+      "timesPlayed": 1,
+      "inSsl": true,
+      "inSheet": true
+    },
+    {
+      "title": "Дыхание",
+      "artist": "Nautilus Pompilius",
+      "timesPlayed": 0,
+      "inSsl": true,
+      "inSheet": true
+    },
+    {
+      "title": "The Reason Is You",
+      "artist": "Nina",
+      "timesPlayed": 0,
+      "inSsl": true,
+      "inSheet": true
+    },
+    {
+      "title": "Твои глаза",
+      "artist": "Polnalyubvi",
+      "timesPlayed": 2,
+      "inSsl": true,
+      "inSheet": true
+    },
+    {
+      "title": "Sway",
+      "artist": "Pussicat Dolls",
+      "timesPlayed": 1,
+      "inSsl": true,
+      "inSheet": true
+    },
+    {
+      "title": "Pedro",
+      "artist": "Rafaella Carra",
+      "timesPlayed": 0,
+      "inSsl": true,
+      "inSheet": true
+    },
+    {
+      "title": "Я знаю ты придёшь",
+      "artist": "Saro Vardanyan",
+      "timesPlayed": 0,
+      "inSsl": true,
+      "inSheet": true
+    },
+    {
+      "title": "Love You Like A Love Song",
+      "artist": "Selena Gomez and The Scene",
+      "timesPlayed": 0,
+      "inSsl": true,
+      "inSheet": true
+    },
+    {
+      "title": "Босая",
+      "artist": "2Маши",
       "timesPlayed": 0,
       "inSsl": false,
       "inSheet": true
@@ -102,34 +368,6 @@
       "inSheet": true
     },
     {
-      "title": "Дельфины",
-      "artist": "DJ SLON, К. Замолодчикова",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Позвони мне",
-      "artist": "DJ Smash, Nevesta",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Avatar",
-      "artist": "DJ Unix, Anna",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Почему же",
-      "artist": "DJ ДОЖДИК",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
       "title": "Вите надо выйти",
       "artist": "Estradarada",
       "timesPlayed": 0,
@@ -137,218 +375,8 @@
       "inSheet": true
     },
     {
-      "title": "Лирика",
-      "artist": "Filatov & Karas (feat Masha)",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
       "title": "Малиновая Лада",
       "artist": "Gayazovs Brother",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Птичка",
-      "artist": "Hammali Navai",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "140",
-      "artist": "IOWA",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Бьет бит",
-      "artist": "IOWA",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Маршрутка",
-      "artist": "IOWA",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Песня простая",
-      "artist": "IOWA",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Улыбайся",
-      "artist": "IOWA",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Одно и тоже",
-      "artist": "IOWA",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Дарите женщинам цветы",
-      "artist": "Jazzdauren",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Casablanca",
-      "artist": "Jessica Jay",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Say you'll never",
-      "artist": "Lian Rosse",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Потому что люблю",
-      "artist": "LINNA",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Красавица",
-      "artist": "Lx24",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Уголек",
-      "artist": "Lx24",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "La isla bonita",
-      "artist": "Madonna",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Mister Feeling",
-      "artist": "Masterboy",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Mother, How Are You Today",
-      "artist": "Maywood",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "А он такой",
-      "artist": "MIA Boyka",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Богатырская",
-      "artist": "MIA Boyka",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Есть у берега река",
-      "artist": "MIA Boyka",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Саламандра",
-      "artist": "MIA Boyka, T-killah",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Гуляй",
-      "artist": "MIROLYBOVA",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Лето",
-      "artist": "MIROLYBOVA",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Дыхание",
-      "artist": "Nautilus Pompilius",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "The Reason Is You",
-      "artist": "Nina",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Твои глаза",
-      "artist": "Polnalyubvi",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Sway",
-      "artist": "Pussicat Dolls",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Pedro",
-      "artist": "Rafaella Carra",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Я знаю ты придёшь",
-      "artist": "Saro Vardanyan",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Love You Like A Love Song",
-      "artist": "Selena Gomez and The Scene",
       "timesPlayed": 0,
       "inSsl": false,
       "inSheet": true
