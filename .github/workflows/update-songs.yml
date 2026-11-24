@@ -20,6 +20,11 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install Playwright and Chromium
+        run: |
+          pip install playwright
+          playwright install chromium
+
       - name: Build songs.json
         run: python scripts/build_songs.py
 
