@@ -48,6 +48,24 @@ def read_dom_table_rows(page):
                 const playsMatch = lastCell.match(/\\d+/);
                 const plays = playsMatch ? parseInt(playsMatch[0], 10) : 0;
                 if (title) rows.push({ title, artist: artist || 'Неизвестный исполнитель', timesPlayed: plays });
+            } else {
+                // Запасной вариант, если строки рендерятся не в tr, а в блоках со ссылкой на /songs/
+                const link = tr.querySelector ? tr.querySelector('a[href*="/songs/"]') : null;
+                if (link) {
+                    const title = (link.innerText || '').trim();
+                    const fullText = (tr.innerText || '').trim().split('\\n').map(x => x.trim()).filter(Boolean);
+                    const artist = fullText.find(x => x !== title && !/заказать/i.test(x)) || 'Неизвестный исполнитель';
+                    if (title) rows.push({ title, artist, timesPlayed: 0 });
+                }
+            }
+        }
+        if (!rows.length) {
+            for (const link of document.querySelectorAll('a[href*="/songs/"]')) {
+                const title = (link.innerText || '').trim();
+                const parent = link.closest('tr, li, div[class*="row"], div[class*="item"]') || link.parentElement;
+                const lines = (parent ? parent.innerText : '').split('\\n').map(x => x.trim()).filter(Boolean);
+                const artist = lines.find(x => x !== title && !/заказать/i.test(x)) || 'Неизвестный исполнитель';
+                if (title) rows.push({ title, artist, timesPlayed: 0 });
             }
         }
         return rows;
@@ -58,86 +76,42 @@ def get_ssl_songs():
     from playwright.sync_api import sync_playwright
 
     all_dom_rows = []
-    controls_near_table = []
 
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
         context = browser.new_context(
-            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+            viewport={"width": 1280, "height": 900},
+            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
         )
         page = context.new_page()
         page.goto(SSL_URL, wait_until="domcontentloaded", timeout=60000)
-        page.wait_for_selector("table tbody tr", timeout=30000)
-        page.wait_for_timeout(1500)
+        page.wait_for_timeout(2000)
 
-        # Прокручиваем до таблицы / низа страницы
-        page.evaluate("""() => {
-            const tbl = document.querySelector('table');
-            if (tbl) tbl.scrollIntoView({ behavior: 'instant', block: 'end' });
-            window.scrollTo(0, document.body.scrollHeight);
-        }""")
-        page.wait_for_timeout(1000)
+        prev_count = 0
+        stall_rounds = 0
 
-        # Ищем кнопки и ссылки рядом с таблицей или в нижней части страницы (исключая боковое/верхнее меню)
-        controls_near_table = page.evaluate("""() => {
-            const tbl = document.querySelector('table');
-            const tblRect = tbl ? tbl.getBoundingClientRect() : null;
-            const out = [];
-            for (const el of document.querySelectorAll('button, a, [role="button"]')) {
-                const r = el.getBoundingClientRect();
-                if (r.width === 0 || r.height === 0) continue;
-                const nearBottom = tblRect ? (r.top >= tblRect.bottom - 120 && r.top <= tblRect.bottom + 260) : true;
-                if (!nearBottom) continue;
-                out.push({
-                    tag: el.tagName.toLowerCase(),
-                    text: (el.innerText || '').trim().replace(/\\s+/g, ' ').slice(0, 30),
-                    aria: el.getAttribute('aria-label') || '',
-                    disabled: el.disabled || el.getAttribute('aria-disabled') === 'true',
-                    top: Math.round(r.top),
-                    left: Math.round(r.left)
-                });
-            }
-            return out.slice(0, 30);
-        }""")
-        print("SSL table bottom controls:", controls_near_table)
-
-        seen_pages = set()
-        for page_num in range(1, 25):
+        # Листаем вниз до тех пор, пока подгружаются новые песни при скролле
+        for step in range(80):
             rows = read_dom_table_rows(page)
-            sig = tuple((r["title"], r["artist"]) for r in rows[:5])
             all_dom_rows.extend(rows)
+            cur_count = len(rows)
 
-            if sig in seen_pages and page_num > 1:
+            if cur_count > prev_count:
+                prev_count = cur_count
+                stall_rounds = 0
+            else:
+                stall_rounds += 1
+
+            # Если 5 проходов подряд число строк не выросло — значит дошли до конца списка
+            if stall_rounds >= 5:
                 break
-            seen_pages.add(sig)
 
-            # Пробуем кликнуть кнопку следующей страницы под таблицей (обычно самая правая кнопка у низа таблицы)
-            moved = page.evaluate("""() => {
-                const tbl = document.querySelector('table');
-                if (!tbl) return false;
-                const tblRect = tbl.getBoundingClientRect();
-                const btns = Array.from(document.querySelectorAll('button, a, [role="button"]')).filter(el => {
-                    const r = el.getBoundingClientRect();
-                    if (r.width === 0 || r.height === 0) return false;
-                    const dis = el.disabled || el.getAttribute('aria-disabled') === 'true';
-                    if (dis) return false;
-                    return r.top >= tblRect.bottom - 80 && r.top <= tblRect.bottom + 220;
-                });
-                if (!btns.length) return false;
-                // Ищем кнопку со стрелкой / next / последней кнопкой правее номеров страниц
-                const arrowBtn = btns.find(b => {
-                    const t = (b.innerText || '').trim();
-                    const a = (b.getAttribute('aria-label') || '').toLowerCase();
-                    return t === '>' || t === '›' || t === '»' || /next/i.test(t + ' ' + a);
-                }) || btns[btns.length - 1];
-                if (!arrowBtn) return false;
-                arrowBtn.click();
-                return true;
+            page.evaluate("""() => {
+                window.scrollTo(0, document.documentElement.scrollHeight);
+                const main = document.querySelector('main, [role="main"], .overflow-auto, .overflow-y-auto');
+                if (main) main.scrollTop = main.scrollHeight;
             }""")
-
-            if not moved:
-                break
-            page.wait_for_timeout(1200)
+            page.wait_for_timeout(900)
 
         browser.close()
 
@@ -160,7 +134,7 @@ def get_ssl_songs():
             merged_ssl[key]["timesPlayed"] = r["timesPlayed"]
 
     songs = list(merged_ssl.values())
-    print(f"SSL loaded: dom_rows={len(all_dom_rows)}, unique={len(songs)}")
+    print(f"SSL loaded: max_dom_rows={prev_count}, unique={len(songs)}")
     if not songs:
         raise RuntimeError("SSL songs list is empty after page render")
     return songs
