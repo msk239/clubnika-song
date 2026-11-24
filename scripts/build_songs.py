@@ -1,4 +1,5 @@
 import csv
+import html
 import io
 import json
 import re
@@ -9,23 +10,14 @@ SHEET_ID = "1-ADetubVcKM3FZUtfURoKnuKE4NODFRcPlroKk5dvl8"
 SHEET_GID = "0"
 
 
-def fetch_json(url: str):
-    req = urllib.request.Request(
-        url,
-        headers={
-            "User-Agent": "Mozilla/5.0 (ClubnikaSongBuilder/1.0)",
-            "Accept": "application/json",
-        },
-    )
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        return json.loads(resp.read().decode("utf-8"))
-
-
-def fetch_text(url: str) -> str:
-    req = urllib.request.Request(
-        url,
-        headers={"User-Agent": "Mozilla/5.0 (ClubnikaSongBuilder/1.0)"},
-    )
+def fetch_text(url: str, extra_headers=None) -> str:
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
+        "Accept": "application/json, text/plain, text/html, */*",
+    }
+    if extra_headers:
+        headers.update(extra_headers)
+    req = urllib.request.Request(url, headers=headers)
     with urllib.request.urlopen(req, timeout=30) as resp:
         return resp.read().decode("utf-8-sig", errors="replace")
 
@@ -38,42 +30,69 @@ def norm(s: str) -> str:
 
 
 def get_ssl_songs():
-    profile = fetch_json(f"https://api.streamersonglist.com/v1/streamers/{STREAMER_NAME}")
-    streamer_id = profile["id"]
+    # 1. Пробуем API v1
+    try:
+        profile = json.loads(fetch_text(f"https://api.streamersonglist.com/v1/streamers/{STREAMER_NAME}"))
+        streamer_id = profile["id"]
+        songs = []
+        current = 0
+        size = 250
+        while True:
+            data = json.loads(
+                fetch_text(
+                    f"https://api.streamersonglist.com/v1/streamers/{streamer_id}/songs?size={size}&current={current}"
+                )
+            )
+            items = data.get("items") or []
+            for s in items:
+                title = (s.get("title") or "").strip()
+                if title:
+                    songs.append(
+                        {
+                            "title": title,
+                            "artist": (s.get("artist") or "Неизвестный исполнитель").strip(),
+                            "timesPlayed": int(s.get("timesPlayed") or 0),
+                            "inSsl": True,
+                            "inSheet": False,
+                        }
+                    )
+            total = int(data.get("total") or len(items))
+            current += 1
+            if len(songs) >= total or not items:
+                break
+        if songs:
+            return songs
+    except Exception as e:
+        print("SSL API error:", e)
+
+    # 2. Запасной вариант: пробуем достать JSON или строки с публичной страницы
+    page_html = fetch_text(f"https://www.streamersonglist.com/t/{STREAMER_NAME}/songs")
+    print("SSL page length:", len(page_html))
+
+    # Ищем встроенные JSON-объекты с "title" и "artist"
+    matches = re.findall(r'\{"id":\d+,"title":"([^"]+)","artist":"([^"]+)"[^}]*\}', page_html)
     songs = []
-    current = 0
-    size = 250
-    while True:
-        data = fetch_json(
-            f"https://api.streamersonglist.com/v1/streamers/{streamer_id}/songs?size={size}&current={current}"
-        )
-        items = data.get("items") or []
-        for s in items:
-            title = (s.get("title") or "").strip()
-            if not title:
-                continue
-            artist = (s.get("artist") or "Неизвестный исполнитель").strip()
+    for title_raw, artist_raw in matches:
+        title = html.unescape(title_raw).strip()
+        artist = html.unescape(artist_raw).strip()
+        if title:
             songs.append(
                 {
                     "title": title,
-                    "artist": artist,
-                    "timesPlayed": int(s.get("timesPlayed") or 0),
+                    "artist": artist or "Неизвестный исполнитель",
+                    "timesPlayed": 0,
                     "inSsl": True,
                     "inSheet": False,
                 }
             )
-        total = int(data.get("total") or len(items))
-        current += 1
-        if len(songs) >= total or not items:
-            break
+    if not songs:
+        raise RuntimeError("Не удалось получить песни со StreamerSongList (возможно, API требует токен или данные грузятся динамически)")
     return songs
 
 
-def get_sheet_songs():
-    url = f"https://docs.google.com/spreadsheets/d/{SHEET_ID}/export?format=csv&gid={SHEET_GID}"
-    raw_csv = fetch_text(url)
+def parse_sheet_csv(raw_csv: str):
     if raw_csv.lstrip().startswith("<!DOCTYPE html") or "<html" in raw_csv[:300].lower():
-        raise RuntimeError("Google Таблица закрыта от доступа по ссылке или вернула HTML вместо CSV")
+        raise RuntimeError("Таблица вернула HTML вместо CSV (проверьте доступ по ссылке)")
 
     reader = csv.reader(io.StringIO(raw_csv))
     rows = [r for r in reader if any(c.strip() for c in r)]
@@ -125,6 +144,24 @@ def get_sheet_songs():
     return songs
 
 
+def get_sheet_songs():
+    urls = [
+        f"https://docs.google.com/spreadsheets/d/{SHEET_ID}/export?format=csv&gid={SHEET_GID}",
+        f"https://docs.google.com/spreadsheets/d/{SHEET_ID}/gviz/tq?tqx=out:csv&gid={SHEET_GID}",
+    ]
+    last_err = None
+    for u in urls:
+        try:
+            raw = fetch_text(u)
+            songs = parse_sheet_csv(raw)
+            print(f"Sheet loaded from {u}: {len(songs)} rows")
+            return songs
+        except Exception as e:
+            last_err = e
+            print("Sheet attempt error:", u, "->", e)
+    raise RuntimeError(f"Не удалось загрузить Google Таблицу: {last_err}")
+
+
 def main():
     merged = {}
     ssl_count = 0
@@ -137,7 +174,7 @@ def main():
             key = f"{norm(s['artist'])}|{norm(s['title'])}"
             merged[key] = s
     except Exception as e:
-        print("SSL warning:", e)
+        print("SSL final error:", e)
 
     try:
         sheet_songs = get_sheet_songs()
@@ -154,7 +191,7 @@ def main():
             else:
                 merged[k1] = s
     except Exception as e:
-        print("Sheet warning:", e)
+        print("Sheet final error:", e)
 
     payload = {
         "sslCount": ssl_count,
