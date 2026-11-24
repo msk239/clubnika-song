@@ -1,7 +1,7 @@
 {
   "sslCount": 734,
   "sheetCount": 734,
-  "totalUnique": 762,
+  "totalUnique": 734,
   "songs": [
     {
       "title": "Босая",
@@ -99,7 +99,7 @@
       "artist": "DJ SLON",
       "timesPlayed": 0,
       "inSsl": true,
-      "inSheet": false
+      "inSheet": true
     },
     {
       "title": "Дельфины",
@@ -134,7 +134,7 @@
       "artist": "Estradarada",
       "timesPlayed": 0,
       "inSsl": true,
-      "inSheet": false
+      "inSheet": true
     },
     {
       "title": "Лирика",
@@ -379,7 +379,7 @@
       "artist": "SONA",
       "timesPlayed": 0,
       "inSsl": true,
-      "inSheet": false
+      "inSheet": true
     },
     {
       "title": "Zombie",
@@ -393,14 +393,14 @@
       "artist": "Thomas Anders",
       "timesPlayed": 4,
       "inSsl": true,
-      "inSheet": false
+      "inSheet": true
     },
     {
       "title": "Tavasis Bučinys",
       "artist": "Viktorija feat. Vasha",
       "timesPlayed": 0,
       "inSsl": true,
-      "inSheet": false
+      "inSheet": true
     },
     {
       "title": "Ля ты какая",
@@ -477,7 +477,7 @@
       "artist": "А. Ведищева",
       "timesPlayed": 0,
       "inSsl": true,
-      "inSheet": false
+      "inSheet": true
     },
     {
       "title": "Песенка о медведях",
@@ -806,7 +806,7 @@
       "artist": "Ани Лорак",
       "timesPlayed": 0,
       "inSsl": true,
-      "inSheet": false
+      "inSheet": true
     },
     {
       "title": "Медленно",
@@ -1247,7 +1247,7 @@
       "artist": "Божья Коровка",
       "timesPlayed": 0,
       "inSsl": true,
-      "inSheet": false
+      "inSheet": true
     },
     {
       "title": "Крутится, вертится шар голубой",
@@ -1814,7 +1814,7 @@
       "artist": "Геннадий Белов",
       "timesPlayed": 0,
       "inSsl": true,
-      "inSheet": false
+      "inSheet": true
     },
     {
       "title": "Орлы или вороны",
@@ -2129,14 +2129,14 @@
       "artist": "Елена Ваенга, Алёна Петровская",
       "timesPlayed": 0,
       "inSsl": true,
-      "inSheet": false
+      "inSheet": true
     },
     {
       "title": "Маленький принц",
       "artist": "Елена Камбурова",
       "timesPlayed": 0,
       "inSsl": true,
-      "inSheet": false
+      "inSheet": true
     },
     {
       "title": "По маленькой",
@@ -2675,7 +2675,7 @@
       "artist": "Казачья",
       "timesPlayed": 0,
       "inSsl": true,
-      "inSheet": false
+      "inSheet": true
     },
     {
       "title": "Донская плясовая",
@@ -2927,7 +2927,7 @@
       "artist": "Лев Лещенко",
       "timesPlayed": 0,
       "inSsl": true,
-      "inSheet": false
+      "inSheet": true
     },
     {
       "title": "Осень",
@@ -3067,7 +3067,7 @@
       "artist": "Людмила Зыкина",
       "timesPlayed": 0,
       "inSsl": true,
-      "inSheet": false
+      "inSheet": true
     },
     {
       "title": "Подари мне платок",
@@ -3137,7 +3137,7 @@
       "artist": "Максим",
       "timesPlayed": 0,
       "inSsl": true,
-      "inSheet": false
+      "inSheet": true
     },
     {
       "title": "Не отдам",
@@ -3242,7 +3242,7 @@
       "artist": "М. Девятова",
       "timesPlayed": 1,
       "inSsl": true,
-      "inSheet": false
+      "inSheet": true
     },
     {
       "title": "Казаки в Берлине",
@@ -3382,7 +3382,7 @@
       "artist": "Михаил Круг, Вика Цыганова",
       "timesPlayed": 0,
       "inSsl": true,
-      "inSheet": false
+      "inSheet": true
     },
     {
       "title": "За глаза твои карие",
@@ -3613,7 +3613,7 @@
       "artist": "Народные",
       "timesPlayed": 0,
       "inSsl": true,
-      "inSheet": false
+      "inSheet": true
     },
     {
       "title": "Ты шкатулка, шкатулка моя",
@@ -3760,7 +3760,7 @@
       "artist": "Наталья Могилевская",
       "timesPlayed": 0,
       "inSsl": true,
-      "inSheet": false
+      "inSheet": true
     },
     {
       "title": "Ромашки-цветы",
@@ -3914,7 +3914,7 @@
       "artist": "Николай Рыбников",
       "timesPlayed": 0,
       "inSsl": true,
-      "inSheet": false
+      "inSheet": true
     },
     {
       "title": "Ах, судьба",
@@ -3935,7 +3935,7 @@
       "artist": "Н. Кадышева",
       "timesPlayed": 0,
       "inSsl": true,
-      "inSheet": false
+      "inSheet": true
     },
     {
       "title": "Зеленые глаза",
@@ -4145,7 +4145,7 @@
       "artist": "Полина Гагарина",
       "timesPlayed": 0,
       "inSsl": true,
-      "inSheet": false
+      "inSheet": true
     },
     {
       "title": "Гордая",
@@ -4502,7 +4502,7 @@
       "artist": "Сектор Газа",
       "timesPlayed": 0,
       "inSsl": true,
-      "inSheet": false
+      "inSheet": true
     },
     {
       "title": "Черный бумер",
@@ -4698,7 +4698,7 @@
       "artist": "Татьяна Овсиенко",
       "timesPlayed": 0,
       "inSsl": true,
-      "inSheet": false
+      "inSheet": true
     },
     {
       "title": "Школьная пора",
@@ -4712,7 +4712,7 @@
       "artist": "Татьяна Сашко",
       "timesPlayed": 0,
       "inSsl": true,
-      "inSheet": false
+      "inSheet": true
     },
     {
       "title": "Не бойтесь любви",
@@ -4733,7 +4733,7 @@
       "artist": "Т. Буланова",
       "timesPlayed": 0,
       "inSsl": true,
-      "inSheet": false
+      "inSheet": true
     },
     {
       "title": "Вот пуля просвистела",
@@ -4831,7 +4831,7 @@
       "artist": "Трофим",
       "timesPlayed": 0,
       "inSsl": true,
-      "inSheet": false
+      "inSheet": true
     },
     {
       "title": "Московская песня",
@@ -5076,7 +5076,7 @@
       "artist": "Ю. Шатунов",
       "timesPlayed": 0,
       "inSsl": true,
-      "inSheet": false
+      "inSheet": true
     },
     {
       "title": "Не бойся",
@@ -5139,202 +5139,6 @@
       "artist": "Я. Шведов, А. Новиков",
       "timesPlayed": 0,
       "inSsl": true,
-      "inSheet": true
-    },
-    {
-      "title": "Ай диги дай",
-      "artist": "DJ SLON",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Вите надо выйти",
-      "artist": "Estradarada",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Все пройдёт",
-      "artist": "SONA",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Why do you cru?",
-      "artist": "Thomas Anders",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Tavasis Bučinys",
-      "artist": "Viktorija feat. Vasha",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Лесной олень",
-      "artist": "А. Ведищева",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Забирай",
-      "artist": "Ани Лорак",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Гранитный камушек",
-      "artist": "Божья Коровка",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "На дальней станции сойду",
-      "artist": "Геннадий Белов",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Обыкновенный",
-      "artist": "Елена Ваенга, Алёна Петровская",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Маленький принц",
-      "artist": "Елена Камбурова",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Ойся ты ойся",
-      "artist": "Казачья",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Родительский дом",
-      "artist": "Лев Лещенко",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Оренбургский пуховый платок",
-      "artist": "Людмила Зыкина",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Небо, засыпай",
-      "artist": "Максим",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Виноградная косточк",
-      "artist": "М. Девятова",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Приходите в мой дом",
-      "artist": "Михаил Круг, Вика Цыганова",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "По Дону гуляет казак молодой",
-      "artist": "Народные",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Полюби меня такой",
-      "artist": "Наталья Могилевская",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Тишина за Рогожской заставою",
-      "artist": "Николай Рыбников",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Давай дружок на посошок",
-      "artist": "Н. Кадышева",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Ты не целуй",
-      "artist": "Полина Гагарина",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Твой звонок",
-      "artist": "Сектор Газа",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Дальнобойщик",
-      "artist": "Татьяна Овсиенко",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Белый танец",
-      "artist": "Татьяна Сашко",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Ясный мой свет",
-      "artist": "Т. Буланова",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "За Тихой Рекою",
-      "artist": "Трофим",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Медленно уходит",
-      "artist": "Ю. Шатунов",
-      "timesPlayed": 0,
-      "inSsl": false,
       "inSheet": true
     }
   ]
