@@ -1,14 +1,14 @@
 {
   "sslCount": 50,
   "sheetCount": 734,
-  "totalUnique": 738,
+  "totalUnique": 733,
   "songs": [
     {
       "title": "Босая",
       "artist": "2 Маши",
       "timesPlayed": 7,
       "inSsl": true,
-      "inSheet": false
+      "inSheet": true
     },
     {
       "title": "Let The Rhythm Take Control",
@@ -148,7 +148,7 @@
       "artist": "Gayazovs Brothers",
       "timesPlayed": 0,
       "inSsl": true,
-      "inSheet": false
+      "inSheet": true
     },
     {
       "title": "Птичка",
@@ -354,13 +354,6 @@
       "inSheet": true
     },
     {
-      "title": "Босая",
-      "artist": "2Маши",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
       "title": "Ай диги дай",
       "artist": "DJ SLON",
       "timesPlayed": 0,
@@ -370,13 +363,6 @@
     {
       "title": "Вите надо выйти",
       "artist": "Estradarada",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Малиновая Лада",
-      "artist": "Gayazovs Brother",
       "timesPlayed": 0,
       "inSsl": false,
       "inSheet": true
@@ -1055,13 +1041,6 @@
     },
     {
       "title": "Танцуй красивая",
-      "artist": "Афина",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Улыбайся",
       "artist": "Афина",
       "timesPlayed": 0,
       "inSsl": false,
@@ -2196,7 +2175,7 @@
     },
     {
       "title": "Одна",
-      "artist": "Жанна Добровольская",
+      "artist": "Жанна Добровольская",
       "timesPlayed": 0,
       "inSsl": false,
       "inSheet": true
@@ -2560,7 +2539,7 @@
     },
     {
       "title": "Город, которого нет",
-      "artist": "И. Корнелюк. Из сериала «Бандитский Петербург»",
+      "artist": "И. Корнелюк. Из сериала «Бандитский Петербург»",
       "timesPlayed": 0,
       "inSsl": false,
       "inSheet": true
@@ -4596,13 +4575,6 @@
       "inSheet": true
     },
     {
-      "title": "Твои глаза",
-      "artist": "С. Лобода",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
       "title": "Зачем топтать мою любовь (ЗТМЛ)",
       "artist": "Смысловые Галлюцинации",
       "timesPlayed": 0,
@@ -4948,13 +4920,6 @@
     {
       "title": "О любви",
       "artist": "ЧИЖ",
-      "timesPlayed": 0,
-      "inSsl": false,
-      "inSheet": true
-    },
-    {
-      "title": "Лето",
-      "artist": "Чи-Ли",
       "timesPlayed": 0,
       "inSsl": false,
       "inSheet": true
