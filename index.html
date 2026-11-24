@@ -317,10 +317,11 @@
       </div>
       <div class="filters" id="filterChips">
         <button class="chip active" data-filter="all">Все песни</button>
-        <button class="chip" data-filter="ssl">StreamerSongList</button>
-        <button class="chip" data-filter="sheet">Google Таблица</button>
-        <button class="chip" data-filter="both">В обоих списках</button>
-        <button class="chip" data-filter="unplayed">Ещё не пелись</button>
+        <button class="chip" data-filter="author">Авторские</button>
+        <button class="chip" data-filter="russian">Российские</button>
+        <button class="chip" data-filter="foreign">Иностранные</button>
+        <button class="chip" data-filter="movies">Из фильмов</button>
+        <button class="chip" data-filter="cartoons">Из мультфильмов</button>
       </div>
     </div>
 
@@ -360,10 +361,21 @@
       const sortBy = document.getElementById('sortSelect').value;
 
       let filtered = allSongs.filter(s => {
-        if (currentFilter === 'ssl' && !s.inSsl) return false;
-        if (currentFilter === 'sheet' && !s.inSheet) return false;
-        if (currentFilter === 'both' && !(s.inSsl && s.inSheet)) return false;
-        if (currentFilter === 'unplayed' && (s.timesPlayed || 0) > 0) return false;
+        const rawFull = `${s.artist || ''} ${s.title || ''}`.toLowerCase();
+        const artistLow = (s.artist || '').toLowerCase();
+        const titleLow = (s.title || '').toLowerCase();
+
+        const isAuthor = /(ника\s*моисеева|nika\s*moiseeva|авторск)/i.test(rawFull) || /^ника$/i.test(artistLow.trim());
+        const isCartoon = /(из\s*м\/ф|м\/ф|из\s*мультфильм|мультфильм|disney|дисней|бременские музыканты|чебурашка|крокодил гена|винни[\s-]*пух|ну,?\s*погоди|простоквашино|леопольд|мамонтенок|мамонтёнок|ундина|русалочка|холодное сердце|король лев|король лев|аладдин)/i.test(rawFull);
+        const isMovie = !isCartoon && /(из\s*к\/ф|к\/ф|из\s*т\/ф|т\/ф|из\s*фильм|из\s*сериал|саундтрек|ost)/i.test(rawFull);
+        const hasCyrillic = /[а-яё]/i.test(`${titleLow} ${artistLow}`);
+
+        if (currentFilter === 'author' && !isAuthor) return false;
+        if (currentFilter === 'cartoons' && !isCartoon) return false;
+        if (currentFilter === 'movies' && !isMovie) return false;
+        if (currentFilter === 'russian' && !hasCyrillic) return false;
+        if (currentFilter === 'foreign' && hasCyrillic) return false;
+
         if (query) {
           const hay = `${norm(s.artist)} ${norm(s.title)}`;
           if (!hay.includes(query)) return false;
