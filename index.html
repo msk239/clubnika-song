@@ -208,7 +208,7 @@
       <h1>Nika Club 🍓 Сонглист</h1>
       <p class="subtitle">Музыка от души — единый каталог песен Ники</p>
       <div class="stats" id="stats">
-        <span class="stat-badge">Загрузка источников...</span>
+        <span class="stat-badge">Загрузка каталога...</span>
       </div>
     </header>
 
@@ -241,14 +241,10 @@
       <button class="btn" id="copyRandomBtn" type="button">Скопировать</button>
     </div>
 
-    <div id="listContainer" class="status-msg">Собираем и объединяем песни из StreamerSongList и Google Таблицы...</div>
+    <div id="listContainer" class="status-msg">Загружаем объединенный список песен...</div>
   </div>
 
   <script>
-    const STREAMER_NAME = 'nikaclub';
-    const SHEET_ID = '1-ADetubVcKM3FZUtfURoKnuKE4NODFRcPlroKk5dvl8';
-    const SHEET_GID = '0';
-
     let allSongs = [];
     let currentFilter = 'all';
 
@@ -262,183 +258,10 @@
         .trim();
     }
 
-    function parseCSV(text) {
-      const rows = [];
-      let row = [];
-      let cell = '';
-      let inQuotes = false;
-      for (let i = 0; i < text.length; i++) {
-        const ch = text[i];
-        const next = text[i + 1];
-        if (inQuotes) {
-          if (ch === '"' && next === '"') {
-            cell += '"';
-            i++;
-          } else if (ch === '"') {
-            inQuotes = false;
-          } else {
-            cell += ch;
-          }
-        } else {
-          if (ch === '"') {
-            inQuotes = true;
-          } else if (ch === ',') {
-            row.push(cell.trim());
-            cell = '';
-          } else if (ch === '\r' && next === '\n') {
-            row.push(cell.trim());
-            rows.push(row);
-            row = [];
-            cell = '';
-            i++;
-          } else if (ch === '\n' || ch === '\r') {
-            row.push(cell.trim());
-            rows.push(row);
-            row = [];
-            cell = '';
-          } else {
-            cell += ch;
-          }
-        }
-      }
-      if (cell.length > 0 || row.length > 0) {
-        row.push(cell.trim());
-        rows.push(row);
-      }
-      return rows.filter(r => r.some(c => c !== ''));
-    }
-
-    async function fetchStreamerSongList() {
-      const profileRes = await fetch(`https://api.streamersonglist.com/v1/streamers/${STREAMER_NAME}`);
-      if (!profileRes.ok) throw new Error('Не удалось получить профиль StreamerSongList');
-      const profile = await profileRes.json();
-      const streamerId = profile.id;
-
-      let items = [];
-      let current = 0;
-      const size = 250;
-      while (true) {
-        const res = await fetch(`https://api.streamersonglist.com/v1/streamers/${streamerId}/songs?size=${size}&current=${current}`);
-        if (!res.ok) throw new Error('Ошибка загрузки списка песен StreamerSongList');
-        const data = await res.json();
-        const batch = data.items || [];
-        items = items.concat(batch);
-        if (items.length >= (data.total || batch.length) || batch.length === 0) break;
-        current++;
-      }
-
-      return items.map(s => ({
-        title: (s.title || '').trim(),
-        artist: (s.artist || 'Неизвестный исполнитель').trim(),
-        timesPlayed: Number(s.timesPlayed || 0),
-        lastPlayed: s.lastPlayed || null,
-        source: 'ssl'
-      })).filter(s => s.title);
-    }
-
-    async function fetchGoogleSheet() {
-      const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=${SHEET_GID}`;
-      const res = await fetch(url);
-      if (!res.ok) throw new Error('Нет доступа к Google Таблице (проверьте доступ по ссылке)');
-      const text = await res.text();
-      if (text.trim().startsWith('<!DOCTYPE html')) {
-        throw new Error('Google Таблица закрыта от публичного чтения — включите «Все, у кого есть ссылка»');
-      }
-
-      const rows = parseCSV(text);
-      if (!rows.length) return [];
-
-      let startIdx = 0;
-      let artistCol = -1;
-      let titleCol = -1;
-
-      const header = rows[0].map(c => c.toLowerCase());
-      header.forEach((h, idx) => {
-        if (/(артист|исполнитель|artist|автор|группа)/.test(h)) artistCol = idx;
-        if (/(песня|название|трек|title|song|композиция)/.test(h)) titleCol = idx;
-      });
-
-      if (artistCol !== -1 || titleCol !== -1) {
-        startIdx = 1;
-      }
-
-      const songs = [];
-      for (let i = startIdx; i < rows.length; i++) {
-        const r = rows[i];
-        let artist = '';
-        let title = '';
-
-        if (artistCol !== -1 && titleCol !== -1) {
-          artist = r[artistCol] || '';
-          title = r[titleCol] || '';
-        } else {
-          const nonEmpty = r.filter(c => c && !/^\d+$/.test(c));
-          if (nonEmpty.length >= 2) {
-            artist = nonEmpty[0];
-            title = nonEmpty[1];
-          } else if (nonEmpty.length === 1) {
-            const parts = nonEmpty[0].split(/\s+[—–-]\s+/);
-            if (parts.length >= 2) {
-              artist = parts[0];
-              title = parts.slice(1).join(' - ');
-            } else {
-              title = nonEmpty[0];
-              artist = 'Из таблицы';
-            }
-          }
-        }
-
-        if (title) {
-          songs.push({
-            title: title.trim(),
-            artist: (artist || 'Из таблицы').trim(),
-            timesPlayed: 0,
-            lastPlayed: null,
-            source: 'sheet'
-          });
-        }
-      }
-      return songs;
-    }
-
-    function mergeSongs(sslSongs, sheetSongs) {
-      const map = new Map();
-
-      for (const s of sslSongs) {
-        const key = `${norm(s.artist)}|${norm(s.title)}`;
-        map.set(key, {
-          title: s.title,
-          artist: s.artist,
-          timesPlayed: s.timesPlayed,
-          lastPlayed: s.lastPlayed,
-          inSsl: true,
-          inSheet: false
-        });
-      }
-
-      for (const s of sheetSongs) {
-        const nArtist = norm(s.artist);
-        const nTitle = norm(s.title);
-        const directKey = `${nArtist}|${nTitle}`;
-        const swappedKey = `${nTitle}|${nArtist}`;
-
-        if (map.has(directKey)) {
-          map.get(directKey).inSheet = true;
-        } else if (map.has(swappedKey)) {
-          map.get(swappedKey).inSheet = true;
-        } else {
-          map.set(directKey, {
-            title: s.title,
-            artist: s.artist,
-            timesPlayed: 0,
-            lastPlayed: null,
-            inSsl: false,
-            inSheet: true
-          });
-        }
-      }
-
-      return Array.from(map.values());
+    function escapeHtml(str) {
+      return (str || '').replace(/[&<>"']/g, m => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+      }[m]));
     }
 
     function render() {
@@ -449,7 +272,7 @@
         if (currentFilter === 'ssl' && !s.inSsl) return false;
         if (currentFilter === 'sheet' && !s.inSheet) return false;
         if (currentFilter === 'both' && !(s.inSsl && s.inSheet)) return false;
-        if (currentFilter === 'unplayed' && s.timesPlayed > 0) return false;
+        if (currentFilter === 'unplayed' && (s.timesPlayed || 0) > 0) return false;
         if (query) {
           const hay = `${norm(s.artist)} ${norm(s.title)}`;
           if (!hay.includes(query)) return false;
@@ -459,7 +282,7 @@
 
       filtered.sort((a, b) => {
         if (sortBy === 'plays') {
-          return b.timesPlayed - a.timesPlayed || a.artist.localeCompare(b.artist, 'ru');
+          return (b.timesPlayed || 0) - (a.timesPlayed || 0) || a.artist.localeCompare(b.artist, 'ru');
         }
         if (sortBy === 'title') {
           return a.title.localeCompare(b.title, 'ru') || a.artist.localeCompare(b.artist, 'ru');
@@ -470,7 +293,9 @@
       const container = document.getElementById('listContainer');
       if (!filtered.length) {
         container.className = 'status-msg';
-        container.textContent = 'По вашему запросу песен не найдено.';
+        container.textContent = allSongs.length
+          ? 'По вашему запросу песен не найдено.'
+          : 'Каталог пока формируется. Запустите workflow "Update Songs Catalog" во вкладке Actions на GitHub.';
         return;
       }
 
@@ -484,54 +309,29 @@
           <div class="song-meta">
             ${s.inSsl ? '<span class="tag tag-ssl">SSL</span>' : ''}
             ${s.inSheet ? '<span class="tag tag-sheet">Таблица</span>' : ''}
-            ${s.timesPlayed > 0 ? `<span class="tag tag-plays">Пела: ${s.timesPlayed}</span>` : ''}
+            ${(s.timesPlayed || 0) > 0 ? `<span class="tag tag-plays">Пела: ${s.timesPlayed}</span>` : ''}
           </div>
         </div>
       `).join('');
     }
 
-    function escapeHtml(str) {
-      return str.replace(/[&<>"']/g, m => ({
-        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
-      }[m]));
-    }
-
     async function init() {
-      const errors = [];
-      let sslSongs = [];
-      let sheetSongs = [];
+      try {
+        const res = await fetch(`./songs.json?v=${Date.now()}`);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        allSongs = data.songs || [];
 
-      const [sslRes, sheetRes] = await Promise.allSettled([
-        fetchStreamerSongList(),
-        fetchGoogleSheet()
-      ]);
-
-      if (sslRes.status === 'fulfilled') {
-        sslSongs = sslRes.value;
-      } else {
-        errors.push(`StreamerSongList: ${sslRes.reason.message}`);
-      }
-
-      if (sheetRes.status === 'fulfilled') {
-        sheetSongs = sheetRes.value;
-      } else {
-        errors.push(`Google Таблица: ${sheetRes.reason.message}`);
-      }
-
-      if (errors.length) {
+        document.getElementById('stats').innerHTML = `
+          <span class="stat-badge">Всего уникальных: <strong>${data.totalUnique ?? allSongs.length}</strong></span>
+          <span class="stat-badge">StreamerSongList: <strong>${data.sslCount ?? 0}</strong></span>
+          <span class="stat-badge">Google Таблица: <strong>${data.sheetCount ?? 0}</strong></span>
+        `;
+      } catch (err) {
         const banner = document.getElementById('errorBanner');
         banner.style.display = 'block';
-        banner.textContent = errors.join(' | ');
+        banner.textContent = `Не удалось загрузить songs.json (${err.message}). Запустите workflow в разделе Actions на GitHub.`;
       }
-
-      allSongs = mergeSongs(sslSongs, sheetSongs);
-
-      document.getElementById('stats').innerHTML = `
-        <span class="stat-badge">Всего уникальных: <strong>${allSongs.length}</strong></span>
-        <span class="stat-badge">StreamerSongList: <strong>${sslSongs.length}</strong></span>
-        <span class="stat-badge">Google Таблица: <strong>${sheetSongs.length}</strong></span>
-      `;
-
       render();
     }
 
