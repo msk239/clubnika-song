@@ -17,8 +17,15 @@ def fetch_text(url: str) -> str:
         return r.read().decode("utf-8-sig", errors="replace")
 
 
+def clean_label(s: str) -> str:
+    s = html.unescape(s or "").strip()
+    s = re.sub(r"^\s*NEW\s+", "", s, flags=re.I)
+    s = re.sub(r"\s+NEW\s*$", "", s, flags=re.I)
+    return re.sub(r"\s+", " ", s).strip()
+
+
 def norm(s: str) -> str:
-    s = (s or "").lower().replace("ё", "е")
+    s = clean_label(s).lower().replace("ё", "е")
     s = re.sub(r"\(.*?\)|\[.*?\]", "", s)
     s = re.sub(r"[^a-zа-я0-9\s]", " ", s)
     return re.sub(r"\s+", " ", s).strip()
@@ -35,8 +42,8 @@ def extract_songs_from_json_obj(obj, out: list):
             except Exception:
                 plays_int = 0
             out.append({
-                "title": html.unescape(title).strip(),
-                "artist": html.unescape(artist).strip(),
+                "title": clean_label(title),
+                "artist": clean_label(artist),
                 "timesPlayed": plays_int,
                 "inSsl": True,
                 "inSheet": False,
@@ -73,7 +80,6 @@ def get_ssl_songs():
         page.on("response", handle_response)
         page.goto(SSL_URL, wait_until="networkidle", timeout=60000)
 
-        # Прокручиваем страницу вниз, если таблица догружает строки при скролле
         last_height = 0
         for _ in range(15):
             page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
@@ -83,7 +89,6 @@ def get_ssl_songs():
                 break
             last_height = new_height
 
-        # Забираем строки таблицы из DOM как запасной / дополнительный источник
         dom_rows = page.evaluate("""() => {
             const rows = [];
             const trs = document.querySelectorAll('table tbody tr');
@@ -109,14 +114,19 @@ def get_ssl_songs():
 
     merged_ssl = {}
     for s in captured:
-        merged_ssl[f"{norm(s['artist'])}|{norm(s['title'])}"] = s
+        if s["title"]:
+            merged_ssl[f"{norm(s['artist'])}|{norm(s['title'])}"] = s
 
     for r in dom_rows:
-        key = f"{norm(r['artist'])}|{norm(r['title'])}"
+        t = clean_label(r["title"])
+        a = clean_label(r["artist"]) or "Неизвестный исполнитель"
+        if not t:
+            continue
+        key = f"{norm(a)}|{norm(t)}"
         if key not in merged_ssl:
             merged_ssl[key] = {
-                "title": r["title"],
-                "artist": r["artist"],
+                "title": t,
+                "artist": a,
                 "timesPlayed": r["timesPlayed"],
                 "inSsl": True,
                 "inSheet": False,
@@ -147,7 +157,7 @@ def parse_csv_songs(raw: str):
         start = 1
     out = []
     for r in rows[start:]:
-        r = [c.strip() for c in r]
+        r = [clean_label(c) for c in r]
         if acol != -1 and tcol != -1:
             a = r[acol] if acol < len(r) else ""
             t = r[tcol] if tcol < len(r) else ""
@@ -190,6 +200,7 @@ def get_sheet_songs():
 
 def main():
     merged = {}
+    by_title = {}
     ssl_c = 0
     sheet_c = 0
 
@@ -197,7 +208,11 @@ def main():
         ssl_s = get_ssl_songs()
         ssl_c = len(ssl_s)
         for s in ssl_s:
-            merged[f"{norm(s['artist'])}|{norm(s['title'])}"] = s
+            na, nt = norm(s["artist"]), norm(s["title"])
+            key = f"{na}|{nt}"
+            merged[key] = s
+            if nt:
+                by_title.setdefault(nt, []).append(key)
     except Exception as e:
         print("SSL final err:", e)
 
@@ -211,6 +226,9 @@ def main():
                 merged[k1]["inSheet"] = True
             elif k2 in merged:
                 merged[k2]["inSheet"] = True
+            elif nt in by_title:
+                for mk in by_title[nt]:
+                    merged[mk]["inSheet"] = True
             else:
                 merged[k1] = s
     except Exception as e:
