@@ -11,7 +11,12 @@ if API_KEY in ("", "ТВОЙ_КЛЮЧ", "YOUR_API_KEY"):
 
 REMIXERS_FILE = "remixers.json"
 VIDEOS_FILE = "remix_videos.json"
-MAX_VIDEOS_PER_CHANNEL = 50
+MAX_VIDEOS_PER_CHANNEL = 100
+
+# Ключевые фразы для отбора роликов именно по песне «Парень удалой»
+SONG_KEYWORDS = [
+    "парень удалой",
+]
 
 
 def api_get(endpoint: str, params: dict) -> dict:
@@ -36,6 +41,15 @@ def extract_video_id(val: str) -> str:
         if m:
             return m.group(1)
     return ""
+
+
+def matches_song(video: dict) -> bool:
+    haystack = " ".join([
+        video.get("title") or "",
+        video.get("description") or "",
+        " ".join(video.get("tags") or []),
+    ]).lower()
+    return any(kw.lower() in haystack for kw in SONG_KEYWORDS)
 
 
 def resolve_channel_id(entry: dict) -> str:
@@ -136,6 +150,8 @@ def get_videos_details(video_ids: list[str]) -> list[dict]:
                 "id": item["id"],
                 "channelId": snip.get("channelId") or "",
                 "title": snip.get("title") or "",
+                "description": snip.get("description") or "",
+                "tags": snip.get("tags") or [],
                 "views": int(stats.get("viewCount") or 0),
                 "likes": int(stats.get("likeCount") or 0),
             })
@@ -164,26 +180,42 @@ def main():
     meta_map = get_channels_meta(list(cid_to_entries.keys()))
     stats_by_cid = {cid: {"videos": 0, "views": 0, "likes": 0} for cid in cid_to_entries}
 
-    for cid, meta in meta_map.items():
-        try:
-            v_ids = get_uploads_video_ids(meta.get("uploads_playlist", ""), MAX_VIDEOS_PER_CHANNEL)
-            v_details = get_videos_details(v_ids)
-            confirmed_count = 0
-            views_sum = 0
-            likes_sum = 0
-            for v in v_details:
-                confirmed_count += 1
-                views_sum += v["views"]
-                likes_sum += v["likes"]
-            stats_by_cid[cid] = {
-                "videos": confirmed_count,
-                "views": views_sum,
-                "likes": likes_sum,
-            }
-            print(f"OK: {meta.get('name')} | роликов: {confirmed_count} | просмотров: {views_sum} | лайков: {likes_sum}")
-            time.sleep(0.1)
-        except Exception as e:
-            print(f"Ошибка при сборе статистики канала {cid}: {e}")
+    explicit_ids = []
+    if os.path.exists(VIDEOS_FILE):
+        with open(VIDEOS_FILE, "r", encoding="utf-8") as f:
+            raw_vids = json.load(f)
+        for v in raw_vids:
+            vid = extract_video_id(v.get("url") if isinstance(v, dict) else str(v))
+            if vid and vid not in explicit_ids:
+                explicit_ids.append(vid)
+
+    if explicit_ids:
+        v_details = get_videos_details(explicit_ids)
+        for v in v_details:
+            cid = v["channelId"]
+            if cid not in stats_by_cid:
+                continue
+            stats_by_cid[cid]["videos"] += 1
+            stats_by_cid[cid]["views"] += v["views"]
+            stats_by_cid[cid]["likes"] += v["likes"]
+    else:
+        for cid, meta in meta_map.items():
+            try:
+                v_ids = get_uploads_video_ids(meta.get("uploads_playlist", ""), MAX_VIDEOS_PER_CHANNEL)
+                v_details = get_videos_details(v_ids)
+                matched = [v for v in v_details if matches_song(v)]
+                stats_by_cid[cid] = {
+                    "videos": len(matched),
+                    "views": sum(v["views"] for v in matched),
+                    "likes": sum(v["likes"] for v in matched),
+                }
+                print(
+                    f"OK: {meta.get('name')} | треков «Парень удалой»: {len(matched)} "
+                    f"| просмотров: {stats_by_cid[cid]['views']} | лайков: {stats_by_cid[cid]['likes']}"
+                )
+                time.sleep(0.1)
+            except Exception as e:
+                print(f"Ошибка при сборе статистики канала {cid}: {e}")
 
     output = []
     for cid, e_list in cid_to_entries.items():
