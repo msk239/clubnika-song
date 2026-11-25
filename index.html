@@ -329,6 +329,47 @@
       transform: scale(0.96);
       filter: brightness(1.2);
     }
+    .site-footer {
+      margin-top: 24px;
+      background: var(--card);
+      border: 1.5px solid rgba(233, 181, 255, 0.55);
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 0 8px rgba(216, 167, 255, 0.2), inset 0 0 4px rgba(233, 181, 255, 0.06);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .footer-donate-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .footer-donate-row .donate-btn {
+      padding: 7px 14px;
+      font-size: 0.82rem;
+    }
+    .footer-tech-info {
+      border-top: 1px solid var(--border);
+      padding-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px 14px;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .footer-tech-info code {
+      color: var(--gold);
+      background: rgba(255, 255, 255, 0.04);
+      padding: 1px 6px;
+      border-radius: 6px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.75rem;
+    }
     .copy-toast {
       position: fixed;
       left: 50%;
@@ -721,12 +762,7 @@
               </svg>
             </button>
           </div>
-          <div class="song-meta donate-actions">
-            <a class="donate-btn donate-da" href="https://www.donationalerts.com/r/nikaclub" target="_blank" rel="noopener noreferrer">DonationAlerts</a>
-            <a class="donate-btn donate-dp" href="https://new.donatepay.ru/@nikamoiseeva" target="_blank" rel="noopener noreferrer">DonatePay</a>
-            <a class="donate-btn donate-ds" href="https://destream.net/live/nikaclub/donatee" target="_blank" rel="noopener noreferrer">Destream</a>
-          </div>
-        </div>
+</div>
       `).join('');
       adjustScrollWindowToTenSongs();
       setTimeout(adjustScrollWindowToTenSongs, 50);
@@ -962,5 +998,17 @@
       });
     })();
 </script>
+    <footer class="site-footer" aria-label="Поддержка и техническая информация">
+      <div class="footer-donate-row donate-actions">
+        <a class="donate-btn donate-da" href="https://www.donationalerts.com/r/nikaclub" target="_blank" rel="noopener noreferrer">DonationAlerts</a>
+        <a class="donate-btn donate-dp" href="https://new.donatepay.ru/@nikamoiseeva" target="_blank" rel="noopener noreferrer">DonatePay</a>
+        <a class="donate-btn donate-ds" href="https://destream.net/live/nikaclub/donatee" target="_blank" rel="noopener noreferrer">Destream</a>
+      </div>
+      <div class="footer-tech-info">
+        <span>Nika Club — Сонглист · Каталог песен для стримов</span>
+        <span>PWA Cache: <code id="swCacheVersion">v14</code> · <span id="footerSongsCount">Всего в базе: —</span></span>
+      </div>
+    </footer>
+
 </body>
 </html>
