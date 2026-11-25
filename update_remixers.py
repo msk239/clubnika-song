@@ -1,171 +1,215 @@
 import json
 import os
 import re
-import subprocess
 import time
+import urllib.parse
 import urllib.request
-import xml.etree.ElementTree as ET
+
+API_KEY = os.environ.get("YOUTUBE_API_KEY", "").strip()
+if API_KEY in ("", "ТВОЙ_КЛЮЧ", "YOUR_API_KEY"):
+    API_KEY = ""
 
 REMIXERS_FILE = "remixers.json"
 VIDEOS_FILE = "remix_videos.json"
-MAX_VIDEOS_PER_CHANNEL = 30
+MAX_VIDEOS_PER_CHANNEL = 50
 
 
-def run_yt_dlp_json(url: str, flat: bool = False) -> dict | None:
-    cmd = [
-        "yt-dlp",
-        "--ignore-errors",
-        "--no-warnings",
-        "--skip-download",
-        "--dump-single-json",
-        "--extractor-args",
-        "youtube:player_client=web,mweb",
-    ]
-    if flat:
-        cmd += ["--flat-playlist", "--playlist-end", str(MAX_VIDEOS_PER_CHANNEL)]
-    cmd.append(url)
-
-    try:
-        res = subprocess.run(cmd, capture_output=True, text=True, timeout=120)
-        if res.stderr and "ERROR" in res.stderr:
-            err_lines = [ln for ln in res.stderr.splitlines() if "ERROR" in ln][:2]
-            print(f"  [stderr] {url}: {' | '.join(err_lines)}")
-        out = (res.stdout or "").strip()
-        if not out:
-            return None
-        for line in reversed(out.splitlines()):
-            line = line.strip()
-            if line.startswith("{"):
-                return json.loads(line)
-    except Exception as e:
-        print(f"  [exception] {url}: {e}")
-    return None
+def api_get(endpoint: str, params: dict) -> dict:
+    q_params = dict(params)
+    q_params["key"] = API_KEY
+    url = f"https://www.googleapis.com/youtube/v3/{endpoint}?{urllib.parse.urlencode(q_params)}"
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+    with urllib.request.urlopen(req, timeout=25) as resp:
+        return json.loads(resp.read().decode("utf-8"))
 
 
-def fetch_og_meta(url: str) -> tuple[str, str, str]:
-    try:
-        req = urllib.request.Request(
-            url,
-            headers={
-                "User-Agent": "Mozilla/5.0 (Linux; Android 13) AppleWebKit/537.36 Chrome/124.0 Safari/537.36",
-                "Accept-Language": "ru-RU,ru;q=0.9,en;q=0.8",
-            },
-        )
-        with urllib.request.urlopen(req, timeout=20) as resp:
-            html = resp.read().decode("utf-8", errors="replace")
-        m_title = re.search(r'<meta property="og:title" content="([^"]+)"', html)
-        m_img = re.search(r'<meta property="og:image" content="([^"]+)"', html)
-        m_cid = re.search(r'"channelId":"(UC[A-Za-z0-9_-]+)"', html) or re.search(
-            r'youtube\.com/channel/(UC[A-Za-z0-9_-]+)', html
-        )
-        return (
-            m_title.group(1).strip() if m_title else "",
-            m_img.group(1).strip() if m_img else "",
-            m_cid.group(1).strip() if m_cid else "",
-        )
-    except Exception:
-        return ("", "", "")
+def extract_video_id(val: str) -> str:
+    val = (val or "").strip()
+    if re.fullmatch(r"[A-Za-z0-9_-]{11}", val):
+        return val
+    for p in (
+        r"youtube\.com/shorts/([A-Za-z0-9_-]{11})",
+        r"youtube\.com/watch\?v=([A-Za-z0-9_-]{11})",
+        r"youtu\.be/([A-Za-z0-9_-]{11})",
+    ):
+        m = re.search(p, val)
+        if m:
+            return m.group(1)
+    return ""
 
 
-def fetch_rss_video_ids(channel_id: str) -> list[str]:
-    if not channel_id:
+def resolve_channel_id(entry: dict) -> str:
+    url = (entry.get("url") or "").strip()
+    m_ch = re.search(r"youtube\.com/channel/(UC[A-Za-z0-9_-]+)", url)
+    if m_ch:
+        return m_ch.group(1)
+
+    handle = (entry.get("handle") or "").strip()
+    if not handle:
+        m_h = re.search(r"youtube\.com/(@[^/?#]+)", url)
+        if m_h:
+            handle = m_h.group(1)
+
+    if handle:
+        data = api_get("channels", {"part": "id", "forHandle": handle.lstrip("@")})
+        items = data.get("items") or []
+        if items:
+            return items[0]["id"]
+
+    return ""
+
+
+def get_channels_meta(channel_ids: list[str]) -> dict[str, dict]:
+    result = {}
+    for i in range(0, len(channel_ids), 50):
+        batch = [c for c in channel_ids[i:i + 50] if c]
+        if not batch:
+            continue
+        data = api_get("channels", {
+            "part": "snippet,statistics,contentDetails",
+            "id": ",".join(batch),
+        })
+        for item in data.get("items") or []:
+            cid = item["id"]
+            snip = item.get("snippet") or {}
+            thumbs = snip.get("thumbnails") or {}
+            avatar = (
+                (thumbs.get("high") or {}).get("url")
+                or (thumbs.get("medium") or {}).get("url")
+                or (thumbs.get("default") or {}).get("url")
+                or ""
+            )
+            custom_url = snip.get("customUrl") or ""
+            handle = custom_url if custom_url.startswith("@") else (f"@{custom_url}" if custom_url else "")
+            uploads_pl = (
+                ((item.get("contentDetails") or {}).get("relatedPlaylists") or {}).get("uploads")
+                or ""
+            )
+            result[cid] = {
+                "name": snip.get("title") or cid,
+                "handle": handle,
+                "url": f"https://www.youtube.com/{handle}" if handle else f"https://www.youtube.com/channel/{cid}",
+                "avatar": avatar,
+                "uploads_playlist": uploads_pl,
+            }
+    return result
+
+
+def get_uploads_video_ids(playlist_id: str, max_items: int = MAX_VIDEOS_PER_CHANNEL) -> list[str]:
+    if not playlist_id:
         return []
-    try:
-        rss_url = f"https://www.youtube.com/feeds/videos.xml?channel_id={channel_id}"
-        req = urllib.request.Request(rss_url, headers={"User-Agent": "Mozilla/5.0"})
-        with urllib.request.urlopen(req, timeout=20) as resp:
-            xml_data = resp.read()
-        root = ET.fromstring(xml_data)
-        ns = {"yt": "http://www.youtube.com/xml/schemas/2015"}
-        ids = []
-        for el in root.findall(".//yt:videoId", ns):
-            if el.text and el.text.strip():
-                ids.append(el.text.strip())
-        return ids[:MAX_VIDEOS_PER_CHANNEL]
-    except Exception as e:
-        print(f"  [rss] {channel_id}: {e}")
-        return []
+    ids = []
+    page_token = ""
+    while len(ids) < max_items:
+        params = {
+            "part": "contentDetails",
+            "playlistId": playlist_id,
+            "maxResults": min(50, max_items - len(ids)),
+        }
+        if page_token:
+            params["pageToken"] = page_token
+        data = api_get("playlistItems", params)
+        for it in data.get("items") or []:
+            vid = (((it.get("contentDetails") or {}).get("videoId")) or "").strip()
+            if vid and vid not in ids:
+                ids.append(vid)
+        page_token = data.get("nextPageToken") or ""
+        if not page_token:
+            break
+    return ids
 
 
-def collect_channel_stats(entry: dict) -> dict:
-    base_url = (entry.get("url") or "").strip().rstrip("/")
-    og_name, og_avatar, channel_id = fetch_og_meta(base_url)
-
-    m_ch = re.search(r"youtube\.com/channel/(UC[A-Za-z0-9_-]+)", base_url)
-    if m_ch and not channel_id:
-        channel_id = m_ch.group(1)
-
-    playlist = run_yt_dlp_json(base_url + "/shorts", flat=True)
-    if not playlist or not playlist.get("entries"):
-        playlist = run_yt_dlp_json(base_url + "/videos", flat=True)
-
-    name = entry.get("name") or og_name or ""
-    avatar = og_avatar or entry.get("avatar") or ""
-    handle = entry.get("handle") or ""
-    canon_url = base_url
-
-    if playlist:
-        name = playlist.get("channel") or playlist.get("uploader") or name
-        uploader_id = playlist.get("uploader_id") or ""
-        if uploader_id.startswith("@"):
-            handle = uploader_id
-            canon_url = f"https://www.youtube.com/{handle}"
-
-    video_ids = []
-    for item in (playlist or {}).get("entries") or []:
-        if isinstance(item, dict) and item.get("id"):
-            vid = item["id"]
-            if vid not in video_ids:
-                video_ids.append(vid)
-
-    if not video_ids and channel_id:
-        video_ids = fetch_rss_video_ids(channel_id)
-
-    print(f"Канал {name or base_url}: найдено ID роликов = {len(video_ids)}")
-
-    videos_count = 0
-    total_views = 0
-    total_likes = 0
-
-    for vid in video_ids[:MAX_VIDEOS_PER_CHANNEL]:
-        v_info = run_yt_dlp_json(f"https://www.youtube.com/watch?v={vid}", flat=False)
-        videos_count += 1
-        if v_info:
-            total_views += int(v_info.get("view_count") or 0)
-            total_likes += int(v_info.get("like_count") or 0)
-        time.sleep(0.15)
-
-    return {
-        "name": name or handle or base_url.split("/")[-1],
-        "handle": handle,
-        "url": canon_url,
-        "platform": "YouTube",
-        "channels": entry.get("channels") or 1,
-        "videos": videos_count,
-        "views": total_views,
-        "likes": total_likes,
-        "avatar": avatar,
-    }
+def get_videos_details(video_ids: list[str]) -> list[dict]:
+    videos = []
+    for i in range(0, len(video_ids), 50):
+        batch = [v for v in video_ids[i:i + 50] if v]
+        if not batch:
+            continue
+        data = api_get("videos", {
+            "part": "snippet,statistics",
+            "id": ",".join(batch),
+        })
+        for item in data.get("items") or []:
+            snip = item.get("snippet") or {}
+            stats = item.get("statistics") or {}
+            videos.append({
+                "id": item["id"],
+                "channelId": snip.get("channelId") or "",
+                "title": snip.get("title") or "",
+                "views": int(stats.get("viewCount") or 0),
+                "likes": int(stats.get("likeCount") or 0),
+            })
+    return videos
 
 
 def main():
     with open(REMIXERS_FILE, "r", encoding="utf-8") as f:
         entries = json.load(f)
 
-    output = []
-    for entry in entries:
-        if not entry.get("url"):
-            continue
-        row = collect_channel_stats(entry)
-        print(f"ИТОГ: {row['name']} | роликов: {row['videos']} | просмотров: {row['views']} | лайков: {row['likes']}")
-        output.append(row)
+    if not API_KEY:
+        print("ВНИМАНИЕ: YOUTUBE_API_KEY не задан.")
+        return
 
-    output.sort(key=lambda x: (x.get("views", 0), x.get("likes", 0), x.get("videos", 0)), reverse=True)
+    cid_to_entries = {}
+    for entry in entries:
+        try:
+            cid = resolve_channel_id(entry)
+            if cid:
+                cid_to_entries.setdefault(cid, []).append(entry)
+            else:
+                print(f"Не удалось определить channelId для: {entry.get('url')}")
+        except Exception as e:
+            print(f"Ошибка при определении канала {entry.get('url')}: {e}")
+
+    meta_map = get_channels_meta(list(cid_to_entries.keys()))
+    stats_by_cid = {cid: {"videos": 0, "views": 0, "likes": 0} for cid in cid_to_entries}
+
+    for cid, meta in meta_map.items():
+        try:
+            v_ids = get_uploads_video_ids(meta.get("uploads_playlist", ""), MAX_VIDEOS_PER_CHANNEL)
+            v_details = get_videos_details(v_ids)
+            confirmed_count = 0
+            views_sum = 0
+            likes_sum = 0
+            for v in v_details:
+                confirmed_count += 1
+                views_sum += v["views"]
+                likes_sum += v["likes"]
+            stats_by_cid[cid] = {
+                "videos": confirmed_count,
+                "views": views_sum,
+                "likes": likes_sum,
+            }
+            print(f"OK: {meta.get('name')} | роликов: {confirmed_count} | просмотров: {views_sum} | лайков: {likes_sum}")
+            time.sleep(0.1)
+        except Exception as e:
+            print(f"Ошибка при сборе статистики канала {cid}: {e}")
+
+    output = []
+    for cid, e_list in cid_to_entries.items():
+        first = e_list[0] if e_list else {}
+        meta = meta_map.get(cid, {})
+        st = stats_by_cid.get(cid, {"videos": 0, "views": 0, "likes": 0})
+        output.append({
+            "name": meta.get("name") or first.get("name") or cid,
+            "handle": meta.get("handle") or first.get("handle") or "",
+            "url": meta.get("url") or first.get("url") or f"https://www.youtube.com/channel/{cid}",
+            "platform": "YouTube",
+            "channels": max(1, len(e_list)),
+            "videos": st["videos"],
+            "views": st["views"],
+            "likes": st["likes"],
+            "avatar": meta.get("avatar") or first.get("avatar") or "",
+        })
+
+    output.sort(key=lambda x: (x["views"], x["likes"], x["videos"]), reverse=True)
     for idx, row in enumerate(output, start=1):
         row["rank"] = idx
 
     with open(REMIXERS_FILE, "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
+
+    print(f"Готово! Обновлено авторов: {len(output)}")
 
 
 if __name__ == "__main__":
