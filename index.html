@@ -529,6 +529,41 @@
       display: flex !important;
     }
 
+      .site-footer {
+      margin-top: 24px;
+      background: var(--card);
+      border: 1.5px solid rgba(233, 181, 255, 0.55);
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 0 8px rgba(216, 167, 255, 0.2), inset 0 0 4px rgba(233, 181, 255, 0.06);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+    .site-footer .stats {
+      margin-top: 0;
+    }
+    .footer-tech-info {
+      width: 100%;
+      border-top: 1px solid var(--border);
+      padding-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px 14px;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .footer-tech-info code {
+      color: var(--gold);
+      background: rgba(255, 255, 255, 0.04);
+      padding: 1px 6px;
+      border-radius: 6px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.75rem;
+    }
   </style>
   <link rel="manifest" href="./manifest.json">
   <meta name="theme-color" content="#140b1d">
@@ -540,10 +575,7 @@
     <header>
       <h1>Nika Club 🍓 Сонглист</h1>
       <p class="subtitle">Музыка от души — единый каталог песен Ники</p>
-      <div class="stats" id="stats">
-        <span class="stat-badge">Загрузка каталога...</span>
-      </div>
-    </header>
+</header>
 
     <div id="errorBanner" class="error-banner"></div>
 
@@ -962,5 +994,15 @@
       });
     })();
 </script>
+    <footer class="site-footer" aria-label="Статистика и техническая информация">
+      <div class="stats" id="stats">
+        <span class="stat-badge">Загрузка каталога...</span>
+      </div>
+      <div class="footer-tech-info">
+        <span>Nika Club — Сонглист · Каталог песен для стримов</span>
+        <span>PWA Cache: <code>v16</code></span>
+      </div>
+    </footer>
+
 </body>
 </html>
