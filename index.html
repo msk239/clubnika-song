@@ -394,6 +394,81 @@
       }
     }
 
+  
+    .extra-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+      margin-top: 8px;
+    }
+    .extra-card {
+      padding: 14px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(233, 181, 255, 0.35);
+    }
+    .extra-group-title {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: #f3d5ff;
+      margin-bottom: 10px;
+    }
+    .extra-links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .extra-link-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 9px 12px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #f5e6ff;
+      background: rgba(168, 85, 247, 0.14);
+      border: 1px solid rgba(233, 181, 255, 0.5);
+      transition: background 0.15s ease, transform 0.12s ease, border-color 0.15s ease;
+    }
+    .extra-link-btn:hover {
+      background: rgba(168, 85, 247, 0.26);
+      border-color: #e9b5ff;
+      transform: translateY(-1px);
+    }
+    .extra-more-wrap {
+      margin-top: 10px;
+    }
+    .extra-more-btn {
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #e9b5ff;
+      background: rgba(233, 181, 255, 0.08);
+      border: 1px solid rgba(233, 181, 255, 0.55);
+      cursor: pointer;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+    .extra-more-btn:hover,
+    .extra-more-btn.active {
+      background: rgba(233, 181, 255, 0.22);
+      color: #ffffff;
+    }
+    .extra-more-panel {
+      display: none;
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px dashed rgba(233, 181, 255, 0.35);
+      flex-direction: column;
+      gap: 8px;
+    }
+    .extra-more-panel.open {
+      display: flex;
+    }
+
   </style>
 </head>
 <body>
@@ -441,8 +516,53 @@
     </div>
 
     <section id="extraSection" class="extra-content-section">
-      <div class="extra-content-title">Дополнительные материалы</div>
-      <div class="extra-content-placeholder">Раздел подготовлен для размещения анонсов, ссылок, правил заказа песен и других материалов.</div>
+      <div class="extra-grid">
+        <div class="extra-card">
+          <div class="extra-group-title">Стримы Ники проходят</div>
+          <div class="extra-links">
+            <a class="extra-link-btn" href="https://youtube.com/@nikamoiseeva" target="_blank" rel="noopener noreferrer">
+              <span>Ютуб</span>
+              <span>↗</span>
+            </a>
+            <a class="extra-link-btn" href="https://www.twitch.tv/nikaclub" target="_blank" rel="noopener noreferrer">
+              <span>Твич</span>
+              <span>↗</span>
+            </a>
+            <a class="extra-link-btn" href="https://live.vkvideo.ru/clubnika" target="_blank" rel="noopener noreferrer">
+              <span>VK Video Live</span>
+              <span>↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="extra-card">
+          <div class="extra-group-title">Соцсети Ники</div>
+          <div class="extra-links">
+            <a class="extra-link-btn" href="https://vk.ru/nikamoiseevaa" target="_blank" rel="noopener noreferrer">
+              <span>ВК сообщество Ники</span>
+              <span>↗</span>
+            </a>
+            <a class="extra-link-btn" href="https://t.me/nikamoiseeva" target="_blank" rel="noopener noreferrer">
+              <span>ТГ сообщество Ники</span>
+              <span>↗</span>
+            </a>
+          </div>
+
+          <div class="extra-more-wrap">
+            <button type="button" class="extra-more-btn" id="moreSocialsBtn" aria-expanded="false">Ещё</button>
+            <div class="extra-more-panel" id="moreSocialsPanel">
+              <a class="extra-link-btn" href="https://www.instagram.com/nikamoiseeva" target="_blank" rel="noopener noreferrer">
+                <span>Нельзяграмм</span>
+                <span>↗</span>
+              </a>
+              <a class="extra-link-btn" href="https://www.tiktok.com/@nika.moiseeva" target="_blank" rel="noopener noreferrer">
+                <span>Тик-ток</span>
+                <span>↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   </div>
 
