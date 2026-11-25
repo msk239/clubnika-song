@@ -296,20 +296,28 @@
     .btn {
       touch-action: manipulation;
       transform-origin: center;
+      transition: transform 0.08s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.08s ease, box-shadow 0.08s ease, border-color 0.08s ease, background 0.12s ease !important;
     }
     .donate-btn:active {
-      transform: scale(0.95) !important;
-      filter: brightness(1.22) !important;
-      border-color: rgba(255, 255, 255, 0.45) !important;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.22);
+      transform: translateY(1px) scale(0.92) !important;
+      filter: brightness(1.35) saturate(1.2) !important;
+      border-color: rgba(255, 255, 255, 0.72) !important;
+      box-shadow: 0 0 14px rgba(255, 255, 255, 0.35), inset 0 0 8px rgba(255, 255, 255, 0.22) !important;
     }
     .copy-song-btn:active {
-      transform: scale(0.94) !important;
-      filter: brightness(1.2);
+      transform: translateY(1px) scale(0.91) !important;
+      filter: brightness(1.32) !important;
+      border-color: rgba(233, 181, 255, 0.95) !important;
+      box-shadow: 0 0 12px rgba(216, 167, 255, 0.45) !important;
     }
     .chip:active {
-      transform: scale(0.96) !important;
-      filter: brightness(1.18);
+      transform: translateY(1px) scale(0.93) !important;
+      filter: brightness(1.28) !important;
+      border-color: rgba(233, 181, 255, 0.8) !important;
+    }
+    .btn:active {
+      transform: translateY(1px) scale(0.94) !important;
+      filter: brightness(1.25) !important;
     }
     .copy-toast {
       position: fixed;
