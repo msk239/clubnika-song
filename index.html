@@ -286,6 +286,16 @@
         letter-spacing: -0.01em;
       }
     }
+    a, button, input, select {
+      -webkit-tap-highlight-color: transparent;
+      tap-highlight-color: transparent;
+    }
+    .donate-btn:active,
+    .copy-song-btn:active,
+    .chip:active {
+      transform: scale(0.97);
+      filter: brightness(1.12);
+    }
     .copy-toast {
       position: fixed;
       left: 50%;
