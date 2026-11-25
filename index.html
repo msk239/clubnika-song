@@ -529,13 +529,14 @@
       display: flex !important;
     }
 
-      .site-footer {
+    .site-footer {
       margin-top: 24px;
-      background: var(--card);
-      border: 1.5px solid rgba(233, 181, 255, 0.55);
-      border-radius: 16px;
-      padding: 16px;
-      box-shadow: 0 0 8px rgba(216, 167, 255, 0.2), inset 0 0 4px rgba(233, 181, 255, 0.06);
+      background: transparent;
+      border: none;
+      border-top: 1.5px solid rgba(233, 181, 255, 0.38);
+      border-radius: 0;
+      padding: 16px 4px 8px;
+      box-shadow: 0 -2px 8px rgba(216, 167, 255, 0.14);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -546,7 +547,7 @@
     }
     .footer-tech-info {
       width: 100%;
-      border-top: 1px solid var(--border);
+      border-top: 1px solid rgba(46, 36, 54, 0.7);
       padding-top: 10px;
       display: flex;
       flex-wrap: wrap;
@@ -564,7 +565,7 @@
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
       font-size: 0.75rem;
     }
-  </style>
+</style>
   <link rel="manifest" href="./manifest.json">
   <meta name="theme-color" content="#140b1d">
   <meta name="mobile-web-app-capable" content="yes">
@@ -1000,7 +1001,7 @@
       </div>
       <div class="footer-tech-info">
         <span>Nika Club — Сонглист · Каталог песен для стримов</span>
-        <span>PWA Cache: <code>v16</code></span>
+        <span>PWA Cache: <code>v17</code></span>
       </div>
     </footer>
 
