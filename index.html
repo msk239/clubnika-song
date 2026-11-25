@@ -547,6 +547,59 @@
     .site-footer .stats {
       margin-top: 0 !important;
     }
+    .footer-remixers {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    .footer-remixers-title {
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+      text-align: center;
+    }
+    .footer-remixers-list {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .remixer-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 11px;
+      border-radius: 999px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 500;
+      transition: transform 0.12s ease, filter 0.12s ease, border-color 0.12s ease, box-shadow 0.12s ease;
+    }
+    @media (hover: hover) {
+      .remixer-chip:hover {
+        border-color: rgba(233, 181, 255, 0.55);
+        filter: brightness(1.12);
+      }
+    }
+    .remixer-chip:active,
+    .remixer-chip.is-pressed,
+    .remixer-chip.is-animating {
+      transform: scale(0.94) translateY(1px);
+      filter: brightness(1.28);
+      border-color: rgba(233, 181, 255, 0.75);
+      box-shadow: 0 0 10px rgba(216, 167, 255, 0.25);
+    }
+    .remixer-count {
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 0.72rem;
+    }
     .footer-tech-info {
       width: 100%;
       border-top: 1px solid rgba(46, 36, 54, 0.7);
@@ -996,14 +1049,61 @@
         if (document.visibilityState === 'visible') clearPressedState();
       });
     })();
+
+    (function loadRemixersList() {
+      var wrap = document.getElementById('footerRemixers');
+      var list = document.getElementById('footerRemixersList');
+      if (!wrap || !list) return;
+
+      fetch('remixers.json?v=20', { cache: 'no-store' })
+        .then(function(res) { return res.ok ? res.json() : []; })
+        .then(function(items) {
+          if (!Array.isArray(items) || items.length === 0) {
+            wrap.style.display = 'none';
+            return;
+          }
+          list.innerHTML = '';
+          items.forEach(function(item) {
+            if (!item || !item.url) return;
+            var a = document.createElement('a');
+            a.className = 'remixer-chip donate-btn';
+            a.href = item.url;
+            a.target = '_blank';
+            a.rel = 'noopener noreferrer';
+
+            var label = document.createElement('span');
+            label.textContent = item.name || item.handle || item.url;
+            a.appendChild(label);
+
+            if (typeof item.count === 'number' && item.count > 0) {
+              var badge = document.createElement('span');
+              badge.className = 'remixer-count';
+              badge.textContent = '×' + item.count;
+              a.appendChild(badge);
+            }
+            list.appendChild(a);
+          });
+          if (list.children.length > 0) {
+            wrap.style.display = 'flex';
+          }
+        })
+        .catch(function() {
+          wrap.style.display = 'none';
+        });
+    })();
+
 </script>
     <footer class="site-footer" aria-label="Статистика и техническая информация">
       <div class="stats" id="stats">
         <span class="stat-badge">Загрузка каталога...</span>
       </div>
+            <div class="footer-remixers" id="footerRemixers" style="display: none;">
+        <div class="footer-remixers-title">Ремиксы на Shorts Ники на YouTube</div>
+        <div class="footer-remixers-list" id="footerRemixersList"></div>
+      </div>
       <div class="footer-tech-info">
         <span>Nika Club — Сонглист · Каталог песен для стримов</span>
-        <span>PWA Cache: <code>v19</code></span>
+        <span>PWA Cache: <code>v20</code></span>
       </div>
     </footer>
 
