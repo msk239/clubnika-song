@@ -483,6 +483,10 @@
     }
 
   </style>
+  <link rel="manifest" href="./manifest.json">
+  <meta name="theme-color" content="#140b1d">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="apple-touch-icon" href="./icon-192.png">
 </head>
 <body>
   <div class="container">
@@ -827,6 +831,13 @@
         btn.setAttribute('aria-expanded', 'true');
       }
     });
+
+  
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').catch(() => {});
+      });
+    }
 
   </script>
 </body>
