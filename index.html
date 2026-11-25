@@ -1055,7 +1055,7 @@
       var list = document.getElementById('footerRemixersList');
       if (!wrap || !list) return;
 
-      fetch('remixers.json?v=20', { cache: 'no-store' })
+      fetch('remixers.json?v=21&_=' + Date.now(), { cache: 'no-store' })
         .then(function(res) { return res.ok ? res.json() : []; })
         .then(function(items) {
           if (!Array.isArray(items) || items.length === 0) {
@@ -1103,7 +1103,7 @@
       </div>
       <div class="footer-tech-info">
         <span>Nika Club — Сонглист · Каталог песен для стримов</span>
-        <span>PWA Cache: <code>v20</code></span>
+        <span>PWA Cache: <code>v21</code></span>
       </div>
     </footer>
 
