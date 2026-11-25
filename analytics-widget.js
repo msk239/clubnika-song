@@ -80,7 +80,7 @@
           </div>
           <div style="padding:10px 12px;border-radius:12px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);">
             <div style="font-size:12px;opacity:.7;margin-bottom:4px;">Просмотры (Shorts / Видео)</div>
-            <div style="font-size:14px;font-weight:700;">${fmt(s.shorts_views)} / ${fmt(s.horizontal_views)}</div>
+            <div style="font-size:14px;font-weight:700;">${fmt(s.total_views)} (${fmt(s.shorts_views)} / ${fmt(s.horizontal_views)})</div>
           </div>
         </div>
 
