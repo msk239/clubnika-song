@@ -888,7 +888,8 @@
 
   
     (function setupDonateDelayedNavigation() {
-      var DELAY_MS = 150;
+      var PRESS_HOLD_MS = 90;
+      var RELEASE_SETTLE_MS = 130;
 
       function clearPressedState() {
         document.querySelectorAll('.donate-btn.is-pressed, .donate-btn.is-animating, .copy-song-btn.is-pressed, .chip.is-pressed, .btn.is-pressed')
@@ -913,7 +914,7 @@
         if (!target.classList.contains('is-animating')) {
           setTimeout(function() {
             target.classList.remove('is-pressed');
-          }, 90);
+          }, 80);
         }
       }, { passive: true });
 
@@ -929,24 +930,29 @@
         if (link.dataset.navigating === '1') return;
         link.dataset.navigating = '1';
 
-        link.classList.remove('is-pressed');
+        var targetAttr = link.getAttribute('target');
         link.classList.add('is-animating');
 
-        var targetAttr = link.getAttribute('target');
+        // Шаг 1: дать анимации нажатия проявиться, затем снять состояние нажатия,
+        // чтобы кнопка вернулась в исходный вид до открытия ссылки
         setTimeout(function() {
+          link.classList.remove('is-pressed');
           link.classList.remove('is-animating');
-          delete link.dataset.navigating;
           if (typeof link.blur === 'function') link.blur();
 
-          if (targetAttr === '_blank') {
-            var win = window.open(href, '_blank', 'noopener,noreferrer');
-            if (!win) {
+          // Шаг 2: дождаться завершения возврата кнопки в исходное состояние и открыть ссылку
+          setTimeout(function() {
+            delete link.dataset.navigating;
+            if (targetAttr === '_blank') {
+              var win = window.open(href, '_blank', 'noopener,noreferrer');
+              if (!win) {
+                window.location.assign(href);
+              }
+            } else {
               window.location.assign(href);
             }
-          } else {
-            window.location.assign(href);
-          }
-        }, DELAY_MS);
+          }, RELEASE_SETTLE_MS);
+        }, PRESS_HOLD_MS);
       });
 
       document.addEventListener('pointercancel', clearPressedState, { passive: true });
@@ -955,7 +961,6 @@
         if (document.visibilityState === 'visible') clearPressedState();
       });
     })();
-
 </script>
 </body>
 </html>
