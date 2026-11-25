@@ -20,10 +20,9 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install yt-dlp
-        run: pip install -U yt-dlp
-
       - name: Run update_remixers.py
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
         run: python3 update_remixers.py
 
       - name: Commit and push if remixers.json changed
