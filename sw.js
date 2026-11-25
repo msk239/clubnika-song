@@ -1,4 +1,4 @@
-const CACHE_NAME = 'clubnika-song-v23';
+const CACHE_NAME = 'clubnika-song-v24';
 const STATIC_ASSETS = ['./', './index.html', './manifest.json', './icon-192.png', './icon-512.png'];
 
 self.addEventListener('install', event => {

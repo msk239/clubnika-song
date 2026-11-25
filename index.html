@@ -1325,9 +1325,129 @@
       </div>
 <div class="footer-tech-info">
         <span>Nika Club — Сонглист · Каталог песен для стримов</span>
-        <span>PWA Cache: <code>v23</code></span>
+        <span>PWA Cache: <code>v24</code></span>
       </div>
     </footer>
+
+
+<script>
+(function() {
+  var wrap = document.getElementById('footerRemixers');
+  var list = document.getElementById('footerRemixersList');
+  var countEl = document.getElementById('remixersCountLabel');
+  if (!wrap || !list) return;
+
+  var items = [
+    {"name":"@msk239","handle":"@msk239","url":"https://youtube.com/@msk239","platform":"YouTube","channels":1,"videos":0,"views":0,"likes":0},
+    {"name":"@marina12335","handle":"@marina12335","url":"https://youtube.com/@marina12335","platform":"YouTube","channels":1,"videos":0,"views":0,"likes":0},
+    {"name":"@messi-b4l6u","handle":"@messi-b4l6u","url":"https://youtube.com/@messi-b4l6u","platform":"YouTube","channels":1,"videos":0,"views":0,"likes":0},
+    {"name":"@michaelshtibelman640","handle":"@michaelshtibelman640","url":"https://youtube.com/@michaelshtibelman640","platform":"YouTube","channels":1,"videos":0,"views":0,"likes":0},
+    {"name":"UCTwqpmDkCM5H90coD9_bMOQ","handle":"","url":"https://youtube.com/channel/UCTwqpmDkCM5H90coD9_bMOQ","platform":"YouTube","channels":1,"videos":0,"views":0,"likes":0},
+    {"name":"UCDBymABVm4XkDakCPIE3RjA","handle":"","url":"https://youtube.com/channel/UCDBymABVm4XkDakCPIE3RjA","platform":"YouTube","channels":1,"videos":0,"views":0,"likes":0},
+    {"name":"UCqCy2cu2RYvnpVDvVZ46oTQ","handle":"","url":"https://youtube.com/channel/UCqCy2cu2RYvnpVDvVZ46oTQ","platform":"YouTube","channels":1,"videos":0,"views":0,"likes":0}
+  ];
+
+  function fmt(n) {
+    return String(Number(n || 0)).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+  }
+
+  function chWord(c) {
+    var n = Number(c || 1);
+    if (n % 10 === 1 && n % 100 !== 11) return n + ' канал';
+    if ([2,3,4].indexOf(n % 10) !== -1 && [12,13,14].indexOf(n % 100) === -1) return n + ' канала';
+    return n + ' каналов';
+  }
+
+  function render(data) {
+    var arr = Array.isArray(data) && data.length ? data : items;
+    if (countEl) countEl.textContent = 'Авторов: ' + arr.length + ' из ' + arr.length;
+    list.innerHTML = '';
+    arr.forEach(function(item, i) {
+      var card = document.createElement('div');
+      card.className = 'remixer-card';
+
+      var top = document.createElement('div');
+      top.className = 'remixer-top';
+
+      var rank = document.createElement('div');
+      rank.className = 'remixer-rank';
+      rank.textContent = String(item.rank || (i + 1));
+
+      var av;
+      if (item.avatar) {
+        av = document.createElement('img');
+        av.className = 'remixer-avatar';
+        av.src = item.avatar;
+        av.alt = item.name || '';
+      } else {
+        av = document.createElement('div');
+        av.className = 'remixer-avatar';
+        var t = String(item.name || '@').replace(/^@/, '');
+        av.textContent = (t.charAt(0) || '♪').toUpperCase();
+      }
+
+      var main = document.createElement('div');
+      main.className = 'remixer-main';
+
+      var nm = document.createElement('div');
+      nm.className = 'remixer-name';
+      nm.textContent = item.name || item.handle || 'Автор';
+
+      var sb = document.createElement('div');
+      sb.className = 'remixer-sub';
+      sb.textContent = (item.platform || 'YouTube') + (item.handle ? ' · ' + item.handle : ' · ' + chWord(item.channels || 1));
+
+      main.appendChild(nm);
+      main.appendChild(sb);
+
+      var chv = document.createElement('div');
+      chv.className = 'remixer-chevron';
+      chv.textContent = '⌄';
+
+      top.appendChild(rank);
+      top.appendChild(av);
+      top.appendChild(main);
+      top.appendChild(chv);
+      top.addEventListener('click', function() { card.classList.toggle('is-open'); });
+
+      var met = document.createElement('div');
+      met.className = 'remixer-metrics';
+      met.innerHTML =
+        '<div class="remixer-metric"><span class="remixer-metric-label">Роликов</span><span class="remixer-metric-value">' + fmt(item.videos) + '</span></div>' +
+        '<div class="remixer-metric"><span class="remixer-metric-label">Просмотры</span><span class="remixer-metric-value">' + fmt(item.views) + '</span></div>' +
+        '<div class="remixer-metric"><span class="remixer-metric-label">Лайки</span><span class="remixer-metric-value">' + fmt(item.likes) + '</span></div>';
+
+      var det = document.createElement('div');
+      det.className = 'remixer-details';
+
+      var u = document.createElement('span');
+      u.textContent = item.url || '';
+
+      var a = document.createElement('a');
+      a.className = 'remixer-link donate-btn';
+      a.href = item.url || '#';
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      a.textContent = 'Открыть канал ↗';
+
+      det.appendChild(u);
+      det.appendChild(a);
+
+      card.appendChild(top);
+      card.appendChild(met);
+      card.appendChild(det);
+      list.appendChild(card);
+    });
+    wrap.style.display = 'flex';
+  }
+
+  render(items);
+  fetch('remixers.json?v=24&_=' + Date.now(), { cache: 'no-store' })
+    .then(function(r) { return r.ok ? r.json() : null; })
+    .then(function(d) { if (Array.isArray(d) && d.length) render(d); })
+    .catch(function() {});
+})();
+</script>
 
 </body>
 </html>
