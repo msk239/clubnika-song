@@ -299,18 +299,20 @@
       -webkit-tap-highlight-color: transparent;
     }
     .donate-btn {
-      transition: transform 0.12s ease, filter 0.12s ease, box-shadow 0.12s ease;
+      transition: transform 0.12s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.12s ease, box-shadow 0.12s ease;
     }
     @media (hover: hover) {
       .donate-btn:hover {
-        filter: brightness(1.12);
+        filter: brightness(1.14);
+        transform: translateY(-1px);
       }
     }
     .donate-btn:active,
-    .donate-btn.is-pressed {
-      transform: scale(0.95) !important;
+    .donate-btn.is-pressed,
+    .donate-btn.is-animating {
+      transform: scale(0.93) translateY(1px) !important;
       filter: brightness(1.3) !important;
-      box-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
+      box-shadow: 0 0 14px rgba(255, 255, 255, 0.28) !important;
     }
     .copy-song-btn:active,
     .copy-song-btn.is-pressed {
@@ -885,30 +887,67 @@
     }
 
   
-    (function setupDonatePressAnimation() {
+    (function setupDonateDelayedNavigation() {
+      var DELAY_MS = 150;
+
       function clearPressedState() {
-        document.querySelectorAll('.donate-btn.is-pressed, .copy-song-btn.is-pressed, .chip.is-pressed, .btn.is-pressed')
-          .forEach(function(el) { el.classList.remove('is-pressed'); });
+        document.querySelectorAll('.donate-btn.is-pressed, .donate-btn.is-animating, .copy-song-btn.is-pressed, .chip.is-pressed, .btn.is-pressed')
+          .forEach(function(el) {
+            el.classList.remove('is-pressed');
+            el.classList.remove('is-animating');
+          });
       }
 
       document.addEventListener('pointerdown', function(e) {
-        const target = e.target.closest('.donate-btn, .copy-song-btn, .chip, .btn');
+        var target = e.target.closest('.donate-btn, .copy-song-btn, .chip, .btn');
         if (!target) return;
-        clearPressedState();
         target.classList.add('is-pressed');
       }, { passive: true });
 
       document.addEventListener('pointerup', function(e) {
-        const target = e.target.closest('.donate-btn, .copy-song-btn, .chip, .btn');
-        if (target) {
+        var target = e.target.closest('.donate-btn, .copy-song-btn, .chip, .btn');
+        if (!target) {
+          clearPressedState();
+          return;
+        }
+        if (!target.classList.contains('is-animating')) {
           setTimeout(function() {
             target.classList.remove('is-pressed');
-            if (typeof target.blur === 'function') target.blur();
           }, 90);
-        } else {
-          clearPressedState();
         }
       }, { passive: true });
+
+      document.addEventListener('click', function(e) {
+        var link = e.target.closest('a.donate-btn');
+        if (!link) return;
+        if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+
+        var href = link.getAttribute('href');
+        if (!href) return;
+
+        e.preventDefault();
+        if (link.dataset.navigating === '1') return;
+        link.dataset.navigating = '1';
+
+        link.classList.remove('is-pressed');
+        link.classList.add('is-animating');
+
+        var targetAttr = link.getAttribute('target');
+        setTimeout(function() {
+          link.classList.remove('is-animating');
+          delete link.dataset.navigating;
+          if (typeof link.blur === 'function') link.blur();
+
+          if (targetAttr === '_blank') {
+            var win = window.open(href, '_blank', 'noopener,noreferrer');
+            if (!win) {
+              window.location.assign(href);
+            }
+          } else {
+            window.location.assign(href);
+          }
+        }, DELAY_MS);
+      });
 
       document.addEventListener('pointercancel', clearPressedState, { passive: true });
       window.addEventListener('pageshow', clearPressedState);
