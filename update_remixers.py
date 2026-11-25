@@ -12,10 +12,13 @@ if API_KEY in ("", "ТВОЙ_КЛЮЧ", "YOUR_API_KEY"):
 REMIXERS_FILE = "remixers.json"
 VIDEOS_FILE = "remix_videos.json"
 MAX_VIDEOS_PER_CHANNEL = 100
+USE_SEARCH_API = True
 
-# Ключевые фразы для отбора роликов именно по песне «Парень удалой»
+# Ключевые фразы и хэштеги для поиска и отбора роликов по песне «Парень удалой»
 SONG_KEYWORDS = [
     "парень удалой",
+    "пареньудалой",
+    "удалой",
 ]
 
 
@@ -133,6 +136,39 @@ def get_uploads_video_ids(playlist_id: str, max_items: int = MAX_VIDEOS_PER_CHAN
     return ids
 
 
+def search_song_video_ids_for_channels(target_cids: set[str], max_pages_per_query: int = 2) -> list[str]:
+    found_ids = []
+    queries = []
+    for kw in SONG_KEYWORDS:
+        q = f"#{kw.replace(' ', '')}" if " " not in kw else f'"{kw}"'
+        if q not in queries:
+            queries.append(q)
+
+    for q in queries:
+        page_token = ""
+        for _ in range(max_pages_per_query):
+            params = {
+                "part": "snippet",
+                "type": "video",
+                "q": q,
+                "maxResults": 50,
+            }
+            if page_token:
+                params["pageToken"] = page_token
+            data = api_get("search", params)
+            for item in data.get("items") or []:
+                snip = item.get("snippet") or {}
+                cid = (snip.get("channelId") or "").strip()
+                vid = (((item.get("id") or {}).get("videoId")) or "").strip()
+                if cid in target_cids and vid and vid not in found_ids:
+                    found_ids.append(vid)
+            page_token = data.get("nextPageToken") or ""
+            if not page_token:
+                break
+        time.sleep(0.1)
+    return found_ids
+
+
 def get_videos_details(video_ids: list[str]) -> list[dict]:
     videos = []
     for i in range(0, len(video_ids), 50):
@@ -199,23 +235,47 @@ def main():
             stats_by_cid[cid]["views"] += v["views"]
             stats_by_cid[cid]["likes"] += v["likes"]
     else:
+        matched_by_cid = {cid: {} for cid in cid_to_entries}
+
         for cid, meta in meta_map.items():
             try:
                 v_ids = get_uploads_video_ids(meta.get("uploads_playlist", ""), MAX_VIDEOS_PER_CHANNEL)
                 v_details = get_videos_details(v_ids)
-                matched = [v for v in v_details if matches_song(v)]
-                stats_by_cid[cid] = {
-                    "videos": len(matched),
-                    "views": sum(v["views"] for v in matched),
-                    "likes": sum(v["likes"] for v in matched),
-                }
-                print(
-                    f"OK: {meta.get('name')} | треков «Парень удалой»: {len(matched)} "
-                    f"| просмотров: {stats_by_cid[cid]['views']} | лайков: {stats_by_cid[cid]['likes']}"
-                )
+                for v in v_details:
+                    if matches_song(v):
+                        matched_by_cid[cid][v["id"]] = v
                 time.sleep(0.1)
             except Exception as e:
                 print(f"Ошибка при сборе статистики канала {cid}: {e}")
+
+        if USE_SEARCH_API and cid_to_entries:
+            try:
+                search_vids = search_song_video_ids_for_channels(set(cid_to_entries.keys()))
+                missing_ids = [
+                    vid for vid in search_vids
+                    if all(vid not in m_dict for m_dict in matched_by_cid.values())
+                ]
+                if missing_ids:
+                    extra_details = get_videos_details(missing_ids)
+                    for v in extra_details:
+                        cid = v.get("channelId") or ""
+                        if cid in matched_by_cid and matches_song(v):
+                            matched_by_cid[cid][v["id"]] = v
+            except Exception as e:
+                print(f"Ошибка при поиске через YouTube Search API: {e}")
+
+        for cid, v_map in matched_by_cid.items():
+            matched_list = list(v_map.values())
+            stats_by_cid[cid] = {
+                "videos": len(matched_list),
+                "views": sum(v["views"] for v in matched_list),
+                "likes": sum(v["likes"] for v in matched_list),
+            }
+            cname = (meta_map.get(cid) or {}).get("name") or cid
+            print(
+                f"OK: {cname} | треков «Парень удалой»: {len(matched_list)} "
+                f"| просмотров: {stats_by_cid[cid]['views']} | лайков: {stats_by_cid[cid]['likes']}"
+            )
 
     output = []
     for cid, e_list in cid_to_entries.items():
