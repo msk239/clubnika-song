@@ -1,151 +1,130 @@
 import json
 import os
 import re
-import ssl
+import subprocess
 import time
-import urllib.parse
 import urllib.request
 
-API_KEY = os.environ.get("YOUTUBE_API_KEY", "").strip()
-if API_KEY in ("", "ТВОЙ_КЛЮЧ", "YOUR_API_KEY"):
-    API_KEY = ""
-
 REMIXERS_FILE = "remixers.json"
-VIDEOS_FILE = "remix_videos.json"
-
-SSL_CTX = ssl.create_default_context()
-
-
-def http_get(url: str, retries: int = 3) -> str:
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Linux; Android 13) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36",
-        "Accept-Language": "ru-RU,ru;q=0.9,en;q=0.8",
-    }
-    last_err = None
-    for attempt in range(retries):
-        try:
-            req = urllib.request.Request(url, headers=headers)
-            with urllib.request.urlopen(req, timeout=25, context=SSL_CTX) as resp:
-                return resp.read().decode("utf-8", errors="replace")
-        except Exception as e:
-            last_err = e
-            time.sleep(1.2 * (attempt + 1))
-    raise last_err
+VIDEOS_FILE = "remix_videos.json"  # необязательный список конкретных URL/ID ремиксов
+MAX_VIDEOS_PER_CHANNEL = 60
 
 
-def fetch_json(url: str) -> dict:
-    return json.loads(http_get(url))
+def run_yt_dlp_json(url: str, flat: bool = False) -> dict | None:
+    cmd = [
+        "yt-dlp",
+        "--ignore-errors",
+        "--no-warnings",
+        "--skip-download",
+        "--dump-single-json",
+    ]
+    if flat:
+        cmd += ["--flat-playlist", "--playlist-end", str(MAX_VIDEOS_PER_CHANNEL)]
+    cmd.append(url)
 
-
-def extract_yt_initial_data(html: str) -> dict:
-    m = re.search(r"var ytInitialData\s*=\s*(\{.*?\});\s*</script>", html, re.DOTALL)
-    if not m:
-        m = re.search(r"ytInitialData\s*=\s*(\{.*?\});", html, re.DOTALL)
-    if not m:
-        return {}
     try:
-        return json.loads(m.group(1))
+        res = subprocess.run(cmd, capture_output=True, text=True, timeout=90)
+        out = (res.stdout or "").strip()
+        if not out:
+            return None
+        for line in reversed(out.splitlines()):
+            line = line.strip()
+            if line.startswith("{"):
+                return json.loads(line)
+    except Exception as e:
+        print(f"yt-dlp error for {url}: {e}")
+    return None
+
+
+def fetch_og_meta(url: str) -> tuple[str, str]:
+    try:
+        req = urllib.request.Request(
+            url,
+            headers={"User-Agent": "Mozilla/5.0 (Linux; Android 13) AppleWebKit/537.36 Chrome/124.0 Safari/537.36"},
+        )
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            html = resp.read().decode("utf-8", errors="replace")
+        m_title = re.search(r'<meta property="og:title" content="([^"]+)"', html)
+        m_img = re.search(r'<meta property="og:image" content="([^"]+)"', html)
+        return (m_title.group(1).strip() if m_title else "", m_img.group(1).strip() if m_img else "")
     except Exception:
-        return {}
+        return ("", "")
 
 
-def parse_human_number(text: str) -> int:
-    if not text:
-        return 0
-    s = str(text).lower().replace("\xa0", " ").replace(",", ".").strip()
-    m = re.search(r"([\d.]+)\s*(тыс|k|млн|m|млрд|b)?", s)
-    if not m:
-        digits = re.sub(r"\D", "", s)
-        return int(digits) if digits else 0
-    num = float(m.group(1))
-    unit = m.group(2) or ""
-    if unit in ("тыс", "k"):
-        num *= 1_000
-    elif unit in ("млн", "m"):
-        num *= 1_000_000
-    elif unit in ("млрд", "b"):
-        num *= 1_000_000_000
-    return int(round(num))
+def extract_video_id(val: str) -> str:
+    val = (val or "").strip()
+    if re.fullmatch(r"[A-Za-z0-9_-]{11}", val):
+        return val
+    for p in (
+        r"youtube\.com/shorts/([A-Za-z0-9_-]{11})",
+        r"youtube\.com/watch\?v=([A-Za-z0-9_-]{11})",
+        r"youtu\.be/([A-Za-z0-9_-]{11})",
+    ):
+        m = re.search(p, val)
+        if m:
+            return m.group(1)
+    return ""
 
 
-def walk_dict(node):
-    if isinstance(node, dict):
-        yield node
-        for v in node.values():
-            yield from walk_dict(v)
-    elif isinstance(node, list):
-        for it in node:
-            yield from walk_dict(it)
+def collect_channel_stats(entry: dict) -> dict:
+    base_url = (entry.get("url") or "").strip().rstrip("/")
+    shorts_url = base_url + "/shorts"
 
+    playlist = run_yt_dlp_json(shorts_url, flat=True)
+    if not playlist or not playlist.get("entries"):
+        playlist = run_yt_dlp_json(base_url, flat=True)
 
-def scrape_channel_no_api(url: str) -> dict:
-    clean_url = url.rstrip("/")
-    html = http_get(clean_url + "/shorts")
-    data = extract_yt_initial_data(html)
-    if not data:
-        html = http_get(clean_url)
-        data = extract_yt_initial_data(html)
+    name = entry.get("name") or ""
+    avatar = entry.get("avatar") or ""
+    handle = entry.get("handle") or ""
+    canon_url = base_url
 
-    name = ""
-    avatar = ""
-    handle = ""
+    if playlist:
+        name = playlist.get("channel") or playlist.get("uploader") or playlist.get("title") or name
+        uploader_id = playlist.get("uploader_id") or ""
+        if uploader_id.startswith("@"):
+            handle = uploader_id
+            canon_url = f"https://www.youtube.com/{handle}"
 
-    m_title = re.search(r'<meta property="og:title" content="([^"]+)"', html)
-    if m_title:
-        name = m_title.group(1).strip()
+    og_name, og_avatar = fetch_og_meta(base_url)
+    if og_name and (not name or name.endswith(" - Shorts")):
+        name = og_name
+    if og_avatar:
+        avatar = og_avatar
 
-    m_img = re.search(r'<meta property="og:image" content="([^"]+)"', html)
-    if m_img:
-        avatar = m_img.group(1).strip()
-
-    m_can = re.search(r'<link rel="canonical" href="([^"]+)"', html)
-    canonical = m_can.group(1).strip() if m_can else clean_url
-    m_h = re.search(r"youtube\.com/(@[^/?#]+)", canonical) or re.search(r"youtube\.com/(@[^/?#]+)", clean_url)
-    if m_h:
-        handle = m_h.group(1)
-
-    # Собираем уникальные ролики со страницы /shorts или /videos
-    seen_ids = set()
+    entries_list = (playlist or {}).get("entries") or []
     videos_count = 0
     total_views = 0
+    total_likes = 0
 
-    for obj in walk_dict(data):
-        # Карточки Shorts (reelItemRenderer / shortsLockupViewModel)
-        if "reelItemRenderer" in obj:
-            r = obj["reelItemRenderer"]
-            vid = r.get("videoId")
-            if vid and vid not in seen_ids:
-                seen_ids.add(vid)
-                videos_count += 1
-                v_txt = ((r.get("viewCountText") or {}).get("simpleText")
-                         or ((r.get("accessibility") or {}).get("accessibilityData") or {}).get("label", ""))
-                total_views += parse_human_number(v_txt)
-        elif "shortsLockupViewModel" in obj:
-            s = obj["shortsLockupViewModel"]
-            on_tap = (((s.get("onTap") or {}).get("innertubeCommand") or {}).get("reelWatchEndpoint") or {})
-            vid = on_tap.get("videoId")
-            if vid and vid not in seen_ids:
-                seen_ids.add(vid)
-                videos_count += 1
-                v_txt = ((s.get("overlayMetadata") or {}).get("secondaryText") or {}).get("content", "")
-                total_views += parse_human_number(v_txt)
-        elif "videoRenderer" in obj:
-            v = obj["videoRenderer"]
-            vid = v.get("videoId")
-            if vid and vid not in seen_ids:
-                seen_ids.add(vid)
-                videos_count += 1
-                v_txt = ((v.get("viewCountText") or {}).get("simpleText") or "")
-                total_views += parse_human_number(v_txt)
+    for item in entries_list:
+        if not isinstance(item, dict):
+            continue
+        vid = item.get("id") or ""
+        if not vid:
+            continue
+
+        # Получаем детальную статистику ролика (просмотры + лайки)
+        v_url = f"https://www.youtube.com/shorts/{vid}"
+        v_info = run_yt_dlp_json(v_url, flat=False)
+        videos_count += 1
+        if v_info:
+            total_views += int(v_info.get("view_count") or item.get("view_count") or 0)
+            total_likes += int(v_info.get("like_count") or 0)
+        else:
+            total_views += int(item.get("view_count") or 0)
+        time.sleep(0.2)
 
     return {
-        "name": name or handle or canonical.split("/")[-1],
+        "name": name or handle or base_url.split("/")[-1],
         "handle": handle,
-        "url": canonical or clean_url,
-        "avatar": avatar,
+        "url": canon_url,
+        "platform": "YouTube",
+        "channels": entry.get("channels") or 1,
         "videos": videos_count,
         "views": total_views,
-        "likes": 0,
+        "likes": total_likes,
+        "avatar": avatar,
     }
 
 
@@ -153,28 +132,56 @@ def main():
     with open(REMIXERS_FILE, "r", encoding="utf-8") as f:
         entries = json.load(f)
 
-    output = []
-    for entry in entries:
-        url = (entry.get("url") or "").strip()
-        if not url:
-            continue
-        try:
-            info = scrape_channel_no_api(url)
-            print(f"OK: {info['name']} | роликов: {info['videos']} | просмотров: {info['views']}")
-            output.append({
-                "name": info["name"] or entry.get("name") or url,
-                "handle": info["handle"] or entry.get("handle") or "",
-                "url": info["url"] or url,
-                "platform": "YouTube",
-                "channels": entry.get("channels") or 1,
-                "videos": info["videos"],
-                "views": info["views"],
-                "likes": info["likes"],
-                "avatar": info["avatar"] or entry.get("avatar") or "",
-            })
-        except Exception as e:
-            print(f"Ошибка для {url}: {e}")
-            output.append(entry)
+    # Если задан remix_videos.json, считаем строго по указанным роликам
+    explicit_ids = []
+    if os.path.exists(VIDEOS_FILE):
+        with open(VIDEOS_FILE, "r", encoding="utf-8") as f:
+            raw = json.load(f)
+        for x in raw:
+            vid = extract_video_id(x.get("url") if isinstance(x, dict) else str(x))
+            if vid and vid not in explicit_ids:
+                explicit_ids.append(vid)
+
+    if explicit_ids:
+        by_channel = {}
+        for vid in explicit_ids:
+            v_info = run_yt_dlp_json(f"https://www.youtube.com/shorts/{vid}", flat=False)
+            if not v_info:
+                continue
+            ch_url = v_info.get("channel_url") or v_info.get("uploader_url") or ""
+            ch_name = v_info.get("channel") or v_info.get("uploader") or "Автор"
+            uploader_id = v_info.get("uploader_id") or ""
+            handle = uploader_id if uploader_id.startswith("@") else ""
+            key = ch_url or ch_name
+            st = by_channel.setdefault(
+                key,
+                {
+                    "name": ch_name,
+                    "handle": handle,
+                    "url": ch_url or f"https://www.youtube.com/{handle}",
+                    "platform": "YouTube",
+                    "channels": 1,
+                    "videos": 0,
+                    "views": 0,
+                    "likes": 0,
+                    "avatar": "",
+                },
+            )
+            st["videos"] += 1
+            st["views"] += int(v_info.get("view_count") or 0)
+            st["likes"] += int(v_info.get("like_count") or 0)
+            if not st["avatar"] and st["url"]:
+                _, av = fetch_og_meta(st["url"])
+                st["avatar"] = av
+        output = list(by_channel.values())
+    else:
+        output = []
+        for entry in entries:
+            if not entry.get("url"):
+                continue
+            row = collect_channel_stats(entry)
+            print(f"OK: {row['name']} | роликов: {row['videos']} | просмотров: {row['views']} | лайков: {row['likes']}")
+            output.append(row)
 
     output.sort(key=lambda x: (x.get("views", 0), x.get("likes", 0), x.get("videos", 0)), reverse=True)
     for idx, row in enumerate(output, start=1):
