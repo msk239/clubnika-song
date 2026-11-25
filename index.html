@@ -308,6 +308,56 @@
       transform: translateX(-50%) translateY(0);
     }
 
+  
+    .song-scroll-box {
+      border: 1.5px solid rgba(233, 181, 255, 0.7);
+      border-radius: 16px;
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.015);
+      box-shadow: 0 0 8px rgba(216, 167, 255, 0.22);
+    }
+    #listContainer.song-list {
+      max-height: 760px;
+      overflow-y: auto;
+      padding-right: 6px;
+      overscroll-behavior: contain;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(233, 181, 255, 0.55) rgba(255, 255, 255, 0.04);
+    }
+    #listContainer.song-list::-webkit-scrollbar {
+      width: 6px;
+    }
+    #listContainer.song-list::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 999px;
+    }
+    #listContainer.song-list::-webkit-scrollbar-thumb {
+      background: rgba(233, 181, 255, 0.55);
+      border-radius: 999px;
+    }
+    #listContainer.song-list::-webkit-scrollbar-thumb:hover {
+      background: rgba(233, 181, 255, 0.8);
+    }
+    .extra-content-section {
+      margin-top: 22px;
+      padding: 18px 16px;
+      border: 1.5px solid rgba(233, 181, 255, 0.7);
+      border-radius: 16px;
+      background: var(--card);
+      box-shadow: 0 0 7px rgba(216, 167, 255, 0.24), inset 0 0 4px rgba(233, 181, 255, 0.08);
+    }
+    .extra-content-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #f3d5ff;
+      margin-bottom: 6px;
+    }
+    .extra-content-placeholder {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
   </style>
 </head>
 <body>
@@ -350,7 +400,14 @@
       <button class="btn" id="copyRandomBtn" type="button">Скопировать</button>
     </div>
 
-    <div id="listContainer" class="status-msg">Загружаем объединенный список песен...</div>
+    <div class="song-scroll-box">
+      <div id="listContainer" class="status-msg">Загружаем объединенный список песен...</div>
+    </div>
+
+    <section id="extraSection" class="extra-content-section">
+      <div class="extra-content-title">Дополнительные материалы</div>
+      <div class="extra-content-placeholder">Раздел подготовлен для размещения анонсов, ссылок, правил заказа песен и других материалов.</div>
+    </section>
   </div>
 
   <script>
@@ -451,6 +508,7 @@
           </div>
         </div>
       `).join('');
+      adjustScrollWindowToTenSongs();
     }
 
     async function init() {
@@ -558,6 +616,26 @@
         if (checkIcon) checkIcon.style.display = 'none';
       }, 1400);
     }
+
+  
+    function adjustScrollWindowToTenSongs() {
+      const box = document.getElementById('listContainer');
+      if (!box || !box.classList.contains('song-list')) return;
+      const items = box.querySelectorAll('.song-item');
+      if (!items.length) {
+        box.style.maxHeight = '';
+        return;
+      }
+      const visibleCount = Math.min(10, items.length);
+      const firstRect = items[0].getBoundingClientRect();
+      const tenthRect = items[visibleCount - 1].getBoundingClientRect();
+      const heightForTen = Math.ceil(tenthRect.bottom - firstRect.top + 4);
+      if (heightForTen > 120) {
+        box.style.maxHeight = `${heightForTen}px`;
+      }
+      box.scrollTop = 0;
+    }
+    window.addEventListener('resize', adjustScrollWindowToTenSongs);
 
   </script>
 </body>
