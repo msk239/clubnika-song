@@ -469,6 +469,19 @@
       display: flex;
     }
 
+  
+    #moreSocialsPanel {
+      display: none;
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px dashed rgba(233, 181, 255, 0.35);
+      flex-direction: column;
+      gap: 8px;
+    }
+    #moreSocialsPanel.open {
+      display: flex !important;
+    }
+
   </style>
 </head>
 <body>
@@ -793,6 +806,27 @@
       box.scrollTop = 0;
     }
     window.addEventListener('resize', adjustScrollWindowToTenSongs);
+
+  
+    document.addEventListener('click', function (e) {
+      const btn = e.target.closest('#moreSocialsBtn');
+      if (!btn) return;
+      e.preventDefault();
+      const panel = document.getElementById('moreSocialsPanel');
+      if (!panel) return;
+      const isOpen = panel.classList.contains('open');
+      if (isOpen) {
+        panel.classList.remove('open');
+        panel.style.display = 'none';
+        btn.classList.remove('active');
+        btn.setAttribute('aria-expanded', 'false');
+      } else {
+        panel.classList.add('open');
+        panel.style.display = 'flex';
+        btn.classList.add('active');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
 
   </script>
 </body>
