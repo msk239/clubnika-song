@@ -551,56 +551,149 @@
       width: 100%;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      gap: 8px;
+      gap: 10px;
     }
-    .footer-remixers-title {
-      font-size: 0.78rem;
+    .footer-remixers-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 0.85rem;
       color: var(--muted);
-      letter-spacing: 0.02em;
-      text-align: center;
     }
     .footer-remixers-list {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+    }
+    .remixer-card {
+      background: var(--card);
+      border: 1px solid rgba(233, 181, 255, 0.24);
+      border-radius: 16px;
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: border-color 0.14s ease, box-shadow 0.14s ease;
+    }
+    .remixer-card.is-open {
+      border-color: rgba(233, 181, 255, 0.52);
+      box-shadow: 0 0 10px rgba(216, 167, 255, 0.14);
+    }
+    .remixer-top {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .remixer-rank {
+      min-width: 22px;
+      text-align: center;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #d8d4e8;
+    }
+    .remixer-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      background: rgba(233, 181, 255, 0.12);
+      border: 1px solid rgba(233, 181, 255, 0.35);
+      display: flex;
       align-items: center;
       justify-content: center;
-      gap: 6px;
+      font-weight: 700;
+      color: var(--gold);
+      font-size: 0.95rem;
     }
-    .remixer-chip {
+    .remixer-main {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .remixer-name {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--text);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .remixer-sub {
+      font-size: 0.78rem;
+      color: var(--muted);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .remixer-chevron {
+      color: var(--muted);
+      font-size: 0.95rem;
+      padding: 4px 6px;
+      transition: transform 0.16s ease, color 0.14s ease;
+    }
+    .remixer-card.is-open .remixer-chevron {
+      transform: rotate(180deg);
+      color: var(--text);
+    }
+    .remixer-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      padding-left: 34px;
+    }
+    .remixer-metric {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 0;
+    }
+    .remixer-metric-label {
+      font-size: 0.76rem;
+      color: var(--muted);
+    }
+    .remixer-metric-value {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text);
+      font-variant-numeric: tabular-nums;
+    }
+    .remixer-details {
+      display: none;
+      padding-top: 8px;
+      margin-top: 2px;
+      border-top: 1px solid rgba(233, 181, 255, 0.14);
+      padding-left: 34px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .remixer-card.is-open .remixer-details {
+      display: flex;
+    }
+    .remixer-link {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 5px 11px;
+      padding: 6px 12px;
       border-radius: 999px;
-      background: var(--card);
-      border: 1px solid var(--border);
+      background: rgba(233, 181, 255, 0.12);
+      border: 1px solid rgba(233, 181, 255, 0.35);
       color: var(--text);
       text-decoration: none;
       font-size: 0.78rem;
-      font-weight: 500;
-      transition: transform 0.12s ease, filter 0.12s ease, border-color 0.12s ease, box-shadow 0.12s ease;
+      font-weight: 600;
     }
-    @media (hover: hover) {
-      .remixer-chip:hover {
-        border-color: rgba(233, 181, 255, 0.55);
-        filter: brightness(1.12);
-      }
-    }
-    .remixer-chip:active,
-    .remixer-chip.is-pressed,
-    .remixer-chip.is-animating {
-      transform: scale(0.94) translateY(1px);
-      filter: brightness(1.28);
-      border-color: rgba(233, 181, 255, 0.75);
-      box-shadow: 0 0 10px rgba(216, 167, 255, 0.25);
-    }
-    .remixer-count {
-      color: var(--gold);
-      font-weight: 700;
-      font-size: 0.72rem;
-    }
-    .footer-tech-info {
+.footer-tech-info {
       width: 100%;
       border-top: 1px solid rgba(46, 36, 54, 0.7);
       padding-top: 10px;
@@ -1092,26 +1185,147 @@
         });
     })();
 
+
+    (function renderRemixerCards() {
+      var wrap = document.getElementById('footerRemixers');
+      var list = document.getElementById('footerRemixersList');
+      var countLabel = document.getElementById('remixersCountLabel');
+      if (!wrap || !list) return;
+
+      var fallbackItems = [
+        {"name":"@msk239","handle":"@msk239","url":"https://youtube.com/@msk239","platform":"YouTube","channels":1,"videos":0,"views":0,"likes":0},
+        {"name":"@marina12335","handle":"@marina12335","url":"https://youtube.com/@marina12335","platform":"YouTube","channels":1,"videos":0,"views":0,"likes":0},
+        {"name":"@messi-b4l6u","handle":"@messi-b4l6u","url":"https://youtube.com/@messi-b4l6u","platform":"YouTube","channels":1,"videos":0,"views":0,"likes":0},
+        {"name":"@michaelshtibelman640","handle":"@michaelshtibelman640","url":"https://youtube.com/@michaelshtibelman640","platform":"YouTube","channels":1,"videos":0,"views":0,"likes":0},
+        {"name":"UCTwqpmDkCM5H90coD9_bMOQ","handle":"","url":"https://youtube.com/channel/UCTwqpmDkCM5H90coD9_bMOQ","platform":"YouTube","channels":1,"videos":0,"views":0,"likes":0},
+        {"name":"UCDBymABVm4XkDakCPIE3RjA","handle":"","url":"https://youtube.com/channel/UCDBymABVm4XkDakCPIE3RjA","platform":"YouTube","channels":1,"videos":0,"views":0,"likes":0},
+        {"name":"UCqCy2cu2RYvnpVDvVZ46oTQ","handle":"","url":"https://youtube.com/channel/UCqCy2cu2RYvnpVDvVZ46oTQ","platform":"YouTube","channels":1,"videos":0,"views":0,"likes":0}
+      ];
+
+      function fmtNum(n) {
+        var num = Number(n || 0);
+        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+      }
+
+      function channelsText(c) {
+        var n = Number(c || 1);
+        if (n % 10 === 1 && n % 100 !== 11) return n + ' канал';
+        if ([2,3,4].indexOf(n % 10) !== -1 && [12,13,14].indexOf(n % 100) === -1) return n + ' канала';
+        return n + ' каналов';
+      }
+
+      function paint(items) {
+        if (!Array.isArray(items) || !items.length) items = fallbackItems;
+        if (countLabel) {
+          countLabel.textContent = 'Авторов: ' + items.length + ' из ' + items.length;
+        }
+        list.innerHTML = '';
+        items.forEach(function(item, idx) {
+          var card = document.createElement('div');
+          card.className = 'remixer-card';
+
+          var top = document.createElement('div');
+          top.className = 'remixer-top';
+
+          var rank = document.createElement('div');
+          rank.className = 'remixer-rank';
+          rank.textContent = String(item.rank || (idx + 1));
+
+          var avatar;
+          if (item.avatar) {
+            avatar = document.createElement('img');
+            avatar.className = 'remixer-avatar';
+            avatar.src = item.avatar;
+            avatar.alt = item.name || 'Автор';
+          } else {
+            avatar = document.createElement('div');
+            avatar.className = 'remixer-avatar';
+            var cleanName = (item.name || '@').replace(/^@/, '');
+            avatar.textContent = cleanName.charAt(0).toUpperCase() || '♪';
+          }
+
+          var main = document.createElement('div');
+          main.className = 'remixer-main';
+
+          var nameEl = document.createElement('div');
+          nameEl.className = 'remixer-name';
+          nameEl.textContent = item.name || item.handle || 'Автор';
+
+          var subEl = document.createElement('div');
+          subEl.className = 'remixer-sub';
+          var plat = item.platform || 'YouTube';
+          var extra = item.handle ? (' · ' + item.handle) : (' · ' + channelsText(item.channels || 1));
+          subEl.textContent = plat + extra;
+
+          main.appendChild(nameEl);
+          main.appendChild(subEl);
+
+          var chev = document.createElement('div');
+          chev.className = 'remixer-chevron';
+          chev.textContent = '⌄';
+
+          top.appendChild(rank);
+          top.appendChild(avatar);
+          top.appendChild(main);
+          top.appendChild(chev);
+
+          top.addEventListener('click', function() {
+            card.classList.toggle('is-open');
+          });
+
+          var metrics = document.createElement('div');
+          metrics.className = 'remixer-metrics';
+          metrics.innerHTML =
+            '<div class="remixer-metric"><span class="remixer-metric-label">Роликов</span><span class="remixer-metric-value">' + fmtNum(item.videos) + '</span></div>' +
+            '<div class="remixer-metric"><span class="remixer-metric-label">Просмотры</span><span class="remixer-metric-value">' + fmtNum(item.views) + '</span></div>' +
+            '<div class="remixer-metric"><span class="remixer-metric-label">Лайки</span><span class="remixer-metric-value">' + fmtNum(item.likes) + '</span></div>';
+
+          var details = document.createElement('div');
+          details.className = 'remixer-details';
+
+          var urlSpan = document.createElement('span');
+          urlSpan.textContent = item.url || '';
+
+          var link = document.createElement('a');
+          link.className = 'remixer-link donate-btn';
+          link.href = item.url || '#';
+          link.target = '_blank';
+          link.rel = 'noopener noreferrer';
+          link.textContent = 'Открыть канал ↗';
+
+          details.appendChild(urlSpan);
+          details.appendChild(link);
+
+          card.appendChild(top);
+          card.appendChild(metrics);
+          card.appendChild(details);
+          list.appendChild(card);
+        });
+        wrap.style.display = 'flex';
+      }
+
+      paint(fallbackItems);
+      fetch('remixers.json?v=23&_=' + Date.now(), { cache: 'no-store' })
+        .then(function(r) { return r.ok ? r.json() : null; })
+        .then(function(data) { if (Array.isArray(data) && data.length) paint(data); })
+        .catch(function() {});
+    })();
+
 </script>
     <footer class="site-footer" aria-label="Статистика и техническая информация">
       <div class="stats" id="stats">
         <span class="stat-badge">Загрузка каталога...</span>
       </div>
       <div class="footer-remixers" id="footerRemixers">
-        <div class="footer-remixers-title">Ремиксы на Shorts Ники на YouTube</div>
-        <div class="footer-remixers-list" id="footerRemixersList">
-          <a class="remixer-chip donate-btn" href="https://youtube.com/@msk239" target="_blank" rel="noopener noreferrer"><span>@msk239</span></a>
-          <a class="remixer-chip donate-btn" href="https://youtube.com/@marina12335" target="_blank" rel="noopener noreferrer"><span>@marina12335</span></a>
-          <a class="remixer-chip donate-btn" href="https://youtube.com/@messi-b4l6u" target="_blank" rel="noopener noreferrer"><span>@messi-b4l6u</span></a>
-          <a class="remixer-chip donate-btn" href="https://youtube.com/@michaelshtibelman640" target="_blank" rel="noopener noreferrer"><span>@michaelshtibelman640</span></a>
-          <a class="remixer-chip donate-btn" href="https://youtube.com/channel/UCTwqpmDkCM5H90coD9_bMOQ" target="_blank" rel="noopener noreferrer"><span>UCTwqpmDkCM5H90coD9_bMOQ</span></a>
-          <a class="remixer-chip donate-btn" href="https://youtube.com/channel/UCDBymABVm4XkDakCPIE3RjA" target="_blank" rel="noopener noreferrer"><span>UCDBymABVm4XkDakCPIE3RjA</span></a>
-          <a class="remixer-chip donate-btn" href="https://youtube.com/channel/UCqCy2cu2RYvnpVDvVZ46oTQ" target="_blank" rel="noopener noreferrer"><span>UCqCy2cu2RYvnpVDvVZ46oTQ</span></a>
+        <div class="footer-remixers-header">
+          <span>Ремиксы на Shorts Ники</span>
+          <span id="remixersCountLabel">Авторов: 7</span>
         </div>
+        <div class="footer-remixers-list" id="footerRemixersList"></div>
       </div>
-      <div class="footer-tech-info">
+<div class="footer-tech-info">
         <span>Nika Club — Сонглист · Каталог песен для стримов</span>
-        <span>PWA Cache: <code>v22</code></span>
+        <span>PWA Cache: <code>v23</code></span>
       </div>
     </footer>
 
