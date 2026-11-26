@@ -20,6 +20,11 @@
 
       const s = data.summary;
       const videos = Array.isArray(data.videos) ? data.videos : [];
+      const channelName = s.channel || "MSK239";
+      const channelUrl = s.channel_url || "https://www.youtube.com/@MSK239";
+      const avatarHtml = s.avatar_url
+        ? `<img src="${escapeHtml(s.avatar_url)}" alt="${escapeHtml(channelName)}" onerror="this.style.display='none'" style="width:34px;height:34px;border-radius:999px;object-fit:cover;flex-shrink:0;border:1px solid rgba(255,255,255,0.16);">`
+        : "";
 
       const section = document.createElement("section");
       section.id = "channel-analytics-section";
@@ -60,8 +65,13 @@
       }).join("");
 
       section.innerHTML = `
-        <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:14px;flex-wrap:wrap;">
-          <div style="font-size:16px;font-weight:700;">Аналитика канала ${escapeHtml(s.channel || "MSK239")}</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:10px;min-width:0;">
+            ${avatarHtml}
+            <div style="font-size:16px;font-weight:700;line-height:1.3;">
+              Аналитика канала <a href="${escapeHtml(channelUrl)}" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">${escapeHtml(channelName)}</a>
+            </div>
+          </div>
           <div style="font-size:12px;opacity:.7;">Всего роликов: ${fmt(s.total_videos)}</div>
         </div>
 

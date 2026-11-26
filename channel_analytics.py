@@ -44,23 +44,41 @@ def is_short_video(item: dict) -> bool:
     return 0 < sec <= SHORTS_MAX_SECONDS
 
 
+def extract_avatar_url(snip: dict) -> str:
+    thumbs = snip.get("thumbnails") or {}
+    for key in ("high", "medium", "default"):
+        info = thumbs.get(key) or {}
+        url = (info.get("url") or "").strip()
+        if url:
+            return url
+    return ""
+
+
 def main():
     if not API_KEY:
         print("ВНИМАНИЕ: YOUTUBE_API_KEY не задан.")
         return
 
+    handle_clean = CHANNEL_HANDLE.lstrip("@")
     ch_data = api_get("channels", {
         "part": "snippet,statistics,contentDetails",
-        "forHandle": CHANNEL_HANDLE.lstrip("@"),
+        "forHandle": handle_clean,
     })
     items = ch_data.get("items") or []
     if not items:
-        print(f"Канал @{CHANNEL_HANDLE.lstrip('@')} не найден.")
+        print(f"Канал @{handle_clean} не найден.")
         return
 
     ch = items[0]
     cid = ch["id"]
-    ch_title = ((ch.get("snippet") or {}).get("title")) or cid
+    snip = ch.get("snippet") or {}
+    ch_title = (snip.get("title") or "").strip() or cid
+    custom_url = (snip.get("customUrl") or "").strip()
+    if custom_url:
+        channel_url = f"https://www.youtube.com/{custom_url.lstrip('/')}"
+    else:
+        channel_url = f"https://www.youtube.com/@{handle_clean}"
+    avatar_url = extract_avatar_url(snip)
     uploads_pl = (((ch.get("contentDetails") or {}).get("relatedPlaylists") or {}).get("uploads")) or ""
 
     video_ids = []
@@ -90,7 +108,7 @@ def main():
             "id": ",".join(batch),
         })
         for v in v_data.get("items") or []:
-            snip = v.get("snippet") or {}
+            v_snip = v.get("snippet") or {}
             stats = v.get("statistics") or {}
             cd = v.get("contentDetails") or {}
             sec = parse_iso_duration_seconds(cd.get("duration") or "")
@@ -100,10 +118,10 @@ def main():
             vid = v["id"]
             videos_out.append({
                 "id": vid,
-                "title": snip.get("title") or "",
+                "title": v_snip.get("title") or "",
                 "type": "shorts" if short_flag else "horizontal",
                 "duration_sec": sec,
-                "published_at": snip.get("publishedAt") or "",
+                "published_at": v_snip.get("publishedAt") or "",
                 "views": views,
                 "likes": likes,
                 "url": f"https://www.youtube.com/shorts/{vid}" if short_flag else f"https://www.youtube.com/watch?v={vid}",
@@ -115,6 +133,8 @@ def main():
     summary = {
         "channel": ch_title,
         "channel_id": cid,
+        "channel_url": channel_url,
+        "avatar_url": avatar_url,
         "total_videos": len(videos_out),
         "shorts_count": len(shorts_list),
         "horizontal_count": len(horiz_list),
@@ -134,7 +154,7 @@ def main():
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(report, f, ensure_ascii=False, indent=2)
 
-    print(f"Канал: {ch_title}")
+    print(f"Канал: {ch_title} ({channel_url})")
     print(f"Всего видео: {summary['total_videos']} | Shorts: {summary['shorts_count']} | Горизонтальных: {summary['horizontal_count']}")
     print(f"Всего просмотров: {summary['total_views']} | Всего лайков: {summary['total_likes']}")
     print(f"Shorts — просмотров: {summary['shorts_views']} | лайков: {summary['shorts_likes']}")
