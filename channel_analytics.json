@@ -7,10 +7,10 @@
     "total_videos": 658,
     "shorts_count": 606,
     "horizontal_count": 52,
-    "total_views": 801047,
-    "total_likes": 28800,
-    "shorts_views": 792157,
-    "shorts_likes": 28247,
+    "total_views": 801046,
+    "total_likes": 28799,
+    "shorts_views": 792156,
+    "shorts_likes": 28246,
     "horizontal_views": 8890,
     "horizontal_likes": 553
   },
@@ -751,7 +751,7 @@
       "type": "shorts",
       "duration_sec": 41,
       "published_at": "2026-10-02T18:37:29Z",
-      "views": 1809,
+      "views": 1810,
       "likes": 42,
       "url": "https://www.youtube.com/shorts/wx7PBSqj89s"
     },
@@ -851,7 +851,7 @@
       "type": "shorts",
       "duration_sec": 41,
       "published_at": "2026-10-04T14:21:26Z",
-      "views": 1728,
+      "views": 1729,
       "likes": 54,
       "url": "https://www.youtube.com/shorts/K__Jmenm0Cs"
     },
@@ -1196,6 +1196,16 @@
       "url": "https://www.youtube.com/shorts/YZD0Yz7lNKQ"
     },
     {
+      "id": "LCXej3_YL-c",
+      "title": "Интересно, как звучал этот хит в его исполнении 🤔 Хотели бы услышать? #переводпесни #ностальгия",
+      "type": "shorts",
+      "duration_sec": 43,
+      "published_at": "2026-11-21T11:38:00Z",
+      "views": 1475,
+      "likes": 49,
+      "url": "https://www.youtube.com/shorts/LCXej3_YL-c"
+    },
+    {
       "id": "JA0IvmZYl1E",
       "title": "Ника Моисеева - Мама Люба (кавер)",
       "type": "shorts",
@@ -1224,16 +1234,6 @@
       "views": 1474,
       "likes": 28,
       "url": "https://www.youtube.com/shorts/ffCa_GvJe0k"
-    },
-    {
-      "id": "LCXej3_YL-c",
-      "title": "Интересно, как звучал этот хит в его исполнении 🤔 Хотели бы услышать? #переводпесни #ностальгия",
-      "type": "shorts",
-      "duration_sec": 43,
-      "published_at": "2026-11-21T11:38:00Z",
-      "views": 1473,
-      "likes": 49,
-      "url": "https://www.youtube.com/shorts/LCXej3_YL-c"
     },
     {
       "id": "c5aBkNI4v5U",
@@ -1732,7 +1732,7 @@
       "duration_sec": 60,
       "published_at": "2026-11-21T05:25:35Z",
       "views": 1354,
-      "likes": 54,
+      "likes": 53,
       "url": "https://www.youtube.com/shorts/66PT4wRMQzQ"
     },
     {
@@ -1986,16 +1986,6 @@
       "url": "https://www.youtube.com/shorts/80BVXnFtYxI"
     },
     {
-      "id": "-qQ9nks_wb8",
-      "title": "А вы знали перевод этой песни? 🔥 #переводпесни #ностальгия #музыка #bonjovi #itsmylife",
-      "type": "shorts",
-      "duration_sec": 46,
-      "published_at": "2026-11-25T14:13:15Z",
-      "views": 1292,
-      "likes": 36,
-      "url": "https://www.youtube.com/shorts/-qQ9nks_wb8"
-    },
-    {
       "id": "Ce3VeE2doEs",
       "title": "Ника Моисеева - Люли | Доступно на всех музыкальных площадках | #shorts #рекомендации #топ #тренд",
       "type": "shorts",
@@ -2034,6 +2024,16 @@
       "views": 1288,
       "likes": 32,
       "url": "https://www.youtube.com/shorts/uDNRnupUugQ"
+    },
+    {
+      "id": "-qQ9nks_wb8",
+      "title": "А вы знали перевод этой песни? 🔥 #переводпесни #ностальгия #музыка #bonjovi #itsmylife",
+      "type": "shorts",
+      "duration_sec": 46,
+      "published_at": "2026-11-25T14:13:15Z",
+      "views": 1287,
+      "likes": 36,
+      "url": "https://www.youtube.com/shorts/-qQ9nks_wb8"
     },
     {
       "id": "rjiJwrzz6lE",
@@ -3206,16 +3206,6 @@
       "url": "https://www.youtube.com/shorts/ZKvIJTYicEs"
     },
     {
-      "id": "lie5o9aExpg",
-      "title": "Какой прекрасный текст ❤️ А вы знали, о чём поётся в песне? #переводпесни #felicità #music",
-      "type": "shorts",
-      "duration_sec": 44,
-      "published_at": "2026-11-25T17:35:48Z",
-      "views": 1088,
-      "likes": 25,
-      "url": "https://www.youtube.com/shorts/lie5o9aExpg"
-    },
-    {
       "id": "IdEms4RiJpg",
       "title": "Покажу вам кусочек нового трека Ники Моисеевой - «Парень удалой». 🕺🔥",
       "type": "shorts",
@@ -3244,6 +3234,16 @@
       "views": 1088,
       "likes": 85,
       "url": "https://www.youtube.com/shorts/LBdXlnTJCao"
+    },
+    {
+      "id": "lie5o9aExpg",
+      "title": "Какой прекрасный текст ❤️ А вы знали, о чём поётся в песне? #переводпесни #felicità #music",
+      "type": "shorts",
+      "duration_sec": 44,
+      "published_at": "2026-11-25T17:35:48Z",
+      "views": 1087,
+      "likes": 25,
+      "url": "https://www.youtube.com/shorts/lie5o9aExpg"
     },
     {
       "id": "s5SiVoB39xA",
@@ -3701,7 +3701,7 @@
       "type": "shorts",
       "duration_sec": 46,
       "published_at": "2026-11-25T18:37:28Z",
-      "views": 1043,
+      "views": 1044,
       "likes": 31,
       "url": "https://www.youtube.com/shorts/TVnZJHeWkp4"
     },
