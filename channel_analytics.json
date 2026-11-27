@@ -7,12 +7,12 @@
     "total_videos": 659,
     "shorts_count": 607,
     "horizontal_count": 52,
-    "total_views": 801243,
-    "total_likes": 28810,
-    "shorts_views": 792331,
-    "shorts_likes": 28257,
-    "horizontal_views": 8912,
-    "horizontal_likes": 553
+    "total_views": 802880,
+    "total_likes": 28845,
+    "shorts_views": 793905,
+    "shorts_likes": 28285,
+    "horizontal_views": 8975,
+    "horizontal_likes": 560
   },
   "videos": [
     {
@@ -21,8 +21,8 @@
       "type": "shorts",
       "duration_sec": 49,
       "published_at": "2026-06-15T17:14:45Z",
-      "views": 31528,
-      "likes": 1221,
+      "views": 31530,
+      "likes": 1220,
       "url": "https://www.youtube.com/shorts/7LFQuTV0toM"
     },
     {
@@ -52,7 +52,7 @@
       "duration_sec": 49,
       "published_at": "2026-06-16T06:04:24Z",
       "views": 7006,
-      "likes": 287,
+      "likes": 286,
       "url": "https://www.youtube.com/shorts/oe2OeayKjII"
     },
     {
@@ -61,8 +61,8 @@
       "type": "shorts",
       "duration_sec": 34,
       "published_at": "2026-03-28T06:30:36Z",
-      "views": 6621,
-      "likes": 204,
+      "views": 6622,
+      "likes": 203,
       "url": "https://www.youtube.com/shorts/9UBWCioroKU"
     },
     {
@@ -71,8 +71,8 @@
       "type": "shorts",
       "duration_sec": 47,
       "published_at": "2026-06-08T17:31:24Z",
-      "views": 6312,
-      "likes": 169,
+      "views": 6315,
+      "likes": 168,
       "url": "https://www.youtube.com/shorts/3b1jLebIK0M"
     },
     {
@@ -131,7 +131,7 @@
       "type": "shorts",
       "duration_sec": 36,
       "published_at": "2026-08-27T07:51:46Z",
-      "views": 4801,
+      "views": 4802,
       "likes": 49,
       "url": "https://www.youtube.com/shorts/11llyQvfQXg"
     },
@@ -222,7 +222,7 @@
       "duration_sec": 55,
       "published_at": "2026-06-17T18:55:10Z",
       "views": 3367,
-      "likes": 216,
+      "likes": 215,
       "url": "https://www.youtube.com/shorts/PqdZKdPgD1w"
     },
     {
@@ -301,7 +301,7 @@
       "type": "shorts",
       "duration_sec": 34,
       "published_at": "2026-09-23T17:10:12Z",
-      "views": 2901,
+      "views": 2902,
       "likes": 62,
       "url": "https://www.youtube.com/shorts/w0Mgj2W0NL8"
     },
@@ -431,7 +431,7 @@
       "type": "shorts",
       "duration_sec": 35,
       "published_at": "2026-07-13T20:27:15Z",
-      "views": 2342,
+      "views": 2343,
       "likes": 53,
       "url": "https://www.youtube.com/shorts/qqb660SuPmQ"
     },
@@ -481,7 +481,7 @@
       "type": "shorts",
       "duration_sec": 39,
       "published_at": "2026-11-04T14:49:45Z",
-      "views": 2169,
+      "views": 2170,
       "likes": 124,
       "url": "https://www.youtube.com/shorts/Kh3l-6Rysac"
     },
@@ -531,7 +531,7 @@
       "type": "shorts",
       "duration_sec": 38,
       "published_at": "2026-08-19T17:36:49Z",
-      "views": 2100,
+      "views": 2102,
       "likes": 38,
       "url": "https://www.youtube.com/shorts/bEvmxYK-Kqg"
     },
@@ -682,7 +682,7 @@
       "duration_sec": 57,
       "published_at": "2026-06-16T09:55:14Z",
       "views": 1855,
-      "likes": 103,
+      "likes": 102,
       "url": "https://www.youtube.com/shorts/Bo9G0A2e0Og"
     },
     {
@@ -702,7 +702,7 @@
       "duration_sec": 26,
       "published_at": "2026-06-17T01:30:27Z",
       "views": 1843,
-      "likes": 24,
+      "likes": 23,
       "url": "https://www.youtube.com/shorts/_EXSZN0GoVY"
     },
     {
@@ -722,7 +722,7 @@
       "duration_sec": 59,
       "published_at": "2026-05-07T12:50:33Z",
       "views": 1837,
-      "likes": 116,
+      "likes": 115,
       "url": "https://www.youtube.com/shorts/ZPX_D-wH83s"
     },
     {
@@ -731,7 +731,7 @@
       "type": "shorts",
       "duration_sec": 59,
       "published_at": "2026-10-18T14:10:43Z",
-      "views": 1814,
+      "views": 1820,
       "likes": 66,
       "url": "https://www.youtube.com/shorts/jDvJXZuR3aE"
     },
@@ -821,7 +821,7 @@
       "type": "shorts",
       "duration_sec": 26,
       "published_at": "2026-06-12T00:30:05Z",
-      "views": 1734,
+      "views": 1735,
       "likes": 44,
       "url": "https://www.youtube.com/shorts/-pHxa1WlJd4"
     },
@@ -872,7 +872,7 @@
       "duration_sec": 24,
       "published_at": "2026-06-04T03:00:08Z",
       "views": 1719,
-      "likes": 50,
+      "likes": 49,
       "url": "https://www.youtube.com/shorts/qhBHfjiSNEQ"
     },
     {
@@ -911,7 +911,7 @@
       "type": "shorts",
       "duration_sec": 51,
       "published_at": "2026-11-01T17:33:06Z",
-      "views": 1693,
+      "views": 1695,
       "likes": 80,
       "url": "https://www.youtube.com/shorts/uEumClHbZmc"
     },
@@ -991,7 +991,7 @@
       "type": "shorts",
       "duration_sec": 17,
       "published_at": "2026-11-04T13:59:21Z",
-      "views": 1596,
+      "views": 1597,
       "likes": 74,
       "url": "https://www.youtube.com/shorts/ocBbWe-avg0"
     },
@@ -1001,7 +1001,7 @@
       "type": "shorts",
       "duration_sec": 34,
       "published_at": "2026-03-18T17:17:31Z",
-      "views": 1569,
+      "views": 1571,
       "likes": 52,
       "url": "https://www.youtube.com/shorts/4W5xrXpAfWc"
     },
@@ -1101,7 +1101,7 @@
       "type": "shorts",
       "duration_sec": 45,
       "published_at": "2026-11-18T17:41:01Z",
-      "views": 1505,
+      "views": 1506,
       "likes": 48,
       "url": "https://www.youtube.com/shorts/SIkzQQDtFiI"
     },
@@ -1126,6 +1126,16 @@
       "url": "https://www.youtube.com/shorts/NXta-vgd4HA"
     },
     {
+      "id": "V57G0lqP6pc",
+      "title": "Ника Моисеева - Казачка (авторская) | @nikamoiseeva",
+      "type": "shorts",
+      "duration_sec": 23,
+      "published_at": "2026-09-11T21:03:47Z",
+      "views": 1497,
+      "likes": 42,
+      "url": "https://www.youtube.com/shorts/V57G0lqP6pc"
+    },
+    {
       "id": "SSPAqyatRl8",
       "title": "Ника Моисеева @nikamoiseeva  - Остров невезения (кавер)",
       "type": "shorts",
@@ -1142,18 +1152,8 @@
       "duration_sec": 36,
       "published_at": "2026-06-22T17:47:26Z",
       "views": 1496,
-      "likes": 34,
+      "likes": 33,
       "url": "https://www.youtube.com/shorts/Nli8yBcRAAw"
-    },
-    {
-      "id": "V57G0lqP6pc",
-      "title": "Ника Моисеева - Казачка (авторская) | @nikamoiseeva",
-      "type": "shorts",
-      "duration_sec": 23,
-      "published_at": "2026-09-11T21:03:47Z",
-      "views": 1495,
-      "likes": 42,
-      "url": "https://www.youtube.com/shorts/V57G0lqP6pc"
     },
     {
       "id": "zhw6xV4xZng",
@@ -1166,12 +1166,22 @@
       "url": "https://www.youtube.com/shorts/zhw6xV4xZng"
     },
     {
+      "id": "LCXej3_YL-c",
+      "title": "Интересно, как звучал этот хит в его исполнении 🤔 Хотели бы услышать? #переводпесни #ностальгия",
+      "type": "shorts",
+      "duration_sec": 43,
+      "published_at": "2026-11-21T11:38:00Z",
+      "views": 1489,
+      "likes": 49,
+      "url": "https://www.youtube.com/shorts/LCXej3_YL-c"
+    },
+    {
       "id": "SgAvnLsNUtw",
       "title": "Моя новая песня помогла попасть в реки песне «Василёк»! А они уже есть в Вашем плейлисте? #музыка",
       "type": "shorts",
       "duration_sec": 17,
       "published_at": "2026-10-28T17:59:52Z",
-      "views": 1483,
+      "views": 1484,
       "likes": 51,
       "url": "https://www.youtube.com/shorts/SgAvnLsNUtw"
     },
@@ -1186,14 +1196,14 @@
       "url": "https://www.youtube.com/shorts/3oZkApcWM6A"
     },
     {
-      "id": "LCXej3_YL-c",
-      "title": "Интересно, как звучал этот хит в его исполнении 🤔 Хотели бы услышать? #переводпесни #ностальгия",
+      "id": "MAQ8W63JiC8",
+      "title": "Интересно, как звучал этот хит в его исполнении 🤔 Хотели бы услышать? #переводпесни",
       "type": "shorts",
       "duration_sec": 43,
-      "published_at": "2026-11-21T11:38:00Z",
-      "views": 1481,
-      "likes": 50,
-      "url": "https://www.youtube.com/shorts/LCXej3_YL-c"
+      "published_at": "2026-11-20T20:52:23Z",
+      "views": 1480,
+      "likes": 56,
+      "url": "https://www.youtube.com/shorts/MAQ8W63JiC8"
     },
     {
       "id": "YZD0Yz7lNKQ",
@@ -1206,16 +1216,6 @@
       "url": "https://www.youtube.com/shorts/YZD0Yz7lNKQ"
     },
     {
-      "id": "MAQ8W63JiC8",
-      "title": "Интересно, как звучал этот хит в его исполнении 🤔 Хотели бы услышать? #переводпесни",
-      "type": "shorts",
-      "duration_sec": 43,
-      "published_at": "2026-11-20T20:52:23Z",
-      "views": 1475,
-      "likes": 56,
-      "url": "https://www.youtube.com/shorts/MAQ8W63JiC8"
-    },
-    {
       "id": "JA0IvmZYl1E",
       "title": "Ника Моисеева - Мама Люба (кавер)",
       "type": "shorts",
@@ -1224,6 +1224,16 @@
       "views": 1475,
       "likes": 67,
       "url": "https://www.youtube.com/shorts/JA0IvmZYl1E"
+    },
+    {
+      "id": "HVTXx6Ar3ZA",
+      "title": "А вы знали перевод этой песни? 🔥 #переводпесни  #bonjovi #itsmylife @bonjovi",
+      "type": "shorts",
+      "duration_sec": 46,
+      "published_at": "2026-11-23T17:49:21Z",
+      "views": 1474,
+      "likes": 54,
+      "url": "https://www.youtube.com/shorts/HVTXx6Ar3ZA"
     },
     {
       "id": "ffCa_GvJe0k",
@@ -1236,6 +1246,16 @@
       "url": "https://www.youtube.com/shorts/ffCa_GvJe0k"
     },
     {
+      "id": "BNQBDR5ZpDI",
+      "title": "Avatar - DJ Unix & Аnna, кавер - Ника Моисеева | @nikamoiseeva",
+      "type": "shorts",
+      "duration_sec": 61,
+      "published_at": "2026-04-04T04:00:09Z",
+      "views": 1473,
+      "likes": 130,
+      "url": "https://www.youtube.com/shorts/BNQBDR5ZpDI"
+    },
+    {
       "id": "c5aBkNI4v5U",
       "title": "Ника Моисеева, Impu1se, MoroZKA - Ласточка #рекомендации #музыка #ласточка #природа #красиво #песня",
       "type": "shorts",
@@ -1246,23 +1266,13 @@
       "url": "https://www.youtube.com/shorts/c5aBkNI4v5U"
     },
     {
-      "id": "BNQBDR5ZpDI",
-      "title": "Avatar - DJ Unix & Аnna, кавер - Ника Моисеева | @nikamoiseeva",
-      "type": "shorts",
-      "duration_sec": 61,
-      "published_at": "2026-04-04T04:00:09Z",
-      "views": 1467,
-      "likes": 129,
-      "url": "https://www.youtube.com/shorts/BNQBDR5ZpDI"
-    },
-    {
       "id": "blfE78rfysI",
       "title": "Покажу вам кусочек моего нового трека «Парень удалой». Ждём пресейв 🙏#mmusic @nikamoiseeva",
       "type": "shorts",
       "duration_sec": 15,
       "published_at": "2026-09-30T17:25:10Z",
       "views": 1465,
-      "likes": 34,
+      "likes": 33,
       "url": "https://www.youtube.com/shorts/blfE78rfysI"
     },
     {
@@ -1284,6 +1294,16 @@
       "views": 1449,
       "likes": 28,
       "url": "https://www.youtube.com/shorts/vzD10ajsGYM"
+    },
+    {
+      "id": "G9BU4qbqxM8",
+      "title": "Каждый день с тобой - Кристина Орбакайте; кавер - Ника Моисеева @nikamoiseeva",
+      "type": "shorts",
+      "duration_sec": 43,
+      "published_at": "2026-04-26T11:56:37Z",
+      "views": 1445,
+      "likes": 81,
+      "url": "https://www.youtube.com/shorts/G9BU4qbqxM8"
     },
     {
       "id": "14TY9WE0O9Q",
@@ -1316,16 +1336,6 @@
       "url": "https://www.youtube.com/shorts/bNXlcxsxXvE"
     },
     {
-      "id": "G9BU4qbqxM8",
-      "title": "Каждый день с тобой - Кристина Орбакайте; кавер - Ника Моисеева @nikamoiseeva",
-      "type": "shorts",
-      "duration_sec": 43,
-      "published_at": "2026-04-26T11:56:37Z",
-      "views": 1440,
-      "likes": 81,
-      "url": "https://www.youtube.com/shorts/G9BU4qbqxM8"
-    },
-    {
       "id": "HBPjUg_eXWI",
       "title": "Ника Моисеева - Где была (кавер) | @nikamoiseeva",
       "type": "shorts",
@@ -1351,7 +1361,7 @@
       "type": "shorts",
       "duration_sec": 44,
       "published_at": "2026-11-08T16:52:21Z",
-      "views": 1434,
+      "views": 1435,
       "likes": 31,
       "url": "https://www.youtube.com/shorts/hDSWMSPMs08"
     },
@@ -1426,14 +1436,14 @@
       "url": "https://www.youtube.com/shorts/d23tG-wyGSY"
     },
     {
-      "id": "HVTXx6Ar3ZA",
-      "title": "А вы знали перевод этой песни? 🔥 #переводпесни  #bonjovi #itsmylife @bonjovi",
+      "id": "9LS2HeJD9Zg",
+      "title": "Покажу вам кусочек нового трека Ники Моисеевой - «Парень удалой». 🕺🔥",
       "type": "shorts",
-      "duration_sec": 46,
-      "published_at": "2026-11-23T17:49:21Z",
+      "duration_sec": 17,
+      "published_at": "2026-10-16T07:11:43Z",
       "views": 1419,
-      "likes": 51,
-      "url": "https://www.youtube.com/shorts/HVTXx6Ar3ZA"
+      "likes": 70,
+      "url": "https://www.youtube.com/shorts/9LS2HeJD9Zg"
     },
     {
       "id": "i6kmoXKUA8U",
@@ -1441,19 +1451,9 @@
       "type": "shorts",
       "duration_sec": 17,
       "published_at": "2026-10-19T05:44:29Z",
-      "views": 1417,
+      "views": 1418,
       "likes": 83,
       "url": "https://www.youtube.com/shorts/i6kmoXKUA8U"
-    },
-    {
-      "id": "9LS2HeJD9Zg",
-      "title": "Покажу вам кусочек нового трека Ники Моисеевой - «Парень удалой». 🕺🔥",
-      "type": "shorts",
-      "duration_sec": 17,
-      "published_at": "2026-10-16T07:11:43Z",
-      "views": 1417,
-      "likes": 70,
-      "url": "https://www.youtube.com/shorts/9LS2HeJD9Zg"
     },
     {
       "id": "UgrGxJ_x5BQ",
@@ -1474,6 +1474,16 @@
       "views": 1413,
       "likes": 28,
       "url": "https://www.youtube.com/shorts/yx4_0cSH9aw"
+    },
+    {
+      "id": "vSKc2bwLV6E",
+      "title": "Ника Моисеева - То не ветер ветку клонит («Лучина») | кавер",
+      "type": "shorts",
+      "duration_sec": 57,
+      "published_at": "2026-11-22T17:40:16Z",
+      "views": 1401,
+      "likes": 82,
+      "url": "https://www.youtube.com/shorts/vSKc2bwLV6E"
     },
     {
       "id": "PQK0iaymnUc",
@@ -1502,7 +1512,7 @@
       "duration_sec": 24,
       "published_at": "2026-06-07T02:00:03Z",
       "views": 1395,
-      "likes": 56,
+      "likes": 55,
       "url": "https://www.youtube.com/shorts/qSdeVBNJwu4"
     },
     {
@@ -1542,7 +1552,7 @@
       "duration_sec": 26,
       "published_at": "2026-05-27T18:22:00Z",
       "views": 1390,
-      "likes": 101,
+      "likes": 100,
       "url": "https://www.youtube.com/shorts/gug1At-4RBM"
     },
     {
@@ -1562,7 +1572,7 @@
       "duration_sec": 25,
       "published_at": "2026-06-03T03:00:33Z",
       "views": 1388,
-      "likes": 46,
+      "likes": 45,
       "url": "https://www.youtube.com/shorts/2df1QJaV_J4"
     },
     {
@@ -1612,7 +1622,7 @@
       "duration_sec": 27,
       "published_at": "2026-06-04T16:57:17Z",
       "views": 1382,
-      "likes": 46,
+      "likes": 45,
       "url": "https://www.youtube.com/shorts/fCLCWpDZCBw"
     },
     {
@@ -1622,7 +1632,7 @@
       "duration_sec": 34,
       "published_at": "2026-10-28T14:34:58Z",
       "views": 1377,
-      "likes": 27,
+      "likes": 28,
       "url": "https://www.youtube.com/shorts/bPOxFbxciXY"
     },
     {
@@ -1646,16 +1656,6 @@
       "url": "https://www.youtube.com/shorts/1XQuhPZGDgM"
     },
     {
-      "id": "vSKc2bwLV6E",
-      "title": "Ника Моисеева - То не ветер ветку клонит («Лучина») | кавер",
-      "type": "shorts",
-      "duration_sec": 57,
-      "published_at": "2026-11-22T17:40:16Z",
-      "views": 1369,
-      "likes": 81,
-      "url": "https://www.youtube.com/shorts/vSKc2bwLV6E"
-    },
-    {
       "id": "1DwO3g5XuX4",
       "title": "Ника Моисеева @nikamoiseeva   - Ищу тебя (кавер) | из к/ф «31 июня»",
       "type": "shorts",
@@ -1676,6 +1676,16 @@
       "url": "https://www.youtube.com/shorts/7oEgwqyqCQ8"
     },
     {
+      "id": "66PT4wRMQzQ",
+      "title": "Игорь Тальков - Чистые пруды | Кавер: Ника Моисеева @nikamoiseeva",
+      "type": "shorts",
+      "duration_sec": 60,
+      "published_at": "2026-11-21T05:25:35Z",
+      "views": 1364,
+      "likes": 54,
+      "url": "https://www.youtube.com/shorts/66PT4wRMQzQ"
+    },
+    {
       "id": "vY8BEcS3d1s",
       "title": "🍓А вы знали, что JONY заработал более $2 млн благодаря ИИ-сериалам про фрукты? #рек #кавер #камин",
       "type": "shorts",
@@ -1686,23 +1696,13 @@
       "url": "https://www.youtube.com/shorts/vY8BEcS3d1s"
     },
     {
-      "id": "66PT4wRMQzQ",
-      "title": "Игорь Тальков - Чистые пруды | Кавер: Ника Моисеева @nikamoiseeva",
-      "type": "shorts",
-      "duration_sec": 60,
-      "published_at": "2026-11-21T05:25:35Z",
-      "views": 1360,
-      "likes": 54,
-      "url": "https://www.youtube.com/shorts/66PT4wRMQzQ"
-    },
-    {
       "id": "Lkq-tP7LkdE",
       "title": "Ника Моисеева - Ласточка (авторская) @nikamoiseeva",
       "type": "shorts",
       "duration_sec": 24,
       "published_at": "2026-06-04T04:30:12Z",
       "views": 1359,
-      "likes": 56,
+      "likes": 55,
       "url": "https://www.youtube.com/shorts/Lkq-tP7LkdE"
     },
     {
@@ -1761,7 +1761,7 @@
       "type": "shorts",
       "duration_sec": 58,
       "published_at": "2026-03-29T05:49:08Z",
-      "views": 1350,
+      "views": 1352,
       "likes": 86,
       "url": "https://www.youtube.com/shorts/Eez-58em4B8"
     },
@@ -1852,8 +1852,18 @@
       "duration_sec": 24,
       "published_at": "2026-06-05T09:00:20Z",
       "views": 1327,
-      "likes": 43,
+      "likes": 42,
       "url": "https://www.youtube.com/shorts/SmA649dKN7M"
+    },
+    {
+      "id": "-qQ9nks_wb8",
+      "title": "А вы знали перевод этой песни? 🔥 #переводпесни #ностальгия #музыка #bonjovi #itsmylife",
+      "type": "shorts",
+      "duration_sec": 46,
+      "published_at": "2026-11-25T14:13:15Z",
+      "views": 1326,
+      "likes": 40,
+      "url": "https://www.youtube.com/shorts/-qQ9nks_wb8"
     },
     {
       "id": "aHlBEzOjQeY",
@@ -1881,7 +1891,7 @@
       "type": "shorts",
       "duration_sec": 25,
       "published_at": "2026-10-27T13:10:39Z",
-      "views": 1318,
+      "views": 1319,
       "likes": 43,
       "url": "https://www.youtube.com/shorts/um1FyQrSTYw"
     },
@@ -1904,16 +1914,6 @@
       "views": 1310,
       "likes": 47,
       "url": "https://www.youtube.com/shorts/kMVcyOmCDx8"
-    },
-    {
-      "id": "-qQ9nks_wb8",
-      "title": "А вы знали перевод этой песни? 🔥 #переводпесни #ностальгия #музыка #bonjovi #itsmylife",
-      "type": "shorts",
-      "duration_sec": 46,
-      "published_at": "2026-11-25T14:13:15Z",
-      "views": 1305,
-      "likes": 36,
-      "url": "https://www.youtube.com/shorts/-qQ9nks_wb8"
     },
     {
       "id": "qaYxO0ALGv8",
@@ -2051,7 +2051,7 @@
       "type": "shorts",
       "duration_sec": 23,
       "published_at": "2026-11-14T06:46:25Z",
-      "views": 1281,
+      "views": 1283,
       "likes": 26,
       "url": "https://www.youtube.com/shorts/hVksn6XunpU"
     },
@@ -2091,7 +2091,7 @@
       "type": "shorts",
       "duration_sec": 17,
       "published_at": "2026-11-04T09:06:40Z",
-      "views": 1277,
+      "views": 1278,
       "likes": 63,
       "url": "https://www.youtube.com/shorts/IZkCFbC1cSs"
     },
@@ -2152,7 +2152,7 @@
       "duration_sec": 24,
       "published_at": "2026-05-30T11:31:54Z",
       "views": 1265,
-      "likes": 67,
+      "likes": 66,
       "url": "https://www.youtube.com/shorts/7aohdUv8eoU"
     },
     {
@@ -2226,6 +2226,16 @@
       "url": "https://www.youtube.com/shorts/fg7JSE9L0x8"
     },
     {
+      "id": "R4jyCMBsiRk",
+      "title": "Какой интересный факт. А вы знали об этом? #переводпесни #музыка #рукивверх #ностальгия #atc",
+      "type": "shorts",
+      "duration_sec": 35,
+      "published_at": "2026-10-27T11:54:57Z",
+      "views": 1255,
+      "likes": 23,
+      "url": "https://www.youtube.com/shorts/R4jyCMBsiRk"
+    },
+    {
       "id": "Sc4xvPMEUh4",
       "title": "Покажу вам кусочек моего нового трека «Парень удалой»",
       "type": "shorts",
@@ -2234,16 +2244,6 @@
       "views": 1255,
       "likes": 47,
       "url": "https://www.youtube.com/shorts/Sc4xvPMEUh4"
-    },
-    {
-      "id": "R4jyCMBsiRk",
-      "title": "Какой интересный факт. А вы знали об этом? #переводпесни #музыка #рукивверх #ностальгия #atc",
-      "type": "shorts",
-      "duration_sec": 35,
-      "published_at": "2026-10-27T11:54:57Z",
-      "views": 1254,
-      "likes": 23,
-      "url": "https://www.youtube.com/shorts/R4jyCMBsiRk"
     },
     {
       "id": "05dTMaOb2TM",
@@ -2306,6 +2306,26 @@
       "url": "https://www.youtube.com/shorts/45-cqrfiaZQ"
     },
     {
+      "id": "fa7S8Gy5vFc",
+      "title": "Какой прекрасный текст ❤️ А вы знали, о чём поётся в песне? #felicità",
+      "type": "shorts",
+      "duration_sec": 44,
+      "published_at": "2026-11-26T15:41:33Z",
+      "views": 1246,
+      "likes": 35,
+      "url": "https://www.youtube.com/shorts/fa7S8Gy5vFc"
+    },
+    {
+      "id": "PinuA57Eumg",
+      "title": "Сегодня ровно 1 год авторской песне Ники Моисеевой - Василёк 🌸🔥🎉 @nikamoiseeva",
+      "type": "shorts",
+      "duration_sec": 61,
+      "published_at": "2026-08-26T07:20:51Z",
+      "views": 1245,
+      "likes": 56,
+      "url": "https://www.youtube.com/shorts/PinuA57Eumg"
+    },
+    {
       "id": "CGZ67ySWgYQ",
       "title": "Ника Моисеева - Художник",
       "type": "shorts",
@@ -2314,16 +2334,6 @@
       "views": 1245,
       "likes": 67,
       "url": "https://www.youtube.com/shorts/CGZ67ySWgYQ"
-    },
-    {
-      "id": "PinuA57Eumg",
-      "title": "Сегодня ровно 1 год авторской песне Ники Моисеевой - Василёк 🌸🔥🎉 @nikamoiseeva",
-      "type": "shorts",
-      "duration_sec": 61,
-      "published_at": "2026-08-26T07:20:51Z",
-      "views": 1243,
-      "likes": 57,
-      "url": "https://www.youtube.com/shorts/PinuA57Eumg"
     },
     {
       "id": "VSuGtUfgvuU",
@@ -2352,7 +2362,7 @@
       "duration_sec": 24,
       "published_at": "2026-05-31T06:45:15Z",
       "views": 1234,
-      "likes": 46,
+      "likes": 45,
       "url": "https://www.youtube.com/shorts/NWUDtZg2-dE"
     },
     {
@@ -2521,7 +2531,7 @@
       "type": "shorts",
       "duration_sec": 18,
       "published_at": "2026-07-21T10:35:13Z",
-      "views": 1189,
+      "views": 1190,
       "likes": 52,
       "url": "https://www.youtube.com/shorts/aVcF8smvwUY"
     },
@@ -2706,6 +2716,16 @@
       "url": "https://www.youtube.com/shorts/NKXAtRr6lFM"
     },
     {
+      "id": "e93c73Y4PeA",
+      "title": "А вы помните эту песню? 🤭 #ностальгия #2007 #максим #макSим #music",
+      "type": "shorts",
+      "duration_sec": 33,
+      "published_at": "2026-11-16T17:53:02Z",
+      "views": 1155,
+      "likes": 25,
+      "url": "https://www.youtube.com/shorts/e93c73Y4PeA"
+    },
+    {
       "id": "eVjPnu5wMbA",
       "title": "А вы задумывались, какие приемы используют музыканты ради легендарного звучания?#музыка #ностальгия",
       "type": "shorts",
@@ -2716,14 +2736,14 @@
       "url": "https://www.youtube.com/shorts/eVjPnu5wMbA"
     },
     {
-      "id": "e93c73Y4PeA",
-      "title": "А вы помните эту песню? 🤭 #ностальгия #2007 #максим #макSим #music",
+      "id": "w9yhc8dnFmE",
+      "title": "Интересно, как звучал этот хит в его исполнении 🤔 Хотели бы услышать? #переводпесни #ностальгия",
       "type": "shorts",
-      "duration_sec": 33,
-      "published_at": "2026-11-16T17:53:02Z",
+      "duration_sec": 43,
+      "published_at": "2026-11-23T07:53:38Z",
       "views": 1154,
-      "likes": 25,
-      "url": "https://www.youtube.com/shorts/e93c73Y4PeA"
+      "likes": 20,
+      "url": "https://www.youtube.com/shorts/w9yhc8dnFmE"
     },
     {
       "id": "oWEjopiktJs",
@@ -2756,6 +2776,16 @@
       "url": "https://www.youtube.com/shorts/G-5iE3baSaQ"
     },
     {
+      "id": "lie5o9aExpg",
+      "title": "Какой прекрасный текст ❤️ А вы знали, о чём поётся в песне? #переводпесни #felicità #music",
+      "type": "shorts",
+      "duration_sec": 44,
+      "published_at": "2026-11-25T17:35:48Z",
+      "views": 1149,
+      "likes": 31,
+      "url": "https://www.youtube.com/shorts/lie5o9aExpg"
+    },
+    {
       "id": "MtW4GbrxdAM",
       "title": "Покажу вам кусочек нового трека Ники Моисеевой - «Парень удалой». 🕺🔥",
       "type": "shorts",
@@ -2781,7 +2811,7 @@
       "type": "shorts",
       "duration_sec": 26,
       "published_at": "2026-06-18T22:28:41Z",
-      "views": 1145,
+      "views": 1147,
       "likes": 31,
       "url": "https://www.youtube.com/shorts/urltXfh_iD0"
     },
@@ -2791,9 +2821,19 @@
       "type": "shorts",
       "duration_sec": 23,
       "published_at": "2026-11-13T19:34:51Z",
-      "views": 1129,
+      "views": 1130,
       "likes": 18,
       "url": "https://www.youtube.com/shorts/1lUUqS4-aTQ"
+    },
+    {
+      "id": "TVnZJHeWkp4",
+      "title": "А вы знали перевод этой песни? 🔥 #переводпесни  #bonjovi #itsmylife @bonjovi",
+      "type": "shorts",
+      "duration_sec": 46,
+      "published_at": "2026-11-25T18:37:28Z",
+      "views": 1129,
+      "likes": 39,
+      "url": "https://www.youtube.com/shorts/TVnZJHeWkp4"
     },
     {
       "id": "-HTJ3ZDH0-0",
@@ -2804,16 +2844,6 @@
       "views": 1129,
       "likes": 54,
       "url": "https://www.youtube.com/shorts/-HTJ3ZDH0-0"
-    },
-    {
-      "id": "w9yhc8dnFmE",
-      "title": "Интересно, как звучал этот хит в его исполнении 🤔 Хотели бы услышать? #переводпесни #ностальгия",
-      "type": "shorts",
-      "duration_sec": 43,
-      "published_at": "2026-11-23T07:53:38Z",
-      "views": 1128,
-      "likes": 20,
-      "url": "https://www.youtube.com/shorts/w9yhc8dnFmE"
     },
     {
       "id": "wFGriRQpnZI",
@@ -2846,6 +2876,26 @@
       "url": "https://www.youtube.com/shorts/dIE4ujl156c"
     },
     {
+      "id": "LNwrPy_CTiM",
+      "title": "2007 vs 2026 😱 какая версия вам нравится больше? #музыка #песня #рекомендации #ностальгия #2007",
+      "type": "shorts",
+      "duration_sec": 31,
+      "published_at": "2026-04-18T04:56:01Z",
+      "views": 1126,
+      "likes": 57,
+      "url": "https://www.youtube.com/shorts/LNwrPy_CTiM"
+    },
+    {
+      "id": "93GxWauL1Js",
+      "title": "Бесприданница - Dead Blonde; кавер - Ника Моисеева | @nikamoiseeva",
+      "type": "shorts",
+      "duration_sec": 53,
+      "published_at": "2026-04-08T04:00:15Z",
+      "views": 1126,
+      "likes": 95,
+      "url": "https://www.youtube.com/shorts/93GxWauL1Js"
+    },
+    {
       "id": "1vFkFQ_XL7E",
       "title": "Удивительно, что новый трек Ники помог попасть в рекомендации старой песни «Василёк» 🤭",
       "type": "shorts",
@@ -2876,16 +2926,6 @@
       "url": "https://www.youtube.com/shorts/vjW9IuHpF3M"
     },
     {
-      "id": "LNwrPy_CTiM",
-      "title": "2007 vs 2026 😱 какая версия вам нравится больше? #музыка #песня #рекомендации #ностальгия #2007",
-      "type": "shorts",
-      "duration_sec": 31,
-      "published_at": "2026-04-18T04:56:01Z",
-      "views": 1125,
-      "likes": 57,
-      "url": "https://www.youtube.com/shorts/LNwrPy_CTiM"
-    },
-    {
       "id": "Y9qk4HxiE68",
       "title": "Покажу вам кусочек нового трека Ники Моисеевой - «Парень удалой». 🕺🔥",
       "type": "shorts",
@@ -2912,18 +2952,8 @@
       "duration_sec": 12,
       "published_at": "2026-08-04T11:54:55Z",
       "views": 1123,
-      "likes": 30,
+      "likes": 29,
       "url": "https://www.youtube.com/shorts/QQN0_BAZ7xw"
-    },
-    {
-      "id": "93GxWauL1Js",
-      "title": "Бесприданница - Dead Blonde; кавер - Ника Моисеева | @nikamoiseeva",
-      "type": "shorts",
-      "duration_sec": 53,
-      "published_at": "2026-04-08T04:00:15Z",
-      "views": 1123,
-      "likes": 95,
-      "url": "https://www.youtube.com/shorts/93GxWauL1Js"
     },
     {
       "id": "RDCD9ZzScsk",
@@ -2974,16 +3004,6 @@
       "views": 1117,
       "likes": 29,
       "url": "https://www.youtube.com/shorts/vttPH07gSK4"
-    },
-    {
-      "id": "lie5o9aExpg",
-      "title": "Какой прекрасный текст ❤️ А вы знали, о чём поётся в песне? #переводпесни #felicità #music",
-      "type": "shorts",
-      "duration_sec": 44,
-      "published_at": "2026-11-25T17:35:48Z",
-      "views": 1114,
-      "likes": 27,
-      "url": "https://www.youtube.com/shorts/lie5o9aExpg"
     },
     {
       "id": "I-HfvEx1G6I",
@@ -3076,6 +3096,16 @@
       "url": "https://www.youtube.com/shorts/kS9RzdY96-c"
     },
     {
+      "id": "-uQ-P3y6MTQ",
+      "title": "Волшебный цветок - Ника Моисеева @nikamoiseeva",
+      "type": "shorts",
+      "duration_sec": 56,
+      "published_at": "2026-06-24T13:04:56Z",
+      "views": 1103,
+      "likes": 55,
+      "url": "https://www.youtube.com/shorts/-uQ-P3y6MTQ"
+    },
+    {
       "id": "M4DWLo5fzcM",
       "title": "Что остаётся за кадром 🤭 Вам интересно закулисье моих видео? #неудачныемоменты #бэкстейдж #закулисье",
       "type": "shorts",
@@ -3084,6 +3114,16 @@
       "views": 1101,
       "likes": 33,
       "url": "https://www.youtube.com/shorts/M4DWLo5fzcM"
+    },
+    {
+      "id": "h-8fGua8PzQ",
+      "title": "А вы помните эту песню? 🤭 #ностальгия #2007 #максим #макSим #music",
+      "type": "shorts",
+      "duration_sec": 33,
+      "published_at": "2026-11-17T16:24:12Z",
+      "views": 1097,
+      "likes": 16,
+      "url": "https://www.youtube.com/shorts/h-8fGua8PzQ"
     },
     {
       "id": "Ci5UDzuswJI",
@@ -3096,16 +3136,6 @@
       "url": "https://www.youtube.com/shorts/Ci5UDzuswJI"
     },
     {
-      "id": "h-8fGua8PzQ",
-      "title": "А вы помните эту песню? 🤭 #ностальгия #2007 #максим #макSим #music",
-      "type": "shorts",
-      "duration_sec": 33,
-      "published_at": "2026-11-17T16:24:12Z",
-      "views": 1096,
-      "likes": 16,
-      "url": "https://www.youtube.com/shorts/h-8fGua8PzQ"
-    },
-    {
       "id": "d8fCS-0iC0M",
       "title": "До релиза осталось совсем чуть-чуть 🤞 Кто ждёт? Перекличка в комментариях 🙏#newmusic",
       "type": "shorts",
@@ -3114,16 +3144,6 @@
       "views": 1096,
       "likes": 46,
       "url": "https://www.youtube.com/shorts/d8fCS-0iC0M"
-    },
-    {
-      "id": "-uQ-P3y6MTQ",
-      "title": "Волшебный цветок - Ника Моисеева @nikamoiseeva",
-      "type": "shorts",
-      "duration_sec": 56,
-      "published_at": "2026-06-24T13:04:56Z",
-      "views": 1096,
-      "likes": 55,
-      "url": "https://www.youtube.com/shorts/-uQ-P3y6MTQ"
     },
     {
       "id": "Az2F4-R1D0U",
@@ -3142,7 +3162,7 @@
       "duration_sec": 17,
       "published_at": "2026-10-21T20:12:52Z",
       "views": 1092,
-      "likes": 52,
+      "likes": 51,
       "url": "https://www.youtube.com/shorts/76QWMb303co"
     },
     {
@@ -3246,6 +3266,16 @@
       "url": "https://www.youtube.com/shorts/LBdXlnTJCao"
     },
     {
+      "id": "Ej9GQxhxM7s",
+      "title": "Удивительно, что новый трек Ники помог попасть в рекомендации старой песне «Василёк» 🤭",
+      "type": "shorts",
+      "duration_sec": 17,
+      "published_at": "2026-11-14T10:24:56Z",
+      "views": 1087,
+      "likes": 37,
+      "url": "https://www.youtube.com/shorts/Ej9GQxhxM7s"
+    },
+    {
       "id": "s5SiVoB39xA",
       "title": "Удивительно, что мой новый трек помог попасть в рекомендации старой песни «Василёк» 🤭",
       "type": "shorts",
@@ -3324,26 +3354,6 @@
       "views": 1083,
       "likes": 55,
       "url": "https://www.youtube.com/shorts/YIrjHCSeE1k"
-    },
-    {
-      "id": "TVnZJHeWkp4",
-      "title": "А вы знали перевод этой песни? 🔥 #переводпесни  #bonjovi #itsmylife @bonjovi",
-      "type": "shorts",
-      "duration_sec": 46,
-      "published_at": "2026-11-25T18:37:28Z",
-      "views": 1081,
-      "likes": 36,
-      "url": "https://www.youtube.com/shorts/TVnZJHeWkp4"
-    },
-    {
-      "id": "Ej9GQxhxM7s",
-      "title": "Удивительно, что новый трек Ники помог попасть в рекомендации старой песне «Василёк» 🤭",
-      "type": "shorts",
-      "duration_sec": 17,
-      "published_at": "2026-11-14T10:24:56Z",
-      "views": 1081,
-      "likes": 37,
-      "url": "https://www.youtube.com/shorts/Ej9GQxhxM7s"
     },
     {
       "id": "_a6YPvBcav0",
@@ -3962,7 +3972,7 @@
       "duration_sec": 24,
       "published_at": "2026-06-02T08:57:58Z",
       "views": 995,
-      "likes": 44,
+      "likes": 43,
       "url": "https://www.youtube.com/shorts/2Y7bVSNRA5g"
     },
     {
@@ -4112,7 +4122,7 @@
       "duration_sec": 26,
       "published_at": "2026-06-16T05:00:46Z",
       "views": 969,
-      "likes": 28,
+      "likes": 27,
       "url": "https://www.youtube.com/shorts/jCA2CGZWfIM"
     },
     {
@@ -4136,6 +4146,16 @@
       "url": "https://www.youtube.com/shorts/gh_5XtDIbwI"
     },
     {
+      "id": "rlkeZNpJBi8",
+      "title": "Удивительно, что новый трек Ники помог попасть в рекомендации старой песне «Василёк» 🤭",
+      "type": "shorts",
+      "duration_sec": 17,
+      "published_at": "2026-11-12T06:38:40Z",
+      "views": 962,
+      "likes": 17,
+      "url": "https://www.youtube.com/shorts/rlkeZNpJBi8"
+    },
+    {
       "id": "M8KwQof2G68",
       "title": "Левый берег Дона - Михаил Шуфутинский; кавер - Ника Моисеева | @nikamoiseeva",
       "type": "shorts",
@@ -4144,16 +4164,6 @@
       "views": 962,
       "likes": 92,
       "url": "https://www.youtube.com/shorts/M8KwQof2G68"
-    },
-    {
-      "id": "rlkeZNpJBi8",
-      "title": "Удивительно, что новый трек Ники помог попасть в рекомендации старой песне «Василёк» 🤭",
-      "type": "shorts",
-      "duration_sec": 17,
-      "published_at": "2026-11-12T06:38:40Z",
-      "views": 961,
-      "likes": 17,
-      "url": "https://www.youtube.com/shorts/rlkeZNpJBi8"
     },
     {
       "id": "_9nRbJFiNxQ",
@@ -4356,24 +4366,24 @@
       "url": "https://www.youtube.com/shorts/RXYF8MyqHm8"
     },
     {
+      "id": "_Zpfd60X0uo",
+      "title": "Ника Моисеева - Ласточка (авторская) | @nikamoiseeva | памятная нарезка релиза Ласточки 🦅",
+      "type": "horizontal",
+      "duration_sec": 292,
+      "published_at": "2026-05-31T14:51:26Z",
+      "views": 916,
+      "likes": 44,
+      "url": "https://www.youtube.com/watch?v=_Zpfd60X0uo"
+    },
+    {
       "id": "glRlbFYlP8I",
       "title": "Ника Моисеева, Impu1se, MoroZKA - Ласточка #рекомендации #музыка #ласточка #природа #красиво #песня",
       "type": "shorts",
       "duration_sec": 25,
       "published_at": "2026-06-23T19:09:01Z",
       "views": 915,
-      "likes": 44,
+      "likes": 43,
       "url": "https://www.youtube.com/shorts/glRlbFYlP8I"
-    },
-    {
-      "id": "_Zpfd60X0uo",
-      "title": "Ника Моисеева - Ласточка (авторская) | @nikamoiseeva | памятная нарезка релиза Ласточки 🦅",
-      "type": "horizontal",
-      "duration_sec": 292,
-      "published_at": "2026-05-31T14:51:26Z",
-      "views": 914,
-      "likes": 44,
-      "url": "https://www.youtube.com/watch?v=_Zpfd60X0uo"
     },
     {
       "id": "ZkkF7Hivyu8",
@@ -4482,7 +4492,7 @@
       "duration_sec": 26,
       "published_at": "2026-06-13T10:33:53Z",
       "views": 895,
-      "likes": 28,
+      "likes": 27,
       "url": "https://www.youtube.com/shorts/b6Uy-nMrJKA"
     },
     {
@@ -4612,7 +4622,7 @@
       "duration_sec": 25,
       "published_at": "2026-06-22T12:00:01Z",
       "views": 857,
-      "likes": 42,
+      "likes": 41,
       "url": "https://www.youtube.com/shorts/BZlOP45ygzw"
     },
     {
@@ -4636,6 +4646,16 @@
       "url": "https://www.youtube.com/shorts/d99Yr5JY44w"
     },
     {
+      "id": "lz6GTG2wdK0",
+      "title": "Романс - В лунном сиянии | кавер - Ника Моисеева @nikamoiseeva",
+      "type": "shorts",
+      "duration_sec": 58,
+      "published_at": "2026-07-12T07:59:26Z",
+      "views": 848,
+      "likes": 52,
+      "url": "https://www.youtube.com/shorts/lz6GTG2wdK0"
+    },
+    {
       "id": "OBLqL8E5w5A",
       "title": "\"Казачка\",новая авторская песня Ники Моисеевой ‎⁨@nikamoiseeva",
       "type": "shorts",
@@ -4644,16 +4664,6 @@
       "views": 847,
       "likes": 16,
       "url": "https://www.youtube.com/shorts/OBLqL8E5w5A"
-    },
-    {
-      "id": "lz6GTG2wdK0",
-      "title": "Романс - В лунном сиянии | кавер - Ника Моисеева @nikamoiseeva",
-      "type": "shorts",
-      "duration_sec": 58,
-      "published_at": "2026-07-12T07:59:26Z",
-      "views": 847,
-      "likes": 52,
-      "url": "https://www.youtube.com/shorts/lz6GTG2wdK0"
     },
     {
       "id": "MB8vlQ4JWhs",
@@ -4771,7 +4781,7 @@
       "type": "shorts",
       "duration_sec": 25,
       "published_at": "2026-06-28T11:13:13Z",
-      "views": 814,
+      "views": 815,
       "likes": 43,
       "url": "https://www.youtube.com/shorts/alN9K-dQmiA"
     },
@@ -4881,7 +4891,7 @@
       "type": "shorts",
       "duration_sec": 60,
       "published_at": "2026-04-21T07:03:13Z",
-      "views": 782,
+      "views": 783,
       "likes": 43,
       "url": "https://www.youtube.com/shorts/OyZEVuqqWg8"
     },
@@ -5121,7 +5131,7 @@
       "type": "shorts",
       "duration_sec": 25,
       "published_at": "2026-06-26T07:47:34Z",
-      "views": 648,
+      "views": 649,
       "likes": 32,
       "url": "https://www.youtube.com/shorts/eVWO0hVNrT8"
     },
@@ -5361,7 +5371,7 @@
       "type": "horizontal",
       "duration_sec": 216,
       "published_at": "2026-04-06T07:57:24Z",
-      "views": 445,
+      "views": 447,
       "likes": 18,
       "url": "https://www.youtube.com/watch?v=0gsnvjJvHag"
     },
@@ -5431,8 +5441,8 @@
       "type": "horizontal",
       "duration_sec": 183,
       "published_at": "2026-07-12T14:42:11Z",
-      "views": 394,
-      "likes": 30,
+      "views": 396,
+      "likes": 31,
       "url": "https://www.youtube.com/watch?v=vS6BumRf0qA"
     },
     {
@@ -5441,9 +5451,19 @@
       "type": "horizontal",
       "duration_sec": 237,
       "published_at": "2026-09-11T10:34:21Z",
-      "views": 383,
+      "views": 386,
       "likes": 18,
       "url": "https://www.youtube.com/watch?v=sg1Im2LMnRc"
+    },
+    {
+      "id": "0oeou4UaA4Y",
+      "title": "Ника Моисеева - Седая ночь | @nikamoiseeva  | #кавер #никамоисеева #седаяночь ",
+      "type": "horizontal",
+      "duration_sec": 267,
+      "published_at": "2026-06-14T11:26:21Z",
+      "views": 376,
+      "likes": 16,
+      "url": "https://www.youtube.com/watch?v=0oeou4UaA4Y"
     },
     {
       "id": "tw4zYpSMcgg",
@@ -5454,16 +5474,6 @@
       "views": 375,
       "likes": 15,
       "url": "https://www.youtube.com/shorts/tw4zYpSMcgg"
-    },
-    {
-      "id": "0oeou4UaA4Y",
-      "title": "Ника Моисеева - Седая ночь | @nikamoiseeva  | #кавер #никамоисеева #седаяночь ",
-      "type": "horizontal",
-      "duration_sec": 267,
-      "published_at": "2026-06-14T11:26:21Z",
-      "views": 375,
-      "likes": 16,
-      "url": "https://www.youtube.com/watch?v=0oeou4UaA4Y"
     },
     {
       "id": "4Ue-ew5-y_0",
@@ -5481,8 +5491,8 @@
       "type": "horizontal",
       "duration_sec": 181,
       "published_at": "2026-07-07T12:29:26Z",
-      "views": 360,
-      "likes": 7,
+      "views": 362,
+      "likes": 9,
       "url": "https://www.youtube.com/watch?v=OiokivNIWyo"
     },
     {
@@ -5506,6 +5516,16 @@
       "url": "https://www.youtube.com/shorts/QEaA8xDZq0w"
     },
     {
+      "id": "Coke8zsPXDw",
+      "title": "Ника Моисеева - Три желания",
+      "type": "horizontal",
+      "duration_sec": 188,
+      "published_at": "2026-04-05T10:27:18Z",
+      "views": 335,
+      "likes": 16,
+      "url": "https://www.youtube.com/watch?v=Coke8zsPXDw"
+    },
+    {
       "id": "9BiDh-QZGqM",
       "title": "@nikamoiseeva #казачка #песня #рек #aiart #aivideo #никамоисеева #nikamoiseeva",
       "type": "shorts",
@@ -5514,16 +5534,6 @@
       "views": 334,
       "likes": 15,
       "url": "https://www.youtube.com/shorts/9BiDh-QZGqM"
-    },
-    {
-      "id": "Coke8zsPXDw",
-      "title": "Ника Моисеева - Три желания",
-      "type": "horizontal",
-      "duration_sec": 188,
-      "published_at": "2026-04-05T10:27:18Z",
-      "views": 334,
-      "likes": 16,
-      "url": "https://www.youtube.com/watch?v=Coke8zsPXDw"
     },
     {
       "id": "lkVvSnz64Yk",
@@ -5591,7 +5601,7 @@
       "type": "shorts",
       "duration_sec": 25,
       "published_at": "2026-07-01T06:24:50Z",
-      "views": 311,
+      "views": 312,
       "likes": 19,
       "url": "https://www.youtube.com/shorts/0H2M8wXohuo"
     },
@@ -5631,7 +5641,7 @@
       "type": "horizontal",
       "duration_sec": 217,
       "published_at": "2026-07-21T03:46:11Z",
-      "views": 277,
+      "views": 280,
       "likes": 20,
       "url": "https://www.youtube.com/watch?v=mG7e0lB_MMg"
     },
@@ -5651,7 +5661,7 @@
       "type": "horizontal",
       "duration_sec": 202,
       "published_at": "2026-07-05T06:29:56Z",
-      "views": 274,
+      "views": 275,
       "likes": 10,
       "url": "https://www.youtube.com/watch?v=gDJckHyLhz0"
     },
@@ -5681,7 +5691,7 @@
       "type": "horizontal",
       "duration_sec": 214,
       "published_at": "2026-06-07T12:23:25Z",
-      "views": 266,
+      "views": 267,
       "likes": 21,
       "url": "https://www.youtube.com/watch?v=5ezi8h0DCTw"
     },
@@ -5691,7 +5701,7 @@
       "type": "horizontal",
       "duration_sec": 184,
       "published_at": "2026-08-24T15:01:46Z",
-      "views": 262,
+      "views": 264,
       "likes": 20,
       "url": "https://www.youtube.com/watch?v=xIY8h_NmDT0"
     },
@@ -5701,7 +5711,7 @@
       "type": "horizontal",
       "duration_sec": 191,
       "published_at": "2026-07-01T07:15:11Z",
-      "views": 262,
+      "views": 263,
       "likes": 15,
       "url": "https://www.youtube.com/watch?v=SUVJBTQrySM"
     },
@@ -5731,8 +5741,8 @@
       "type": "shorts",
       "duration_sec": 135,
       "published_at": "2026-07-09T04:00:05Z",
-      "views": 243,
-      "likes": 11,
+      "views": 244,
+      "likes": 12,
       "url": "https://www.youtube.com/shorts/PD8HAAe8LNs"
     },
     {
@@ -5741,7 +5751,7 @@
       "type": "horizontal",
       "duration_sec": 246,
       "published_at": "2026-07-08T05:05:46Z",
-      "views": 237,
+      "views": 239,
       "likes": 9,
       "url": "https://www.youtube.com/watch?v=FbUGeP_nJ1M"
     },
@@ -5751,7 +5761,7 @@
       "type": "shorts",
       "duration_sec": 60,
       "published_at": "2026-11-05T15:14:57Z",
-      "views": 226,
+      "views": 227,
       "likes": 24,
       "url": "https://www.youtube.com/shorts/jT13Wuuo67E"
     },
@@ -5791,8 +5801,8 @@
       "type": "horizontal",
       "duration_sec": 212,
       "published_at": "2026-07-24T04:54:51Z",
-      "views": 210,
-      "likes": 12,
+      "views": 211,
+      "likes": 13,
       "url": "https://www.youtube.com/watch?v=5-1Qx3a9VeI"
     },
     {
@@ -5811,7 +5821,7 @@
       "type": "horizontal",
       "duration_sec": 185,
       "published_at": "2026-04-07T14:00:08Z",
-      "views": 186,
+      "views": 187,
       "likes": 10,
       "url": "https://www.youtube.com/watch?v=4ZihaYs6778"
     },
@@ -5856,6 +5866,16 @@
       "url": "https://www.youtube.com/shorts/ZQj6AetZo1E"
     },
     {
+      "id": "0iHSwhJY54Y",
+      "title": "Ника Моисеева - Вольный ветер (авторская) | @nikamoiseeva ",
+      "type": "shorts",
+      "duration_sec": 157,
+      "published_at": "2026-04-13T16:01:06Z",
+      "views": 159,
+      "likes": 9,
+      "url": "https://www.youtube.com/shorts/0iHSwhJY54Y"
+    },
+    {
       "id": "f0RkS4yEXXs",
       "title": "Ромашка - Белый день; кавер - Ника Моисеева | @nikamoiseeva ",
       "type": "shorts",
@@ -5866,14 +5886,14 @@
       "url": "https://www.youtube.com/shorts/f0RkS4yEXXs"
     },
     {
-      "id": "0iHSwhJY54Y",
-      "title": "Ника Моисеева - Вольный ветер (авторская) | @nikamoiseeva ",
-      "type": "shorts",
-      "duration_sec": 157,
-      "published_at": "2026-04-13T16:01:06Z",
-      "views": 158,
-      "likes": 9,
-      "url": "https://www.youtube.com/shorts/0iHSwhJY54Y"
+      "id": "kMg370cmYS0",
+      "title": "Ирина Понаровская - Рябиновые бусы | кавер - Ника Моисеева | @nikamoiseeva ",
+      "type": "horizontal",
+      "duration_sec": 237,
+      "published_at": "2026-06-13T04:19:30Z",
+      "views": 155,
+      "likes": 13,
+      "url": "https://www.youtube.com/watch?v=kMg370cmYS0"
     },
     {
       "id": "vR1IvaR74b0",
@@ -5884,16 +5904,6 @@
       "views": 154,
       "likes": 22,
       "url": "https://www.youtube.com/shorts/vR1IvaR74b0"
-    },
-    {
-      "id": "kMg370cmYS0",
-      "title": "Ирина Понаровская - Рябиновые бусы | кавер - Ника Моисеева | @nikamoiseeva ",
-      "type": "horizontal",
-      "duration_sec": 237,
-      "published_at": "2026-06-13T04:19:30Z",
-      "views": 154,
-      "likes": 13,
-      "url": "https://www.youtube.com/watch?v=kMg370cmYS0"
     },
     {
       "id": "s6p-bVgW8kg",
@@ -5921,8 +5931,8 @@
       "type": "shorts",
       "duration_sec": 192,
       "published_at": "2026-04-28T11:38:51Z",
-      "views": 147,
-      "likes": 9,
+      "views": 149,
+      "likes": 10,
       "url": "https://www.youtube.com/shorts/5TMkKETCdkE"
     },
     {
@@ -5971,9 +5981,29 @@
       "type": "horizontal",
       "duration_sec": 331,
       "published_at": "2026-04-12T14:27:51Z",
-      "views": 120,
+      "views": 121,
       "likes": 8,
       "url": "https://www.youtube.com/watch?v=ps4S7lU6I7M"
+    },
+    {
+      "id": "iXOTMaMx_WQ",
+      "title": "Ника Моисеева - Генералы песчаных карьеров (кавер) ",
+      "type": "horizontal",
+      "duration_sec": 248,
+      "published_at": "2026-11-01T13:57:29Z",
+      "views": 120,
+      "likes": 9,
+      "url": "https://www.youtube.com/watch?v=iXOTMaMx_WQ"
+    },
+    {
+      "id": "obuy3gWAbdU",
+      "title": "Елена Камбурова - Разлука; Кавер -  Софья Щукина | ‪@sofushkasun  | Песня рейду 🫠",
+      "type": "shorts",
+      "duration_sec": 139,
+      "published_at": "2026-08-30T06:32:01Z",
+      "views": 119,
+      "likes": 9,
+      "url": "https://www.youtube.com/shorts/obuy3gWAbdU"
     },
     {
       "id": "hRd-eHX_aZI",
@@ -5986,26 +6016,6 @@
       "url": "https://www.youtube.com/watch?v=hRd-eHX_aZI"
     },
     {
-      "id": "iXOTMaMx_WQ",
-      "title": "Ника Моисеева - Генералы песчаных карьеров (кавер) ",
-      "type": "horizontal",
-      "duration_sec": 248,
-      "published_at": "2026-11-01T13:57:29Z",
-      "views": 118,
-      "likes": 9,
-      "url": "https://www.youtube.com/watch?v=iXOTMaMx_WQ"
-    },
-    {
-      "id": "obuy3gWAbdU",
-      "title": "Елена Камбурова - Разлука; Кавер -  Софья Щукина | ‪@sofushkasun  | Песня рейду 🫠",
-      "type": "shorts",
-      "duration_sec": 139,
-      "published_at": "2026-08-30T06:32:01Z",
-      "views": 118,
-      "likes": 9,
-      "url": "https://www.youtube.com/shorts/obuy3gWAbdU"
-    },
-    {
       "id": "3MADEnEVQjc",
       "title": "Ника Моисеева - Ласточка (авторская) @nikamoiseeva",
       "type": "shorts",
@@ -6014,6 +6024,16 @@
       "views": 112,
       "likes": 11,
       "url": "https://www.youtube.com/shorts/3MADEnEVQjc"
+    },
+    {
+      "id": "HNFcGK2rJPE",
+      "title": "Ноченька - Тина Кароль | кавер - Ника Моисеева @nikamoiseeva ",
+      "type": "shorts",
+      "duration_sec": 169,
+      "published_at": "2026-05-05T10:33:21Z",
+      "views": 111,
+      "likes": 9,
+      "url": "https://www.youtube.com/shorts/HNFcGK2rJPE"
     },
     {
       "id": "eHVObAA9l3A",
@@ -6026,6 +6046,16 @@
       "url": "https://www.youtube.com/watch?v=eHVObAA9l3A"
     },
     {
+      "id": "he1qduJdKOY",
+      "title": "Ника Моисеева - Брось слова (кавер) | Ориг. исп.: Александр Мелех",
+      "type": "horizontal",
+      "duration_sec": 201,
+      "published_at": "2026-10-28T12:51:05Z",
+      "views": 108,
+      "likes": 10,
+      "url": "https://www.youtube.com/watch?v=he1qduJdKOY"
+    },
+    {
       "id": "9JyrlTwOJ90",
       "title": "\"Казачка\", новый хит Ники Моисеевой, уже доступен на всех музыкальных площадках 🔥@nikamoiseeva",
       "type": "shorts",
@@ -6034,26 +6064,6 @@
       "views": 106,
       "likes": 12,
       "url": "https://www.youtube.com/shorts/9JyrlTwOJ90"
-    },
-    {
-      "id": "he1qduJdKOY",
-      "title": "Ника Моисеева - Брось слова (кавер) | Ориг. исп.: Александр Мелех",
-      "type": "horizontal",
-      "duration_sec": 201,
-      "published_at": "2026-10-28T12:51:05Z",
-      "views": 105,
-      "likes": 10,
-      "url": "https://www.youtube.com/watch?v=he1qduJdKOY"
-    },
-    {
-      "id": "HNFcGK2rJPE",
-      "title": "Ноченька - Тина Кароль | кавер - Ника Моисеева @nikamoiseeva ",
-      "type": "shorts",
-      "duration_sec": 169,
-      "published_at": "2026-05-05T10:33:21Z",
-      "views": 105,
-      "likes": 8,
-      "url": "https://www.youtube.com/shorts/HNFcGK2rJPE"
     },
     {
       "id": "UrBiKPGL2BA",
@@ -6121,7 +6131,7 @@
       "type": "horizontal",
       "duration_sec": 194,
       "published_at": "2026-08-31T07:59:46Z",
-      "views": 92,
+      "views": 93,
       "likes": 5,
       "url": "https://www.youtube.com/watch?v=-lubmvTDqAo"
     },
@@ -6151,8 +6161,8 @@
       "type": "shorts",
       "duration_sec": 157,
       "published_at": "2026-05-20T09:00:06Z",
-      "views": 89,
-      "likes": 7,
+      "views": 90,
+      "likes": 8,
       "url": "https://www.youtube.com/shorts/4IQ5W56ubPo"
     },
     {
@@ -6161,7 +6171,7 @@
       "type": "shorts",
       "duration_sec": 229,
       "published_at": "2026-04-21T13:40:56Z",
-      "views": 87,
+      "views": 88,
       "likes": 6,
       "url": "https://www.youtube.com/shorts/mzI38rR5P4Q"
     },
@@ -6176,6 +6186,16 @@
       "url": "https://www.youtube.com/watch?v=2b-SHtIfxSI"
     },
     {
+      "id": "EX4JfK8Bo0E",
+      "title": "Спела на стриме, Ника Моисеева - Мама Люба (кавер, полная версия) ",
+      "type": "horizontal",
+      "duration_sec": 247,
+      "published_at": "2026-10-30T13:48:01Z",
+      "views": 86,
+      "likes": 8,
+      "url": "https://www.youtube.com/watch?v=EX4JfK8Bo0E"
+    },
+    {
       "id": "-xOdf7WGrpo",
       "title": "Lissa, колдовство на донаты )) #lissa #elissa #twlissa #shorts",
       "type": "shorts",
@@ -6184,16 +6204,6 @@
       "views": 86,
       "likes": 1,
       "url": "https://www.youtube.com/shorts/-xOdf7WGrpo"
-    },
-    {
-      "id": "EX4JfK8Bo0E",
-      "title": "Спела на стриме, Ника Моисеева - Мама Люба (кавер, полная версия) ",
-      "type": "horizontal",
-      "duration_sec": 247,
-      "published_at": "2026-10-30T13:48:01Z",
-      "views": 85,
-      "likes": 8,
-      "url": "https://www.youtube.com/watch?v=EX4JfK8Bo0E"
     },
     {
       "id": "XAfCnJYBA1o",
@@ -6241,9 +6251,19 @@
       "type": "shorts",
       "duration_sec": 133,
       "published_at": "2026-10-27T12:27:27Z",
-      "views": 79,
-      "likes": 5,
+      "views": 80,
+      "likes": 6,
       "url": "https://www.youtube.com/shorts/xu54ZOUXUBE"
+    },
+    {
+      "id": "vq7ulilGaCU",
+      "title": "Ника Моисеева - То не вечер ветку клонит («Лучина») | Кавер ",
+      "type": "horizontal",
+      "duration_sec": 249,
+      "published_at": "2026-11-23T06:21:53Z",
+      "views": 76,
+      "likes": 12,
+      "url": "https://www.youtube.com/watch?v=vq7ulilGaCU"
     },
     {
       "id": "Dcz6s_lEUrk",
@@ -6254,16 +6274,6 @@
       "views": 76,
       "likes": 3,
       "url": "https://www.youtube.com/shorts/Dcz6s_lEUrk"
-    },
-    {
-      "id": "vq7ulilGaCU",
-      "title": "Ника Моисеева - То не вечер ветку клонит («Лучина») | Кавер ",
-      "type": "horizontal",
-      "duration_sec": 249,
-      "published_at": "2026-11-23T06:21:53Z",
-      "views": 72,
-      "likes": 11,
-      "url": "https://www.youtube.com/watch?v=vq7ulilGaCU"
     },
     {
       "id": "bNfBgRUN3NM",
@@ -6306,6 +6316,16 @@
       "url": "https://www.youtube.com/watch?v=vALcOo0Pt8w"
     },
     {
+      "id": "qJQfk7gSZt4",
+      "title": "«Когда цвели сады» - Анна Герман | Кавер - Ника Моисеева @nikamoiseeva ",
+      "type": "shorts",
+      "duration_sec": 227,
+      "published_at": "2026-08-10T04:03:16Z",
+      "views": 70,
+      "likes": 6,
+      "url": "https://www.youtube.com/shorts/qJQfk7gSZt4"
+    },
+    {
       "id": "PoQ77Endq2U",
       "title": "Казачка - Ника Моисеева @nikamoiseeva #авторскаяпесня #никамоисеева #казачка #aivideo",
       "type": "shorts",
@@ -6316,14 +6336,14 @@
       "url": "https://www.youtube.com/shorts/PoQ77Endq2U"
     },
     {
-      "id": "qJQfk7gSZt4",
-      "title": "«Когда цвели сады» - Анна Герман | Кавер - Ника Моисеева @nikamoiseeva ",
-      "type": "shorts",
-      "duration_sec": 227,
-      "published_at": "2026-08-10T04:03:16Z",
+      "id": "myrUcBpsqdU",
+      "title": "Игорь Тальков - Чистые пруды | Кавер: Ника Моисеева @nikamoiseeva ",
+      "type": "horizontal",
+      "duration_sec": 340,
+      "published_at": "2026-11-21T06:07:47Z",
       "views": 69,
-      "likes": 6,
-      "url": "https://www.youtube.com/shorts/qJQfk7gSZt4"
+      "likes": 10,
+      "url": "https://www.youtube.com/watch?v=myrUcBpsqdU"
     },
     {
       "id": "x9yPKRlFAlc",
@@ -6361,7 +6381,7 @@
       "type": "horizontal",
       "duration_sec": 333,
       "published_at": "2026-11-09T05:39:19Z",
-      "views": 65,
+      "views": 66,
       "likes": 4,
       "url": "https://www.youtube.com/watch?v=YnCIMT90u9w"
     },
@@ -6386,24 +6406,24 @@
       "url": "https://www.youtube.com/watch?v=u5KTzGpfHTQ"
     },
     {
-      "id": "CRADCHpKa24",
-      "title": "ВИА Гра - Антигейша | Кавер - Ника Моисеева @nikamoiseeva ",
-      "type": "horizontal",
-      "duration_sec": 212,
-      "published_at": "2026-10-19T05:46:56Z",
-      "views": 62,
-      "likes": 5,
-      "url": "https://www.youtube.com/watch?v=CRADCHpKa24"
-    },
-    {
       "id": "Otyp_jGJZYw",
       "title": "Ника Моисеева @nikamoiseeva  - Ищу тебя (кавер) | Из к/ф «31 июня»",
       "type": "horizontal",
       "duration_sec": 226,
       "published_at": "2026-11-04T13:02:17Z",
-      "views": 61,
+      "views": 64,
       "likes": 7,
       "url": "https://www.youtube.com/watch?v=Otyp_jGJZYw"
+    },
+    {
+      "id": "CRADCHpKa24",
+      "title": "ВИА Гра - Антигейша | Кавер - Ника Моисеева @nikamoiseeva ",
+      "type": "horizontal",
+      "duration_sec": 212,
+      "published_at": "2026-10-19T05:46:56Z",
+      "views": 63,
+      "likes": 5,
+      "url": "https://www.youtube.com/watch?v=CRADCHpKa24"
     },
     {
       "id": "fz27i2FjIGU",
@@ -6414,6 +6434,16 @@
       "views": 61,
       "likes": 6,
       "url": "https://www.youtube.com/watch?v=fz27i2FjIGU"
+    },
+    {
+      "id": "lsIkzrSOxF4",
+      "title": "Reflex - Танцы | Кавер - Ника Моисеева @nikamoiseeva ",
+      "type": "horizontal",
+      "duration_sec": 197,
+      "published_at": "2026-11-06T05:54:33Z",
+      "views": 58,
+      "likes": 7,
+      "url": "https://www.youtube.com/watch?v=lsIkzrSOxF4"
     },
     {
       "id": "8g4Z7aKi88w",
@@ -6436,24 +6466,14 @@
       "url": "https://www.youtube.com/shorts/5SSykXDvemc"
     },
     {
-      "id": "lsIkzrSOxF4",
-      "title": "Reflex - Танцы | Кавер - Ника Моисеева @nikamoiseeva ",
+      "id": "jzbkQVV4fw4",
+      "title": "Арсен Шахунц - Девочка, стопКавер: Ника Моисеева #никамоисеева #девочкастоп #кавер #рек #музыка",
       "type": "horizontal",
-      "duration_sec": 197,
-      "published_at": "2026-11-06T05:54:33Z",
-      "views": 57,
-      "likes": 7,
-      "url": "https://www.youtube.com/watch?v=lsIkzrSOxF4"
-    },
-    {
-      "id": "myrUcBpsqdU",
-      "title": "Игорь Тальков - Чистые пруды | Кавер: Ника Моисеева @nikamoiseeva ",
-      "type": "horizontal",
-      "duration_sec": 340,
-      "published_at": "2026-11-21T06:07:47Z",
-      "views": 56,
-      "likes": 9,
-      "url": "https://www.youtube.com/watch?v=myrUcBpsqdU"
+      "duration_sec": 225,
+      "published_at": "2026-11-15T07:46:26Z",
+      "views": 54,
+      "likes": 12,
+      "url": "https://www.youtube.com/watch?v=jzbkQVV4fw4"
     },
     {
       "id": "kIbGTs4_WSM",
@@ -6464,16 +6484,6 @@
       "views": 54,
       "likes": 4,
       "url": "https://www.youtube.com/shorts/kIbGTs4_WSM"
-    },
-    {
-      "id": "jzbkQVV4fw4",
-      "title": "Арсен Шахунц - Девочка, стопКавер: Ника Моисеева #никамоисеева #девочкастоп #кавер #рек #музыка",
-      "type": "horizontal",
-      "duration_sec": 225,
-      "published_at": "2026-11-15T07:46:26Z",
-      "views": 50,
-      "likes": 11,
-      "url": "https://www.youtube.com/watch?v=jzbkQVV4fw4"
     },
     {
       "id": "__2pnk-yxO4",
@@ -6501,7 +6511,7 @@
       "type": "horizontal",
       "duration_sec": 288,
       "published_at": "2026-05-01T07:05:15Z",
-      "views": 44,
+      "views": 45,
       "likes": 9,
       "url": "https://www.youtube.com/watch?v=3uJESRjQhH0"
     },
@@ -6511,7 +6521,7 @@
       "type": "horizontal",
       "duration_sec": 354,
       "published_at": "2026-06-21T04:56:41Z",
-      "views": 41,
+      "views": 42,
       "likes": 6,
       "url": "https://www.youtube.com/watch?v=5Vaaso2_XLc"
     },
@@ -6584,16 +6594,6 @@
       "views": 20,
       "likes": 3,
       "url": "https://www.youtube.com/shorts/J7wtaoVgwF0"
-    },
-    {
-      "id": "fa7S8Gy5vFc",
-      "title": "Какой прекрасный текст ❤️ А вы знали, о чём поётся в песне? #felicità",
-      "type": "shorts",
-      "duration_sec": 44,
-      "published_at": "2026-11-26T15:41:33Z",
-      "views": 3,
-      "likes": 1,
-      "url": "https://www.youtube.com/shorts/fa7S8Gy5vFc"
     },
     {
       "id": "eL0ckzX-Ync",
