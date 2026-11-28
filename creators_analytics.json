@@ -8,13 +8,13 @@
         "channel_id": "UCDBymABVm4XkDakCPIE3RjA",
         "channel_url": "https://www.youtube.com/@александро-159",
         "avatar_url": "https://yt3.ggpht.com/eO2MxcXJSb7C6TXU2I4h7eRCHEEfHqKSBqeIBGQwPAB_fR0jVQY5F3mI8CKx7vzIUDz2Ofrcndg=s800-c-k-c0x00ffffff-no-rj",
-        "total_videos": 187,
-        "shorts_count": 187,
+        "total_videos": 191,
+        "shorts_count": 191,
         "horizontal_count": 0,
-        "total_views": 219468,
-        "total_likes": 4625,
-        "shorts_views": 219468,
-        "shorts_likes": 4625,
+        "total_views": 220505,
+        "total_likes": 4640,
+        "shorts_views": 220505,
+        "shorts_likes": 4640,
         "horizontal_views": 0,
         "horizontal_likes": 0
       },
@@ -35,7 +35,7 @@
           "type": "shorts",
           "duration_sec": 35,
           "published_at": "2026-06-29T19:15:39Z",
-          "views": 3895,
+          "views": 3898,
           "likes": 158,
           "url": "https://www.youtube.com/shorts/rA1TkdT2geI"
         },
@@ -45,7 +45,7 @@
           "type": "shorts",
           "duration_sec": 25,
           "published_at": "2026-05-28T03:15:01Z",
-          "views": 2666,
+          "views": 2669,
           "likes": 100,
           "url": "https://www.youtube.com/shorts/B9UyJuSMNjM"
         },
@@ -75,7 +75,7 @@
           "type": "shorts",
           "duration_sec": 25,
           "published_at": "2026-05-27T03:30:03Z",
-          "views": 2450,
+          "views": 2451,
           "likes": 63,
           "url": "https://www.youtube.com/shorts/kI4LDb4lgFc"
         },
@@ -115,7 +115,7 @@
           "type": "shorts",
           "duration_sec": 57,
           "published_at": "2026-07-20T18:31:37Z",
-          "views": 2051,
+          "views": 2053,
           "likes": 44,
           "url": "https://www.youtube.com/shorts/tHCdky3sJ-s"
         },
@@ -235,7 +235,7 @@
           "type": "shorts",
           "duration_sec": 38,
           "published_at": "2026-11-03T01:00:13Z",
-          "views": 1686,
+          "views": 1690,
           "likes": 44,
           "url": "https://www.youtube.com/shorts/ivtfu0u_hVw"
         },
@@ -295,8 +295,8 @@
           "type": "shorts",
           "duration_sec": 36,
           "published_at": "2026-08-25T01:00:33Z",
-          "views": 1512,
-          "likes": 42,
+          "views": 1515,
+          "likes": 43,
           "url": "https://www.youtube.com/shorts/fw0m6ixvSDU"
         },
         {
@@ -305,7 +305,7 @@
           "type": "shorts",
           "duration_sec": 43,
           "published_at": "2026-09-11T01:00:16Z",
-          "views": 1497,
+          "views": 1498,
           "likes": 49,
           "url": "https://www.youtube.com/shorts/ObJAUu_yKSg"
         },
@@ -345,8 +345,8 @@
           "type": "shorts",
           "duration_sec": 37,
           "published_at": "2026-11-10T01:00:21Z",
-          "views": 1392,
-          "likes": 29,
+          "views": 1393,
+          "likes": 30,
           "url": "https://www.youtube.com/shorts/ugsDXneOXtI"
         },
         {
@@ -370,6 +370,16 @@
           "url": "https://www.youtube.com/shorts/b0r7yAPR4Lo"
         },
         {
+          "id": "3yM7ocAJLvg",
+          "title": "Ника Моисеева @nikamoiseeva #никамоисеева #ника #музыка #кавер #music #cover #shorts #песни",
+          "type": "shorts",
+          "duration_sec": 43,
+          "published_at": "2026-11-20T17:56:36Z",
+          "views": 1370,
+          "likes": 35,
+          "url": "https://www.youtube.com/shorts/3yM7ocAJLvg"
+        },
+        {
           "id": "yjAwg16ItZg",
           "title": "Ника Моисеева - Ласточка @nikamoiseeva  #никамоисеева #ника #music  #песни #ласточка #авторская",
           "type": "shorts",
@@ -378,16 +388,6 @@
           "views": 1370,
           "likes": 47,
           "url": "https://www.youtube.com/shorts/yjAwg16ItZg"
-        },
-        {
-          "id": "3yM7ocAJLvg",
-          "title": "Ника Моисеева @nikamoiseeva #никамоисеева #ника #музыка #кавер #music #cover #shorts #песни",
-          "type": "shorts",
-          "duration_sec": 43,
-          "published_at": "2026-11-20T17:56:36Z",
-          "views": 1369,
-          "likes": 35,
-          "url": "https://www.youtube.com/shorts/3yM7ocAJLvg"
         },
         {
           "id": "EusCiWLVNAg",
@@ -495,7 +495,7 @@
           "type": "shorts",
           "duration_sec": 17,
           "published_at": "2026-10-13T03:09:58Z",
-          "views": 1302,
+          "views": 1319,
           "likes": 25,
           "url": "https://www.youtube.com/shorts/SPRscVWl-r8"
         },
@@ -520,6 +520,16 @@
           "url": "https://www.youtube.com/shorts/ddngPYS1lxA"
         },
         {
+          "id": "JlN9_NprIzk",
+          "title": "Ника Моисеева - Парень удалой @nikamoiseeva  #никамоисеева #ника #пареньудалой #авторскаяпесня",
+          "type": "shorts",
+          "duration_sec": 14,
+          "published_at": "2026-10-15T04:38:35Z",
+          "views": 1290,
+          "likes": 46,
+          "url": "https://www.youtube.com/shorts/JlN9_NprIzk"
+        },
+        {
           "id": "Ae4NKpDSeIY",
           "title": "Ника Моисеева - Солнце Монако @nikamoiseeva #никамоисеева #ника #музыка #кавер #music #cover",
           "type": "shorts",
@@ -538,16 +548,6 @@
           "views": 1287,
           "likes": 29,
           "url": "https://www.youtube.com/shorts/lPeCfkkb9t4"
-        },
-        {
-          "id": "JlN9_NprIzk",
-          "title": "Ника Моисеева - Парень удалой @nikamoiseeva  #никамоисеева #ника #пареньудалой #авторскаяпесня",
-          "type": "shorts",
-          "duration_sec": 14,
-          "published_at": "2026-10-15T04:38:35Z",
-          "views": 1285,
-          "likes": 46,
-          "url": "https://www.youtube.com/shorts/JlN9_NprIzk"
         },
         {
           "id": "o6sciFz_Hpk",
@@ -575,7 +575,7 @@
           "type": "shorts",
           "duration_sec": 31,
           "published_at": "2026-09-29T01:00:10Z",
-          "views": 1261,
+          "views": 1263,
           "likes": 41,
           "url": "https://www.youtube.com/shorts/4c5LG1IZhkE"
         },
@@ -650,6 +650,16 @@
           "url": "https://www.youtube.com/shorts/phGcDOc5GWw"
         },
         {
+          "id": "LVxXQdVBXsU",
+          "title": "Ника Моисеева - Давай, дружок, на посошок @nikamoiseeva #никамоисеева #ника #music #cover",
+          "type": "shorts",
+          "duration_sec": 36,
+          "published_at": "2026-11-25T01:00:00Z",
+          "views": 1217,
+          "likes": 26,
+          "url": "https://www.youtube.com/shorts/LVxXQdVBXsU"
+        },
+        {
           "id": "ZJmfh-xFB_I",
           "title": "Ника Моисеева - Казачка @nikamoiseeva  #никамоисеева #ника #music #казачка #авторская #песни",
           "type": "shorts",
@@ -688,16 +698,6 @@
           "views": 1211,
           "likes": 11,
           "url": "https://www.youtube.com/shorts/O-R2WgOwLz0"
-        },
-        {
-          "id": "LVxXQdVBXsU",
-          "title": "Ника Моисеева - Давай, дружок, на посошок @nikamoiseeva #никамоисеева #ника #music #cover",
-          "type": "shorts",
-          "duration_sec": 36,
-          "published_at": "2026-11-25T01:00:00Z",
-          "views": 1206,
-          "likes": 25,
-          "url": "https://www.youtube.com/shorts/LVxXQdVBXsU"
         },
         {
           "id": "cg-QLwEaRlA",
@@ -760,6 +760,16 @@
           "url": "https://www.youtube.com/shorts/D-CHx5B2f80"
         },
         {
+          "id": "-eZveSweHik",
+          "title": "Ника Моисеева - Парень удалой @nikamoiseeva  #никамоисеева #ника #пареньудалой #авторскаяпесня",
+          "type": "shorts",
+          "duration_sec": 16,
+          "published_at": "2026-10-14T05:40:45Z",
+          "views": 1184,
+          "likes": 37,
+          "url": "https://www.youtube.com/shorts/-eZveSweHik"
+        },
+        {
           "id": "nWZGwIpMg9I",
           "title": "Ника Моисеева - Парень удалой @nikamoiseeva  #никамоисеева #ника #пареньудалой #авторскаяпесня",
           "type": "shorts",
@@ -780,14 +790,14 @@
           "url": "https://www.youtube.com/shorts/GBVUFrSoB3k"
         },
         {
-          "id": "-eZveSweHik",
+          "id": "Uz3UOecAxRw",
           "title": "Ника Моисеева - Парень удалой @nikamoiseeva  #никамоисеева #ника #пареньудалой #авторскаяпесня",
           "type": "shorts",
-          "duration_sec": 16,
-          "published_at": "2026-10-14T05:40:45Z",
-          "views": 1182,
-          "likes": 37,
-          "url": "https://www.youtube.com/shorts/-eZveSweHik"
+          "duration_sec": 15,
+          "published_at": "2026-10-02T03:44:53Z",
+          "views": 1177,
+          "likes": 11,
+          "url": "https://www.youtube.com/shorts/Uz3UOecAxRw"
         },
         {
           "id": "uXe-HpXnhuk",
@@ -798,16 +808,6 @@
           "views": 1174,
           "likes": 14,
           "url": "https://www.youtube.com/shorts/uXe-HpXnhuk"
-        },
-        {
-          "id": "Uz3UOecAxRw",
-          "title": "Ника Моисеева - Парень удалой @nikamoiseeva  #никамоисеева #ника #пареньудалой #авторскаяпесня",
-          "type": "shorts",
-          "duration_sec": 15,
-          "published_at": "2026-10-02T03:44:53Z",
-          "views": 1174,
-          "likes": 11,
-          "url": "https://www.youtube.com/shorts/Uz3UOecAxRw"
         },
         {
           "id": "cXRTWDdilAg",
@@ -960,6 +960,16 @@
           "url": "https://www.youtube.com/shorts/r-dCUkK6fHc"
         },
         {
+          "id": "KedGlbtEyOo",
+          "title": "Ника Моисеева - Парень удалой @nikamoiseeva  #никамоисеева #ника #пареньудалой #авторскаяпесня",
+          "type": "shorts",
+          "duration_sec": 25,
+          "published_at": "2026-10-24T05:48:23Z",
+          "views": 1099,
+          "likes": 20,
+          "url": "https://www.youtube.com/shorts/KedGlbtEyOo"
+        },
+        {
           "id": "9CMTTLTMtzE",
           "title": "Ника Моисеева - Казачка @nikamoiseeva  #никамоисеева #ника #music #казачка #авторскаяпесня",
           "type": "shorts",
@@ -968,16 +978,6 @@
           "views": 1094,
           "likes": 19,
           "url": "https://www.youtube.com/shorts/9CMTTLTMtzE"
-        },
-        {
-          "id": "KedGlbtEyOo",
-          "title": "Ника Моисеева - Парень удалой @nikamoiseeva  #никамоисеева #ника #пареньудалой #авторскаяпесня",
-          "type": "shorts",
-          "duration_sec": 25,
-          "published_at": "2026-10-24T05:48:23Z",
-          "views": 1091,
-          "likes": 20,
-          "url": "https://www.youtube.com/shorts/KedGlbtEyOo"
         },
         {
           "id": "gE43NaT1dWM",
@@ -1030,6 +1030,16 @@
           "url": "https://www.youtube.com/shorts/KBp0cVCCKQo"
         },
         {
+          "id": "fZuIP7klogs",
+          "title": "Ника Моисеева - Одинокая гармонь @nikamoiseeva #никамоисеева #ника #музыка #кавер #music #cover",
+          "type": "shorts",
+          "duration_sec": 38,
+          "published_at": "2026-06-23T02:00:34Z",
+          "views": 1065,
+          "likes": 40,
+          "url": "https://www.youtube.com/shorts/fZuIP7klogs"
+        },
+        {
           "id": "oj2RFo1wPro",
           "title": "Ника Моисеева - Парень удалой @nikamoiseeva  #никамоисеева #ника #пареньудалой #авторскаяпесня",
           "type": "shorts",
@@ -1038,16 +1048,6 @@
           "views": 1064,
           "likes": 22,
           "url": "https://www.youtube.com/shorts/oj2RFo1wPro"
-        },
-        {
-          "id": "fZuIP7klogs",
-          "title": "Ника Моисеева - Одинокая гармонь @nikamoiseeva #никамоисеева #ника #музыка #кавер #music #cover",
-          "type": "shorts",
-          "duration_sec": 38,
-          "published_at": "2026-06-23T02:00:34Z",
-          "views": 1063,
-          "likes": 40,
-          "url": "https://www.youtube.com/shorts/fZuIP7klogs"
         },
         {
           "id": "6FnRFtX0Igg",
@@ -1095,7 +1095,7 @@
           "type": "shorts",
           "duration_sec": 25,
           "published_at": "2026-10-29T01:00:27Z",
-          "views": 1038,
+          "views": 1040,
           "likes": 13,
           "url": "https://www.youtube.com/shorts/Z2eDUBk7tjY"
         },
@@ -1735,7 +1735,7 @@
           "type": "shorts",
           "duration_sec": 25,
           "published_at": "2026-10-27T01:00:30Z",
-          "views": 567,
+          "views": 570,
           "likes": 9,
           "url": "https://www.youtube.com/shorts/dZrxAMz4TgU"
         },
@@ -1790,6 +1790,16 @@
           "url": "https://www.youtube.com/shorts/6rl9RxuboeE"
         },
         {
+          "id": "dsPcjtKDvVI",
+          "title": "Ника Моисеева @nikamoiseeva  #никамоисеева #ника #авторскаяпесня #песни #народное",
+          "type": "shorts",
+          "duration_sec": 10,
+          "published_at": "2026-11-27T17:46:47Z",
+          "views": 278,
+          "likes": 2,
+          "url": "https://www.youtube.com/shorts/dsPcjtKDvVI"
+        },
+        {
           "id": "1PgXclXQz3s",
           "title": "Ника Моисеева - Парень удалой @nikamoiseeva  #никамоисеева #ника #пареньудалой #авторскаяпесня",
           "type": "shorts",
@@ -1798,6 +1808,36 @@
           "views": 274,
           "likes": 7,
           "url": "https://www.youtube.com/shorts/1PgXclXQz3s"
+        },
+        {
+          "id": "qKJvRpqXcd4",
+          "title": "Ника Моисеева @nikamoiseeva  #никамоисеева #ника #авторскаяпесня #песни #народное",
+          "type": "shorts",
+          "duration_sec": 10,
+          "published_at": "2026-11-27T17:45:40Z",
+          "views": 233,
+          "likes": 3,
+          "url": "https://www.youtube.com/shorts/qKJvRpqXcd4"
+        },
+        {
+          "id": "vsc2DeiW1l8",
+          "title": "Ника Моисеева  @nikamoiseeva #никамоисеева #ника #авторскаяпесня #песни #народное",
+          "type": "shorts",
+          "duration_sec": 10,
+          "published_at": "2026-11-28T06:01:52Z",
+          "views": 231,
+          "likes": 5,
+          "url": "https://www.youtube.com/shorts/vsc2DeiW1l8"
+        },
+        {
+          "id": "xvY8oC6eVVI",
+          "title": "Ника Моисеева @nikamoiseeva  #никамоисеева #ника #авторскаяпесня #песни #народное",
+          "type": "shorts",
+          "duration_sec": 10,
+          "published_at": "2026-11-28T06:00:23Z",
+          "views": 219,
+          "likes": 2,
+          "url": "https://www.youtube.com/shorts/xvY8oC6eVVI"
         },
         {
           "id": "DFY2IjP2gYw",
@@ -1825,7 +1865,7 @@
           "type": "shorts",
           "duration_sec": 15,
           "published_at": "2026-09-30T18:41:18Z",
-          "views": 111,
+          "views": 113,
           "likes": 13,
           "url": "https://www.youtube.com/shorts/sxAe15XTzTY"
         },
@@ -1902,10 +1942,10 @@
         "total_videos": 200,
         "shorts_count": 200,
         "horizontal_count": 0,
-        "total_views": 139756,
-        "total_likes": 2782,
-        "shorts_views": 139756,
-        "shorts_likes": 2782,
+        "total_views": 141483,
+        "total_likes": 2837,
+        "shorts_views": 141483,
+        "shorts_likes": 2837,
         "horizontal_views": 0,
         "horizontal_likes": 0
       },
@@ -1916,8 +1956,8 @@
           "type": "shorts",
           "duration_sec": 44,
           "published_at": "2026-11-25T17:16:19Z",
-          "views": 7164,
-          "likes": 233,
+          "views": 9373,
+          "likes": 288,
           "url": "https://www.youtube.com/shorts/PAh0UQ_GmjA"
         },
         {
@@ -1936,8 +1976,8 @@
           "type": "shorts",
           "duration_sec": 46,
           "published_at": "2026-11-23T17:11:52Z",
-          "views": 4300,
-          "likes": 154,
+          "views": 4441,
+          "likes": 159,
           "url": "https://www.youtube.com/shorts/QzWqopDLbGQ"
         },
         {
@@ -1966,7 +2006,7 @@
           "type": "shorts",
           "duration_sec": 15,
           "published_at": "2026-11-06T10:02:50Z",
-          "views": 2069,
+          "views": 2071,
           "likes": 34,
           "url": "https://www.youtube.com/shorts/6Uj7e8Wp_yE"
         },
@@ -1976,7 +2016,7 @@
           "type": "shorts",
           "duration_sec": 31,
           "published_at": "2026-09-07T17:51:54Z",
-          "views": 1888,
+          "views": 1889,
           "likes": 26,
           "url": "https://www.youtube.com/shorts/kb0Bl0mNuUU"
         },
@@ -2006,19 +2046,9 @@
           "type": "shorts",
           "duration_sec": 45,
           "published_at": "2026-11-18T17:20:32Z",
-          "views": 1577,
+          "views": 1581,
           "likes": 41,
           "url": "https://www.youtube.com/shorts/dkdgdwEkQ3c"
-        },
-        {
-          "id": "t10E2L1XyKY",
-          "title": "# #никамоисеева #казачка @nikamoiseeva",
-          "type": "shorts",
-          "duration_sec": 13,
-          "published_at": "2026-07-12T13:16:39Z",
-          "views": 1574,
-          "likes": 10,
-          "url": "https://www.youtube.com/shorts/t10E2L1XyKY"
         },
         {
           "id": "thnjjsJJO4I",
@@ -2036,8 +2066,8 @@
           "type": "shorts",
           "duration_sec": 43,
           "published_at": "2026-11-20T18:42:33Z",
-          "views": 1479,
-          "likes": 26,
+          "views": 1482,
+          "likes": 27,
           "url": "https://www.youtube.com/shorts/PRQpza-eQ6M"
         },
         {
@@ -2046,7 +2076,7 @@
           "type": "shorts",
           "duration_sec": 17,
           "published_at": "2026-11-05T18:54:50Z",
-          "views": 1448,
+          "views": 1453,
           "likes": 33,
           "url": "https://www.youtube.com/shorts/eizQ1q1Zh2k"
         },
@@ -2056,7 +2086,7 @@
           "type": "shorts",
           "duration_sec": 44,
           "published_at": "2026-10-10T17:24:28Z",
-          "views": 1442,
+          "views": 1443,
           "likes": 24,
           "url": "https://www.youtube.com/shorts/XoQ-x-4ByHo"
         },
@@ -2066,7 +2096,7 @@
           "type": "shorts",
           "duration_sec": 24,
           "published_at": "2026-10-24T09:37:50Z",
-          "views": 1427,
+          "views": 1431,
           "likes": 37,
           "url": "https://www.youtube.com/shorts/5orG68AnZIM"
         },
@@ -2106,7 +2136,7 @@
           "type": "shorts",
           "duration_sec": 17,
           "published_at": "2026-10-13T13:21:46Z",
-          "views": 1343,
+          "views": 1344,
           "likes": 13,
           "url": "https://www.youtube.com/shorts/5TsRZCdNxU8"
         },
@@ -2116,7 +2146,7 @@
           "type": "shorts",
           "duration_sec": 17,
           "published_at": "2026-10-10T10:34:56Z",
-          "views": 1342,
+          "views": 1343,
           "likes": 12,
           "url": "https://www.youtube.com/shorts/ejXVap1O_Us"
         },
@@ -2131,6 +2161,16 @@
           "url": "https://www.youtube.com/shorts/oTTKqP6w_Fg"
         },
         {
+          "id": "aaQZ1HNbsqc",
+          "title": "@nikamoiseeva #никамоисеева #пареньудалой",
+          "type": "shorts",
+          "duration_sec": 16,
+          "published_at": "2026-11-04T18:36:48Z",
+          "views": 1333,
+          "likes": 22,
+          "url": "https://www.youtube.com/shorts/aaQZ1HNbsqc"
+        },
+        {
           "id": "RbRFMDYxNNA",
           "title": "@nikamoiseeva #никамоисеева #пареньудалой",
           "type": "shorts",
@@ -2139,16 +2179,6 @@
           "views": 1332,
           "likes": 32,
           "url": "https://www.youtube.com/shorts/RbRFMDYxNNA"
-        },
-        {
-          "id": "aaQZ1HNbsqc",
-          "title": "@nikamoiseeva #никамоисеева #пареньудалой",
-          "type": "shorts",
-          "duration_sec": 16,
-          "published_at": "2026-11-04T18:36:48Z",
-          "views": 1331,
-          "likes": 22,
-          "url": "https://www.youtube.com/shorts/aaQZ1HNbsqc"
         },
         {
           "id": "2EBVxACNMtE",
@@ -2161,6 +2191,16 @@
           "url": "https://www.youtube.com/shorts/2EBVxACNMtE"
         },
         {
+          "id": "a9tDmXS4AcI",
+          "title": "@nikamoiseeva #никамоисеева #пареньудалой",
+          "type": "shorts",
+          "duration_sec": 25,
+          "published_at": "2026-10-23T11:18:14Z",
+          "views": 1306,
+          "likes": 33,
+          "url": "https://www.youtube.com/shorts/a9tDmXS4AcI"
+        },
+        {
           "id": "7DnALJ7oObo",
           "title": "@nikamoiseeva #никамоисеева #казачка #приколы #еда",
           "type": "shorts",
@@ -2171,22 +2211,12 @@
           "url": "https://www.youtube.com/shorts/7DnALJ7oObo"
         },
         {
-          "id": "a9tDmXS4AcI",
-          "title": "@nikamoiseeva #никамоисеева #пареньудалой",
-          "type": "shorts",
-          "duration_sec": 25,
-          "published_at": "2026-10-23T11:18:14Z",
-          "views": 1301,
-          "likes": 32,
-          "url": "https://www.youtube.com/shorts/a9tDmXS4AcI"
-        },
-        {
           "id": "ZnnE8uhPtMY",
           "title": "@nikamoiseeva #никамоисеева #coversong #imblue",
           "type": "shorts",
           "duration_sec": 50,
           "published_at": "2026-09-09T17:30:11Z",
-          "views": 1292,
+          "views": 1293,
           "likes": 10,
           "url": "https://www.youtube.com/shorts/ZnnE8uhPtMY"
         },
@@ -2206,7 +2236,7 @@
           "type": "shorts",
           "duration_sec": 35,
           "published_at": "2026-11-09T17:29:36Z",
-          "views": 1273,
+          "views": 1274,
           "likes": 37,
           "url": "https://www.youtube.com/shorts/eI2TUbtdJDg"
         },
@@ -2241,6 +2271,16 @@
           "url": "https://www.youtube.com/shorts/P-FuXjb1-58"
         },
         {
+          "id": "rPtkRdfZUu8",
+          "title": "@nikamoiseeva #никамоисеева #пареньудалой",
+          "type": "shorts",
+          "duration_sec": 17,
+          "published_at": "2026-10-30T15:39:34Z",
+          "views": 1245,
+          "likes": 21,
+          "url": "https://www.youtube.com/shorts/rPtkRdfZUu8"
+        },
+        {
           "id": "W0ho7aD0Mwo",
           "title": "@nikamoiseeva #никамоисеева #пареньудалой",
           "type": "shorts",
@@ -2249,16 +2289,6 @@
           "views": 1245,
           "likes": 14,
           "url": "https://www.youtube.com/shorts/W0ho7aD0Mwo"
-        },
-        {
-          "id": "rPtkRdfZUu8",
-          "title": "@nikamoiseeva #никамоисеева #пареньудалой",
-          "type": "shorts",
-          "duration_sec": 17,
-          "published_at": "2026-10-30T15:39:34Z",
-          "views": 1243,
-          "likes": 21,
-          "url": "https://www.youtube.com/shorts/rPtkRdfZUu8"
         },
         {
           "id": "rj_4lcPkOnU",
@@ -2271,6 +2301,16 @@
           "url": "https://www.youtube.com/shorts/rj_4lcPkOnU"
         },
         {
+          "id": "HrebU1KAdVk",
+          "title": "@nikamoiseeva #никамоисеева #пареньудалой",
+          "type": "shorts",
+          "duration_sec": 17,
+          "published_at": "2026-11-05T17:35:06Z",
+          "views": 1237,
+          "likes": 22,
+          "url": "https://www.youtube.com/shorts/HrebU1KAdVk"
+        },
+        {
           "id": "2nQGTZ5G2xw",
           "title": "@nikamoiseeva #никамоисеева #пареньудалой",
           "type": "shorts",
@@ -2279,16 +2319,6 @@
           "views": 1237,
           "likes": 19,
           "url": "https://www.youtube.com/shorts/2nQGTZ5G2xw"
-        },
-        {
-          "id": "HrebU1KAdVk",
-          "title": "@nikamoiseeva #никамоисеева #пареньудалой",
-          "type": "shorts",
-          "duration_sec": 17,
-          "published_at": "2026-11-05T17:35:06Z",
-          "views": 1235,
-          "likes": 22,
-          "url": "https://www.youtube.com/shorts/HrebU1KAdVk"
         },
         {
           "id": "N2r7M5WR5hs",
@@ -2301,6 +2331,16 @@
           "url": "https://www.youtube.com/shorts/N2r7M5WR5hs"
         },
         {
+          "id": "0BrhwwO_ymI",
+          "title": "@nikamoiseeva #никамоисеева #coversong",
+          "type": "shorts",
+          "duration_sec": 23,
+          "published_at": "2026-11-13T18:13:29Z",
+          "views": 1224,
+          "likes": 23,
+          "url": "https://www.youtube.com/shorts/0BrhwwO_ymI"
+        },
+        {
           "id": "f2zJASv3gjc",
           "title": "@nikamoiseeva #никамоисеева #казачка #рекомендации",
           "type": "shorts",
@@ -2311,22 +2351,12 @@
           "url": "https://www.youtube.com/shorts/f2zJASv3gjc"
         },
         {
-          "id": "0BrhwwO_ymI",
-          "title": "@nikamoiseeva #никамоисеева #coversong",
-          "type": "shorts",
-          "duration_sec": 23,
-          "published_at": "2026-11-13T18:13:29Z",
-          "views": 1219,
-          "likes": 23,
-          "url": "https://www.youtube.com/shorts/0BrhwwO_ymI"
-        },
-        {
           "id": "3fL_MsAaqm8",
           "title": "@nikamoiseeva #никамоисеева #пареньудалой",
           "type": "shorts",
           "duration_sec": 15,
           "published_at": "2026-10-14T14:19:54Z",
-          "views": 1208,
+          "views": 1214,
           "likes": 22,
           "url": "https://www.youtube.com/shorts/3fL_MsAaqm8"
         },
@@ -2336,7 +2366,7 @@
           "type": "shorts",
           "duration_sec": 16,
           "published_at": "2026-10-26T16:11:16Z",
-          "views": 1207,
+          "views": 1209,
           "likes": 26,
           "url": "https://www.youtube.com/shorts/2B0MhbbGfPQ"
         },
@@ -2346,7 +2376,7 @@
           "type": "shorts",
           "duration_sec": 25,
           "published_at": "2026-10-25T17:27:40Z",
-          "views": 1202,
+          "views": 1206,
           "likes": 21,
           "url": "https://www.youtube.com/shorts/elj1J4V3XEE"
         },
@@ -2366,9 +2396,19 @@
           "type": "shorts",
           "duration_sec": 33,
           "published_at": "2026-11-16T17:38:06Z",
-          "views": 1190,
+          "views": 1191,
           "likes": 18,
           "url": "https://www.youtube.com/shorts/u8p6DODNToE"
+        },
+        {
+          "id": "56pEPquywLU",
+          "title": "@nikamoiseeva #никамоисеева #кавер",
+          "type": "shorts",
+          "duration_sec": 41,
+          "published_at": "2026-11-12T18:04:56Z",
+          "views": 1187,
+          "likes": 27,
+          "url": "https://www.youtube.com/shorts/56pEPquywLU"
         },
         {
           "id": "iIu6zTi1-cY",
@@ -2379,16 +2419,6 @@
           "views": 1186,
           "likes": 9,
           "url": "https://www.youtube.com/shorts/iIu6zTi1-cY"
-        },
-        {
-          "id": "56pEPquywLU",
-          "title": "@nikamoiseeva #никамоисеева #кавер",
-          "type": "shorts",
-          "duration_sec": 41,
-          "published_at": "2026-11-12T18:04:56Z",
-          "views": 1185,
-          "likes": 27,
-          "url": "https://www.youtube.com/shorts/56pEPquywLU"
         },
         {
           "id": "B7dAqO6xaos",
@@ -2421,6 +2451,16 @@
           "url": "https://www.youtube.com/shorts/gSbfwp-QSbc"
         },
         {
+          "id": "a4NC_zGbCOk",
+          "title": "@nikamoiseeva #никамоисеева #пропесни",
+          "type": "shorts",
+          "duration_sec": 43,
+          "published_at": "2026-11-08T17:20:49Z",
+          "views": 1145,
+          "likes": 20,
+          "url": "https://www.youtube.com/shorts/a4NC_zGbCOk"
+        },
+        {
           "id": "YktHhCszpTc",
           "title": "@nikamoiseeva #никамоисеева #пареньудалой #авторскаяпесня",
           "type": "shorts",
@@ -2429,16 +2469,6 @@
           "views": 1144,
           "likes": 13,
           "url": "https://www.youtube.com/shorts/YktHhCszpTc"
-        },
-        {
-          "id": "a4NC_zGbCOk",
-          "title": "@nikamoiseeva #никамоисеева #пропесни",
-          "type": "shorts",
-          "duration_sec": 43,
-          "published_at": "2026-11-08T17:20:49Z",
-          "views": 1143,
-          "likes": 20,
-          "url": "https://www.youtube.com/shorts/a4NC_zGbCOk"
         },
         {
           "id": "AoBiNOfdTog",
@@ -2566,7 +2596,7 @@
           "type": "shorts",
           "duration_sec": 17,
           "published_at": "2026-11-01T17:05:11Z",
-          "views": 1034,
+          "views": 1035,
           "likes": 17,
           "url": "https://www.youtube.com/shorts/Jct9T41jSBU"
         },
@@ -2676,7 +2706,7 @@
           "type": "shorts",
           "duration_sec": 17,
           "published_at": "2026-10-16T14:01:19Z",
-          "views": 899,
+          "views": 901,
           "likes": 15,
           "url": "https://www.youtube.com/shorts/HlDR0fjn_n8"
         },
@@ -2776,7 +2806,7 @@
           "type": "shorts",
           "duration_sec": 61,
           "published_at": "2026-11-02T18:03:55Z",
-          "views": 647,
+          "views": 648,
           "likes": 17,
           "url": "https://www.youtube.com/shorts/MSlcaXpB7dM"
         },
@@ -2871,6 +2901,16 @@
           "url": "https://www.youtube.com/shorts/7tXn7ys8OvA"
         },
         {
+          "id": "0EbgrCMUbrQ",
+          "title": "@nikamoiseeva #никамоисеева #новыйрелиз",
+          "type": "shorts",
+          "duration_sec": 10,
+          "published_at": "2026-11-27T17:37:00Z",
+          "views": 443,
+          "likes": 5,
+          "url": "https://www.youtube.com/shorts/0EbgrCMUbrQ"
+        },
+        {
           "id": "UxCTQWdMaO0",
           "title": "@nikamoiseeva # #никамоисеева #cover #titanic",
           "type": "shorts",
@@ -2951,6 +2991,16 @@
           "url": "https://www.youtube.com/shorts/zy1PCz0GflU"
         },
         {
+          "id": "Sj2S12oRdjw",
+          "title": "@nikamoiseeva #никамоисеева",
+          "type": "shorts",
+          "duration_sec": 10,
+          "published_at": "2026-11-27T17:03:02Z",
+          "views": 362,
+          "likes": 2,
+          "url": "https://www.youtube.com/shorts/Sj2S12oRdjw"
+        },
+        {
           "id": "8Ky03AzXzEc",
           "title": "@nikamoiseeva #никамоисеева #казачка #рекомендации",
           "type": "shorts",
@@ -2969,6 +3019,16 @@
           "views": 360,
           "likes": 6,
           "url": "https://www.youtube.com/shorts/NYrkkhkkK7E"
+        },
+        {
+          "id": "Og1AcWlHA-c",
+          "title": "@nikamoiseeva #никамоисеева #новыйрелиз #новинка",
+          "type": "shorts",
+          "duration_sec": 10,
+          "published_at": "2026-11-27T17:18:54Z",
+          "views": 349,
+          "likes": 8,
+          "url": "https://www.youtube.com/shorts/Og1AcWlHA-c"
         },
         {
           "id": "znlah45E-uo",
@@ -3101,16 +3161,6 @@
           "url": "https://www.youtube.com/shorts/xkFaGiQJynA"
         },
         {
-          "id": "UVJpffRvIlI",
-          "title": "# #никамоисеева #казачка #авторскаяпесня #jerusalem @nikamoiseeva",
-          "type": "shorts",
-          "duration_sec": 13,
-          "published_at": "2026-07-13T14:35:29Z",
-          "views": 260,
-          "likes": 7,
-          "url": "https://www.youtube.com/shorts/UVJpffRvIlI"
-        },
-        {
           "id": "ud4c2cuLv7I",
           "title": "@nikamoiseeva #никамоисеева #казачка #рекомендации",
           "type": "shorts",
@@ -3119,6 +3169,16 @@
           "views": 259,
           "likes": 8,
           "url": "https://www.youtube.com/shorts/ud4c2cuLv7I"
+        },
+        {
+          "id": "aVLmDpPr4QQ",
+          "title": "@nikamoiseeva #никамоисеева #новыйрелиз #песнидлядуши",
+          "type": "shorts",
+          "duration_sec": 10,
+          "published_at": "2026-11-28T04:42:32Z",
+          "views": 244,
+          "likes": 5,
+          "url": "https://www.youtube.com/shorts/aVLmDpPr4QQ"
         },
         {
           "id": "97Wi10aYqmA",
@@ -3139,16 +3199,6 @@
           "views": 230,
           "likes": 12,
           "url": "https://www.youtube.com/shorts/TVIRbxNKOmA"
-        },
-        {
-          "id": "0NDOFoDSJvo",
-          "title": "#никамоисеева #казачка @nikamoiseeva",
-          "type": "shorts",
-          "duration_sec": 13,
-          "published_at": "2026-07-12T11:01:43Z",
-          "views": 228,
-          "likes": 5,
-          "url": "https://www.youtube.com/shorts/0NDOFoDSJvo"
         },
         {
           "id": "VLUp3oH1LpA",
@@ -3221,16 +3271,6 @@
           "url": "https://www.youtube.com/shorts/-9w7ei3Cs-8"
         },
         {
-          "id": "7I2AqVownto",
-          "title": "# #никамоисеева #казачка #aivideo @nikamoiseeva",
-          "type": "shorts",
-          "duration_sec": 13,
-          "published_at": "2026-07-12T16:03:39Z",
-          "views": 178,
-          "likes": 9,
-          "url": "https://www.youtube.com/shorts/7I2AqVownto"
-        },
-        {
           "id": "16fLv9outWM",
           "title": "@nikamoiseeva #никамоисеева #казачка #рекомендации #еда",
           "type": "shorts",
@@ -3266,7 +3306,7 @@
           "type": "shorts",
           "duration_sec": 52,
           "published_at": "2026-10-30T18:07:18Z",
-          "views": 166,
+          "views": 167,
           "likes": 7,
           "url": "https://www.youtube.com/shorts/yMmLzysXt84"
         },
@@ -3291,6 +3331,16 @@
           "url": "https://www.youtube.com/shorts/-aOuj-8OT54"
         },
         {
+          "id": "JogSaBgJkrc",
+          "title": "@nikamoiseeva #никамоисеева #новыйрелиз #песнядлядуши",
+          "type": "shorts",
+          "duration_sec": 10,
+          "published_at": "2026-11-28T09:33:08Z",
+          "views": 162,
+          "likes": 8,
+          "url": "https://www.youtube.com/shorts/JogSaBgJkrc"
+        },
+        {
           "id": "glHGtnNX24Q",
           "title": "@nikamoiseeva #никамоисеева #казачка",
           "type": "shorts",
@@ -3309,6 +3359,16 @@
           "views": 160,
           "likes": 3,
           "url": "https://www.youtube.com/shorts/uEWlSqPDbU0"
+        },
+        {
+          "id": "juw4nTDV9Co",
+          "title": "@nikamoiseeva #никамоисеева #пареньудалой",
+          "type": "shorts",
+          "duration_sec": 25,
+          "published_at": "2026-11-03T09:21:28Z",
+          "views": 153,
+          "likes": 14,
+          "url": "https://www.youtube.com/shorts/juw4nTDV9Co"
         },
         {
           "id": "VzXtCPxK414",
@@ -3361,22 +3421,12 @@
           "url": "https://www.youtube.com/shorts/tp7I0ep6Ohk"
         },
         {
-          "id": "juw4nTDV9Co",
-          "title": "@nikamoiseeva #никамоисеева #пареньудалой",
-          "type": "shorts",
-          "duration_sec": 25,
-          "published_at": "2026-11-03T09:21:28Z",
-          "views": 136,
-          "likes": 14,
-          "url": "https://www.youtube.com/shorts/juw4nTDV9Co"
-        },
-        {
           "id": "2LSFsEsEq5I",
           "title": "@nikamoiseeva #никамоисеева #пареньудалой",
           "type": "shorts",
           "duration_sec": 25,
           "published_at": "2026-10-24T10:17:29Z",
-          "views": 133,
+          "views": 135,
           "likes": 8,
           "url": "https://www.youtube.com/shorts/2LSFsEsEq5I"
         },
@@ -3451,6 +3501,16 @@
           "url": "https://www.youtube.com/shorts/RmDZD8Xe4QI"
         },
         {
+          "id": "ZsAV_ROCZA4",
+          "title": "@nikamoiseeva #никамоисеева #пареньудалой",
+          "type": "shorts",
+          "duration_sec": 25,
+          "published_at": "2026-10-25T15:33:35Z",
+          "views": 113,
+          "likes": 16,
+          "url": "https://www.youtube.com/shorts/ZsAV_ROCZA4"
+        },
+        {
           "id": "mZF_qaq30sk",
           "title": "@nikamoiseeva #никамоисеева #казачка #котики",
           "type": "shorts",
@@ -3499,16 +3559,6 @@
           "views": 106,
           "likes": 6,
           "url": "https://www.youtube.com/shorts/fiftPaYFmXA"
-        },
-        {
-          "id": "ZsAV_ROCZA4",
-          "title": "@nikamoiseeva #никамоисеева #пареньудалой",
-          "type": "shorts",
-          "duration_sec": 25,
-          "published_at": "2026-10-25T15:33:35Z",
-          "views": 104,
-          "likes": 16,
-          "url": "https://www.youtube.com/shorts/ZsAV_ROCZA4"
         },
         {
           "id": "2NKKu-k9PJU",
@@ -3716,19 +3766,9 @@
           "type": "shorts",
           "duration_sec": 10,
           "published_at": "2026-11-06T17:01:30Z",
-          "views": 36,
+          "views": 37,
           "likes": 4,
           "url": "https://www.youtube.com/shorts/jBcaUpxZdNE"
-        },
-        {
-          "id": "uRWb-NH4EjY",
-          "title": "# #никамоисеева #казачка #aivideo @nikamoiseeva",
-          "type": "shorts",
-          "duration_sec": 13,
-          "published_at": "2026-07-12T17:50:03Z",
-          "views": 34,
-          "likes": 4,
-          "url": "https://www.youtube.com/shorts/uRWb-NH4EjY"
         },
         {
           "id": "NqsYNSRcmE0",
@@ -3923,11 +3963,11 @@
         "total_videos": 200,
         "shorts_count": 197,
         "horizontal_count": 3,
-        "total_views": 167592,
-        "total_likes": 2859,
-        "shorts_views": 167398,
-        "shorts_likes": 2834,
-        "horizontal_views": 194,
+        "total_views": 168533,
+        "total_likes": 2852,
+        "shorts_views": 168338,
+        "shorts_likes": 2827,
+        "horizontal_views": 195,
         "horizontal_likes": 25
       },
       "videos": [
@@ -3972,6 +4012,16 @@
           "url": "https://www.youtube.com/shorts/YUL7NFEgUX4"
         },
         {
+          "id": "WFtXgmZyuww",
+          "title": "@nikamoiseeva#macarena#LosDelRio#переводпесни#макарена#никамоисеева#музыка#dance#врек#втоп#хит",
+          "type": "shorts",
+          "duration_sec": 45,
+          "published_at": "2026-10-10T23:24:23Z",
+          "views": 1576,
+          "likes": 18,
+          "url": "https://www.youtube.com/shorts/WFtXgmZyuww"
+        },
+        {
           "id": "wpOFmfppsx8",
           "title": "@gellertlera#brotherlouie#moderntalking#переводпесни#лерагеллерт#signer#музыка#figureskating#врек",
           "type": "shorts",
@@ -3980,16 +4030,6 @@
           "views": 1576,
           "likes": 15,
           "url": "https://www.youtube.com/shorts/wpOFmfppsx8"
-        },
-        {
-          "id": "WFtXgmZyuww",
-          "title": "@nikamoiseeva#macarena#LosDelRio#переводпесни#макарена#никамоисеева#музыка#dance#врек#втоп#хит",
-          "type": "shorts",
-          "duration_sec": 45,
-          "published_at": "2026-10-10T23:24:23Z",
-          "views": 1575,
-          "likes": 18,
-          "url": "https://www.youtube.com/shorts/WFtXgmZyuww"
         },
         {
           "id": "MhIcWxFnqNk",
@@ -4007,7 +4047,7 @@
           "type": "shorts",
           "duration_sec": 17,
           "published_at": "2026-11-04T20:00:50Z",
-          "views": 1483,
+          "views": 1484,
           "likes": 21,
           "url": "https://www.youtube.com/shorts/Txbbzk0pY7A"
         },
@@ -4057,7 +4097,7 @@
           "type": "shorts",
           "duration_sec": 55,
           "published_at": "2026-11-01T20:25:57Z",
-          "views": 1385,
+          "views": 1387,
           "likes": 35,
           "url": "https://www.youtube.com/shorts/l_oVSgXUbZY"
         },
@@ -4162,6 +4202,16 @@
           "url": "https://www.youtube.com/shorts/mB8NQe2P-Bo"
         },
         {
+          "id": "_kUlJwq5dpI",
+          "title": "@Risha_Kuznetsova#могучая#премьера#авторскаяпесня#аринакузнецова#а-риша#singer#музыка#dance#врек",
+          "type": "shorts",
+          "duration_sec": 35,
+          "published_at": "2026-08-30T03:56:31Z",
+          "views": 1304,
+          "likes": 21,
+          "url": "https://www.youtube.com/shorts/_kUlJwq5dpI"
+        },
+        {
           "id": "ONS3HUGGg50",
           "title": "@Risha_Kuznetsova#тамнетменя#севара#кавер#аринакузнецова#ариша#singer#музыка#figureskating#dance#ok",
           "type": "shorts",
@@ -4170,16 +4220,6 @@
           "views": 1303,
           "likes": 20,
           "url": "https://www.youtube.com/shorts/ONS3HUGGg50"
-        },
-        {
-          "id": "_kUlJwq5dpI",
-          "title": "@Risha_Kuznetsova#могучая#премьера#авторскаяпесня#аринакузнецова#а-риша#singer#музыка#dance#врек",
-          "type": "shorts",
-          "duration_sec": 35,
-          "published_at": "2026-08-30T03:56:31Z",
-          "views": 1303,
-          "likes": 21,
-          "url": "https://www.youtube.com/shorts/_kUlJwq5dpI"
         },
         {
           "id": "oa5yUHs5p9o",
@@ -4207,7 +4247,7 @@
           "type": "shorts",
           "duration_sec": 33,
           "published_at": "2026-09-05T13:01:55Z",
-          "views": 1262,
+          "views": 1263,
           "likes": 25,
           "url": "https://www.youtube.com/shorts/dmasBsULdEM"
         },
@@ -4352,12 +4392,22 @@
           "url": "https://www.youtube.com/shorts/LR0KiuuDKBM"
         },
         {
+          "id": "WMRNbvj0upM",
+          "title": "@Risha_Kuznetsova#платьице#авторскаяпесня#аринакузнецова#ариша#singer#dance#музыка#врек#втоп#хит",
+          "type": "shorts",
+          "duration_sec": 58,
+          "published_at": "2026-11-26T22:03:43Z",
+          "views": 1194,
+          "likes": 22,
+          "url": "https://www.youtube.com/shorts/WMRNbvj0upM"
+        },
+        {
           "id": "BlD_LxVjOWc",
           "title": "@Risha_Kuznetsova#калинка#русскаяпесня#аринакузнецова#ариша#singer# вокал#музыка#dance#врек#втоп",
           "type": "shorts",
           "duration_sec": 25,
           "published_at": "2026-11-04T19:05:22Z",
-          "views": 1188,
+          "views": 1189,
           "likes": 17,
           "url": "https://www.youtube.com/shorts/BlD_LxVjOWc"
         },
@@ -4452,6 +4502,16 @@
           "url": "https://www.youtube.com/shorts/cDY5Gl_jgl0"
         },
         {
+          "id": "vofGF16KuZI",
+          "title": "@nikamoiseeva#сниппет#авторскаяпесня#народное#никамоисеева#singer#музыка#dance#врек#втоп#хит#ok",
+          "type": "shorts",
+          "duration_sec": 10,
+          "published_at": "2026-11-27T20:30:40Z",
+          "views": 1161,
+          "likes": 7,
+          "url": "https://www.youtube.com/shorts/vofGF16KuZI"
+        },
+        {
           "id": "rdOJiOqf034",
           "title": "@Risha_Kuznetsova#втрендыбалалайка#авторскаяпесня#аринакузнецова#а-риша#singer #музыка#dance#рек",
           "type": "shorts",
@@ -4467,7 +4527,7 @@
           "type": "shorts",
           "duration_sec": 12,
           "published_at": "2026-08-12T02:35:48Z",
-          "views": 1153,
+          "views": 1155,
           "likes": 17,
           "url": "https://www.youtube.com/shorts/nmzYfn9zqfU"
         },
@@ -4567,7 +4627,7 @@
           "type": "shorts",
           "duration_sec": 20,
           "published_at": "2026-10-21T17:19:40Z",
-          "views": 1097,
+          "views": 1100,
           "likes": 15,
           "url": "https://www.youtube.com/shorts/QP3eMmhN6bE"
         },
@@ -4587,7 +4647,7 @@
           "type": "shorts",
           "duration_sec": 48,
           "published_at": "2026-08-11T19:42:54Z",
-          "views": 1089,
+          "views": 1091,
           "likes": 5,
           "url": "https://www.youtube.com/shorts/6mL9ir-MHZY"
         },
@@ -4627,7 +4687,7 @@
           "type": "shorts",
           "duration_sec": 39,
           "published_at": "2026-11-18T20:03:19Z",
-          "views": 1059,
+          "views": 1060,
           "likes": 14,
           "url": "https://www.youtube.com/shorts/Lo9Pz2ideqA"
         },
@@ -4667,9 +4727,19 @@
           "type": "shorts",
           "duration_sec": 25,
           "published_at": "2026-10-14T20:46:13Z",
-          "views": 1051,
+          "views": 1053,
           "likes": 10,
           "url": "https://www.youtube.com/shorts/TjPeciKSu7A"
+        },
+        {
+          "id": "TVjpNPLJdEo",
+          "title": "@Risha_Kuznetsova#вспоминаяотебе#авторскаяпесня#аринакузнецова#singer#музыка#хаски#врек#втоп#хит",
+          "type": "shorts",
+          "duration_sec": 31,
+          "published_at": "2026-10-27T05:23:04Z",
+          "views": 1050,
+          "likes": 26,
+          "url": "https://www.youtube.com/shorts/TVjpNPLJdEo"
         },
         {
           "id": "PRk5VwmjCPQ",
@@ -4682,22 +4752,12 @@
           "url": "https://www.youtube.com/shorts/PRk5VwmjCPQ"
         },
         {
-          "id": "TVjpNPLJdEo",
-          "title": "@Risha_Kuznetsova#вспоминаяотебе#авторскаяпесня#аринакузнецова#singer#музыка#хаски#врек#втоп#хит",
-          "type": "shorts",
-          "duration_sec": 31,
-          "published_at": "2026-10-27T05:23:04Z",
-          "views": 1049,
-          "likes": 26,
-          "url": "https://www.youtube.com/shorts/TVjpNPLJdEo"
-        },
-        {
           "id": "CJ7E8I6BPh8",
           "title": "@Risha_Kuznetsova сл. @ОлегРунко#русалочныйцветок#аринакузнецова#singer#музыка#ильямуртазин#врек",
           "type": "shorts",
           "duration_sec": 61,
           "published_at": "2026-11-17T21:39:23Z",
-          "views": 1031,
+          "views": 1033,
           "likes": 14,
           "url": "https://www.youtube.com/shorts/CJ7E8I6BPh8"
         },
@@ -4802,6 +4862,16 @@
           "url": "https://www.youtube.com/shorts/4WgiY9vP9lU"
         },
         {
+          "id": "RXTiGOpL8_k",
+          "title": "@nikamoiseeva#казачка#авторскаяпесня#никамоисеева#singer#музыка#newmusic#врек#втоп#хит#пропесни",
+          "type": "shorts",
+          "duration_sec": 25,
+          "published_at": "2026-11-22T21:54:48Z",
+          "views": 1009,
+          "likes": 11,
+          "url": "https://www.youtube.com/shorts/RXTiGOpL8_k"
+        },
+        {
           "id": "OSfNGFbgLp4",
           "title": "@nikamoiseeva#нашелето#стрыкало#кавер#никамоисеева#singer#вокал#music#dance#врек#втоп#ялта#яхта#хит",
           "type": "shorts",
@@ -4820,16 +4890,6 @@
           "views": 1009,
           "likes": 16,
           "url": "https://www.youtube.com/shorts/VKvgd26XXEM"
-        },
-        {
-          "id": "RXTiGOpL8_k",
-          "title": "@nikamoiseeva#казачка#авторскаяпесня#никамоисеева#singer#музыка#newmusic#врек#втоп#хит#пропесни",
-          "type": "shorts",
-          "duration_sec": 25,
-          "published_at": "2026-11-22T21:54:48Z",
-          "views": 1008,
-          "likes": 11,
-          "url": "https://www.youtube.com/shorts/RXTiGOpL8_k"
         },
         {
           "id": "Z3kLBA6qpfQ",
@@ -4937,7 +4997,7 @@
           "type": "shorts",
           "duration_sec": 20,
           "published_at": "2026-07-23T14:25:08Z",
-          "views": 939,
+          "views": 940,
           "likes": 22,
           "url": "https://www.youtube.com/shorts/lmqjnnSw58c"
         },
@@ -4960,16 +5020,6 @@
           "views": 918,
           "likes": 18,
           "url": "https://www.youtube.com/shorts/LiSagRdKrjY"
-        },
-        {
-          "id": "WMRNbvj0upM",
-          "title": "@Risha_Kuznetsova#платьице#авторскаяпесня#аринакузнецова#ариша#singer#dance#музыка#врек#втоп#хит",
-          "type": "shorts",
-          "duration_sec": 58,
-          "published_at": "2026-11-26T22:03:43Z",
-          "views": 903,
-          "likes": 19,
-          "url": "https://www.youtube.com/shorts/WMRNbvj0upM"
         },
         {
           "id": "k7GsTxLFsMc",
@@ -5277,7 +5327,7 @@
           "type": "shorts",
           "duration_sec": 49,
           "published_at": "2026-07-25T13:10:27Z",
-          "views": 597,
+          "views": 601,
           "likes": 10,
           "url": "https://www.youtube.com/shorts/gUVAd-dlHS4"
         },
@@ -5340,16 +5390,6 @@
           "views": 576,
           "likes": 16,
           "url": "https://www.youtube.com/shorts/L1IzBbGGneU"
-        },
-        {
-          "id": "8RhZTPj8KQk",
-          "title": "@Risha_Kuznetsova#голосочек#авторскаяпесня#rishakuznetsova#singer#вокал#музыка#врек#втоп#хит#ok",
-          "type": "shorts",
-          "duration_sec": 60,
-          "published_at": "2026-07-07T21:56:41Z",
-          "views": 558,
-          "likes": 17,
-          "url": "https://www.youtube.com/shorts/8RhZTPj8KQk"
         },
         {
           "id": "Rcr6OwSJVX0",
@@ -5427,7 +5467,7 @@
           "type": "shorts",
           "duration_sec": 58,
           "published_at": "2026-11-24T22:35:32Z",
-          "views": 429,
+          "views": 428,
           "likes": 13,
           "url": "https://www.youtube.com/shorts/QqfHNmWIItU"
         },
@@ -5437,7 +5477,7 @@
           "type": "shorts",
           "duration_sec": 26,
           "published_at": "2026-11-24T22:07:45Z",
-          "views": 425,
+          "views": 427,
           "likes": 3,
           "url": "https://www.youtube.com/shorts/KC6YNx_78cc"
         },
@@ -5517,7 +5557,7 @@
           "type": "shorts",
           "duration_sec": 61,
           "published_at": "2026-07-28T15:22:53Z",
-          "views": 266,
+          "views": 268,
           "likes": 14,
           "url": "https://www.youtube.com/shorts/0D6NaqlCLnQ"
         },
@@ -5772,6 +5812,16 @@
           "url": "https://www.youtube.com/shorts/LAQ1Ve-iATA"
         },
         {
+          "id": "HmBKoJHqhuw",
+          "title": "@Risha_Kuznetsova#носикикурносики#толкунова#кавер#аринакузнецова#singer#колыбельная#врек#втоп#ok",
+          "type": "shorts",
+          "duration_sec": 60,
+          "published_at": "2026-08-20T21:11:25Z",
+          "views": 81,
+          "likes": 4,
+          "url": "https://www.youtube.com/shorts/HmBKoJHqhuw"
+        },
+        {
           "id": "b7NIN9XACWY",
           "title": "@Risha_Kuznetsova#разнесуха#русскаяпесня#аринакузнецова#ариша#singer#вокал#музыка#dance#врек#втоп",
           "type": "shorts",
@@ -5790,16 +5840,6 @@
           "views": 79,
           "likes": 4,
           "url": "https://www.youtube.com/shorts/RQnuxdlykQk"
-        },
-        {
-          "id": "HmBKoJHqhuw",
-          "title": "@Risha_Kuznetsova#носикикурносики#толкунова#кавер#аринакузнецова#singer#колыбельная#врек#втоп#ok",
-          "type": "shorts",
-          "duration_sec": 60,
-          "published_at": "2026-08-20T21:11:25Z",
-          "views": 79,
-          "likes": 4,
-          "url": "https://www.youtube.com/shorts/HmBKoJHqhuw"
         },
         {
           "id": "11oTKfoQfpI",
@@ -5847,9 +5887,19 @@
           "type": "horizontal",
           "duration_sec": 192,
           "published_at": "2026-07-19T12:38:56Z",
-          "views": 68,
+          "views": 69,
           "likes": 7,
           "url": "https://www.youtube.com/watch?v=inDljgZD-m4"
+        },
+        {
+          "id": "oKJqAYb9NY0",
+          "title": "@Risha_Kuznetsova#платьице#авторскаяпесня#аринакузнецова#ариша#singer#вокал#музыка#врек#втоп#хит#ok",
+          "type": "shorts",
+          "duration_sec": 25,
+          "published_at": "2026-11-21T22:41:50Z",
+          "views": 66,
+          "likes": 6,
+          "url": "https://www.youtube.com/shorts/oKJqAYb9NY0"
         },
         {
           "id": "2N0732tnDmQ",
@@ -5860,16 +5910,6 @@
           "views": 65,
           "likes": 5,
           "url": "https://www.youtube.com/shorts/2N0732tnDmQ"
-        },
-        {
-          "id": "oKJqAYb9NY0",
-          "title": "@Risha_Kuznetsova#платьице#авторскаяпесня#аринакузнецова#ариша#singer#вокал#музыка#врек#втоп#хит#ok",
-          "type": "shorts",
-          "duration_sec": 25,
-          "published_at": "2026-11-21T22:41:50Z",
-          "views": 63,
-          "likes": 6,
-          "url": "https://www.youtube.com/shorts/oKJqAYb9NY0"
         },
         {
           "id": "2Nfl6f3-Fbw",
@@ -5892,6 +5932,16 @@
           "url": "https://www.youtube.com/shorts/vivs7zbdyKs"
         },
         {
+          "id": "bwpZofchxUI",
+          "title": "@Risha_Kuznetsova#гармоньмоя#русскаяпесня#аринакузнецова#ариша#singer#вокал#музыка#dance#врек#втоп",
+          "type": "shorts",
+          "duration_sec": 60,
+          "published_at": "2026-11-25T22:41:19Z",
+          "views": 53,
+          "likes": 3,
+          "url": "https://www.youtube.com/shorts/bwpZofchxUI"
+        },
+        {
           "id": "Qg6dixDa3cM",
           "title": "@Risha_Kuznetsova#вокал#аринакузнецова#серебряныйвальс Слова@ОлегРунко#олегвервека#музыка#яковмишиев",
           "type": "horizontal",
@@ -5912,22 +5962,12 @@
           "url": "https://www.youtube.com/shorts/GpFdiZ1truU"
         },
         {
-          "id": "bwpZofchxUI",
-          "title": "@Risha_Kuznetsova#гармоньмоя#русскаяпесня#аринакузнецова#ариша#singer#вокал#музыка#dance#врек#втоп",
-          "type": "shorts",
-          "duration_sec": 60,
-          "published_at": "2026-11-25T22:41:19Z",
-          "views": 50,
-          "likes": 3,
-          "url": "https://www.youtube.com/shorts/bwpZofchxUI"
-        },
-        {
           "id": "MY2Lv9kwbOE",
           "title": "@Risha_Kuznetsova#втрендыбалалайка#авторскаяпесня#аринакузнецова#ариша#singer#dance#музыка#врек#топ",
           "type": "shorts",
           "duration_sec": 53,
           "published_at": "2026-11-26T23:02:24Z",
-          "views": 33,
+          "views": 42,
           "likes": 5,
           "url": "https://www.youtube.com/shorts/MY2Lv9kwbOE"
         }
@@ -5944,9 +5984,9 @@
         "total_videos": 98,
         "shorts_count": 98,
         "horizontal_count": 0,
-        "total_views": 66583,
+        "total_views": 66588,
         "total_likes": 1222,
-        "shorts_views": 66583,
+        "shorts_views": 66588,
         "shorts_likes": 1222,
         "horizontal_views": 0,
         "horizontal_likes": 0
@@ -5958,7 +5998,7 @@
           "type": "shorts",
           "duration_sec": 25,
           "published_at": "2026-02-08T09:48:44Z",
-          "views": 2315,
+          "views": 2317,
           "likes": 27,
           "url": "https://www.youtube.com/shorts/qCB3odKKadg"
         },
@@ -6048,7 +6088,7 @@
           "type": "shorts",
           "duration_sec": 25,
           "published_at": "2026-02-28T18:23:33Z",
-          "views": 1507,
+          "views": 1508,
           "likes": 27,
           "url": "https://www.youtube.com/shorts/FADlY6Xw5w4"
         },
@@ -6193,6 +6233,16 @@
           "url": "https://www.youtube.com/shorts/A9Uvb4D5MJk"
         },
         {
+          "id": "kfF5yaNtlW8",
+          "title": "Ой,Люли,да ой Люли\" Авторская песня Ники Моисеевой.",
+          "type": "shorts",
+          "duration_sec": 25,
+          "published_at": "2026-02-18T14:47:19Z",
+          "views": 1258,
+          "likes": 21,
+          "url": "https://www.youtube.com/shorts/kfF5yaNtlW8"
+        },
+        {
           "id": "8JBIGQYHvjo",
           "title": "Авторская песня \" Ай,Люли\" Ники Моисеевой.",
           "type": "shorts",
@@ -6201,16 +6251,6 @@
           "views": 1257,
           "likes": 24,
           "url": "https://www.youtube.com/shorts/8JBIGQYHvjo"
-        },
-        {
-          "id": "kfF5yaNtlW8",
-          "title": "Ой,Люли,да ой Люли\" Авторская песня Ники Моисеевой.",
-          "type": "shorts",
-          "duration_sec": 25,
-          "published_at": "2026-02-18T14:47:19Z",
-          "views": 1257,
-          "likes": 21,
-          "url": "https://www.youtube.com/shorts/kfF5yaNtlW8"
         },
         {
           "id": "7bnN7U4q-Ps",
@@ -6228,7 +6268,7 @@
           "type": "shorts",
           "duration_sec": 26,
           "published_at": "2026-05-21T09:22:29Z",
-          "views": 1253,
+          "views": 1254,
           "likes": 32,
           "url": "https://www.youtube.com/shorts/dWg53oOtNPE"
         },
@@ -6945,10 +6985,10 @@
         "total_videos": 200,
         "shorts_count": 200,
         "horizontal_count": 0,
-        "total_views": 144676,
-        "total_likes": 2330,
-        "shorts_views": 144676,
-        "shorts_likes": 2330,
+        "total_views": 146295,
+        "total_likes": 2318,
+        "shorts_views": 146295,
+        "shorts_likes": 2318,
         "horizontal_views": 0,
         "horizontal_likes": 0
       },
@@ -6959,7 +6999,7 @@
           "type": "shorts",
           "duration_sec": 15,
           "published_at": "2026-04-09T12:26:44Z",
-          "views": 11611,
+          "views": 11612,
           "likes": 28,
           "url": "https://www.youtube.com/shorts/iyo9oNQlB08"
         },
@@ -6989,7 +7029,7 @@
           "type": "shorts",
           "duration_sec": 15,
           "published_at": "2026-10-03T16:15:55Z",
-          "views": 1856,
+          "views": 1857,
           "likes": 10,
           "url": "https://www.youtube.com/shorts/8ztkWUHGsiY"
         },
@@ -7059,7 +7099,7 @@
           "type": "shorts",
           "duration_sec": 33,
           "published_at": "2026-10-07T19:55:57Z",
-          "views": 1606,
+          "views": 1608,
           "likes": 27,
           "url": "https://www.youtube.com/shorts/JNQiCMwjQ1k"
         },
@@ -7149,8 +7189,8 @@
           "type": "shorts",
           "duration_sec": 44,
           "published_at": "2026-11-25T18:13:56Z",
-          "views": 1408,
-          "likes": 43,
+          "views": 1415,
+          "likes": 44,
           "url": "https://www.youtube.com/shorts/0aW1ZzSMXLI"
         },
         {
@@ -7209,7 +7249,7 @@
           "type": "shorts",
           "duration_sec": 17,
           "published_at": "2026-10-11T17:17:46Z",
-          "views": 1317,
+          "views": 1319,
           "likes": 41,
           "url": "https://www.youtube.com/shorts/6zD8-wlIM2M"
         },
@@ -7219,7 +7259,7 @@
           "type": "shorts",
           "duration_sec": 46,
           "published_at": "2026-11-18T19:39:22Z",
-          "views": 1312,
+          "views": 1314,
           "likes": 24,
           "url": "https://www.youtube.com/shorts/N4tofRIFMuY"
         },
@@ -7269,7 +7309,7 @@
           "type": "shorts",
           "duration_sec": 17,
           "published_at": "2026-10-09T09:10:41Z",
-          "views": 1268,
+          "views": 1270,
           "likes": 7,
           "url": "https://www.youtube.com/shorts/BRn4LMV3wxk"
         },
@@ -7349,7 +7389,7 @@
           "type": "shorts",
           "duration_sec": 23,
           "published_at": "2026-11-13T17:50:12Z",
-          "views": 1246,
+          "views": 1247,
           "likes": 16,
           "url": "https://www.youtube.com/shorts/_xNb4LcfMYI"
         },
@@ -7374,6 +7414,16 @@
           "url": "https://www.youtube.com/shorts/jlzoVWa4xEk"
         },
         {
+          "id": "IR286Hf_aZk",
+          "title": "#музыка #music #стрим #ностальгик #@nikamoiseeva #рекомендации",
+          "type": "shorts",
+          "duration_sec": 46,
+          "published_at": "2026-11-23T17:56:32Z",
+          "views": 1216,
+          "likes": 19,
+          "url": "https://www.youtube.com/shorts/IR286Hf_aZk"
+        },
+        {
           "id": "VImti9B76NI",
           "title": "#музыка #рек #стрим #@nikamoiseeva #viralvideo",
           "type": "shorts",
@@ -7392,16 +7442,6 @@
           "views": 1216,
           "likes": 11,
           "url": "https://www.youtube.com/shorts/Wum3ndWy61k"
-        },
-        {
-          "id": "IR286Hf_aZk",
-          "title": "#музыка #music #стрим #ностальгик #@nikamoiseeva #рекомендации",
-          "type": "shorts",
-          "duration_sec": 46,
-          "published_at": "2026-11-23T17:56:32Z",
-          "views": 1213,
-          "likes": 19,
-          "url": "https://www.youtube.com/shorts/IR286Hf_aZk"
         },
         {
           "id": "PWpw2PIRaSA",
@@ -7439,7 +7479,7 @@
           "type": "shorts",
           "duration_sec": 14,
           "published_at": "2026-10-05T15:31:22Z",
-          "views": 1198,
+          "views": 1200,
           "likes": 5,
           "url": "https://www.youtube.com/shorts/kpIVWS5Piac"
         },
@@ -7489,7 +7529,7 @@
           "type": "shorts",
           "duration_sec": 17,
           "published_at": "2026-10-09T06:38:28Z",
-          "views": 1158,
+          "views": 1162,
           "likes": 9,
           "url": "https://www.youtube.com/shorts/VPqlT1C5PYI"
         },
@@ -7509,9 +7549,19 @@
           "type": "shorts",
           "duration_sec": 17,
           "published_at": "2026-10-05T16:35:03Z",
-          "views": 1154,
+          "views": 1155,
           "likes": 6,
           "url": "https://www.youtube.com/shorts/Ux3w5RxJ2oM"
+        },
+        {
+          "id": "v6Ko-Czuhvo",
+          "title": "#музыка #рек #стрим #@nikamoiseeva #video",
+          "type": "shorts",
+          "duration_sec": 10,
+          "published_at": "2026-11-28T07:17:59Z",
+          "views": 1149,
+          "likes": 5,
+          "url": "https://www.youtube.com/shorts/v6Ko-Czuhvo"
         },
         {
           "id": "sntTnBfdL2k",
@@ -7522,6 +7572,16 @@
           "views": 1144,
           "likes": 17,
           "url": "https://www.youtube.com/shorts/sntTnBfdL2k"
+        },
+        {
+          "id": "t6MWeTC3aAY",
+          "title": "#музыка #рек #стрим #@nikamoiseeva #ностальгия",
+          "type": "shorts",
+          "duration_sec": 10,
+          "published_at": "2026-11-27T16:54:51Z",
+          "views": 1143,
+          "likes": 4,
+          "url": "https://www.youtube.com/shorts/t6MWeTC3aAY"
         },
         {
           "id": "cMn-Nv7kn4o",
@@ -7539,9 +7599,19 @@
           "type": "shorts",
           "duration_sec": 57,
           "published_at": "2026-08-21T19:24:03Z",
-          "views": 1113,
+          "views": 1114,
           "likes": 12,
           "url": "https://www.youtube.com/shorts/RPPlG8z8Sg0"
+        },
+        {
+          "id": "47ML9c1__Ao",
+          "title": "#музыка #рек #стрим #@nikamoiseeva",
+          "type": "shorts",
+          "duration_sec": 10,
+          "published_at": "2026-11-27T17:57:25Z",
+          "views": 1103,
+          "likes": 10,
+          "url": "https://www.youtube.com/shorts/47ML9c1__Ao"
         },
         {
           "id": "mL3TC5AfZxc",
@@ -7549,7 +7619,7 @@
           "type": "shorts",
           "duration_sec": 17,
           "published_at": "2026-10-05T19:54:01Z",
-          "views": 1080,
+          "views": 1082,
           "likes": 8,
           "url": "https://www.youtube.com/shorts/mL3TC5AfZxc"
         },
@@ -7604,16 +7674,6 @@
           "url": "https://www.youtube.com/shorts/e-Uui64nSog"
         },
         {
-          "id": "Y5_fA5kiI6E",
-          "title": "#музыка #рек #youtuber #никамоисеева #song",
-          "type": "shorts",
-          "duration_sec": 25,
-          "published_at": "2026-02-14T18:53:18Z",
-          "views": 1012,
-          "likes": 20,
-          "url": "https://www.youtube.com/shorts/Y5_fA5kiI6E"
-        },
-        {
           "id": "ap4XmPbU0z0",
           "title": "#музыка #стрим #@nikamoiseeva #рекомендации #viralvideo",
           "type": "shorts",
@@ -7639,7 +7699,7 @@
           "type": "shorts",
           "duration_sec": 17,
           "published_at": "2026-10-08T16:25:11Z",
-          "views": 978,
+          "views": 981,
           "likes": 7,
           "url": "https://www.youtube.com/shorts/D4t8suK4M5A"
         },
@@ -7812,16 +7872,6 @@
           "views": 814,
           "likes": 31,
           "url": "https://www.youtube.com/shorts/UJkdcTYPUhY"
-        },
-        {
-          "id": "BDKjiaZ_m4I",
-          "title": "#музыка #рек #любовь #youtuber #никамоисеева #song #cat",
-          "type": "shorts",
-          "duration_sec": 25,
-          "published_at": "2026-02-14T14:07:35Z",
-          "views": 808,
-          "likes": 10,
-          "url": "https://www.youtube.com/shorts/BDKjiaZ_m4I"
         },
         {
           "id": "_Tn9lVTwyuc",
@@ -7999,7 +8049,7 @@
           "type": "shorts",
           "duration_sec": 57,
           "published_at": "2026-08-06T19:36:32Z",
-          "views": 612,
+          "views": 617,
           "likes": 8,
           "url": "https://www.youtube.com/shorts/Oom7Zi9A8lI"
         },
@@ -8039,7 +8089,7 @@
           "type": "shorts",
           "duration_sec": 17,
           "published_at": "2026-10-15T18:36:42Z",
-          "views": 536,
+          "views": 537,
           "likes": 5,
           "url": "https://www.youtube.com/shorts/hnSIIyKm7Sw"
         },
@@ -8159,7 +8209,7 @@
           "type": "shorts",
           "duration_sec": 17,
           "published_at": "2026-10-08T17:25:29Z",
-          "views": 305,
+          "views": 309,
           "likes": 4,
           "url": "https://www.youtube.com/shorts/_D772Fa-NAE"
         },
@@ -8209,7 +8259,7 @@
           "type": "shorts",
           "duration_sec": 61,
           "published_at": "2026-11-02T20:36:24Z",
-          "views": 239,
+          "views": 240,
           "likes": 6,
           "url": "https://www.youtube.com/shorts/dcY_Gv8z9aE"
         },
@@ -8229,7 +8279,7 @@
           "type": "shorts",
           "duration_sec": 15,
           "published_at": "2026-10-14T18:44:13Z",
-          "views": 216,
+          "views": 221,
           "likes": 5,
           "url": "https://www.youtube.com/shorts/hJL56XX_IaA"
         },
@@ -8354,6 +8404,16 @@
           "url": "https://www.youtube.com/shorts/20aAloZW3_o"
         },
         {
+          "id": "__08FnBpvuo",
+          "title": "#музыка #рекомендации #жизнь #viralvideo",
+          "type": "shorts",
+          "duration_sec": 23,
+          "published_at": "2026-05-25T19:44:57Z",
+          "views": 129,
+          "likes": 6,
+          "url": "https://www.youtube.com/shorts/__08FnBpvuo"
+        },
+        {
           "id": "yN-HN-5ZYEE",
           "title": "#чм26 #никамоисеева #стрим #messi #рек#@nikamoiseeva",
           "type": "shorts",
@@ -8362,16 +8422,6 @@
           "views": 125,
           "likes": 4,
           "url": "https://www.youtube.com/shorts/yN-HN-5ZYEE"
-        },
-        {
-          "id": "__08FnBpvuo",
-          "title": "#музыка #рекомендации #жизнь #viralvideo",
-          "type": "shorts",
-          "duration_sec": 23,
-          "published_at": "2026-05-25T19:44:57Z",
-          "views": 121,
-          "likes": 6,
-          "url": "https://www.youtube.com/shorts/__08FnBpvuo"
         },
         {
           "id": "4Gjp2Cr7zfM",
@@ -8784,6 +8834,16 @@
           "url": "https://www.youtube.com/shorts/cIvvca6iCS0"
         },
         {
+          "id": "hYgo2OqQfUk",
+          "title": "#рек #@nikamoiseeva #стрим #стримерша #music",
+          "type": "shorts",
+          "duration_sec": 15,
+          "published_at": "2026-10-03T06:48:23Z",
+          "views": 27,
+          "likes": 2,
+          "url": "https://www.youtube.com/shorts/hYgo2OqQfUk"
+        },
+        {
           "id": "STdps22bBmg",
           "title": "#музыка #рек #никамоисеева #automobile #song #топ @nikamoiseeva",
           "type": "shorts",
@@ -8792,16 +8852,6 @@
           "views": 27,
           "likes": 1,
           "url": "https://www.youtube.com/shorts/STdps22bBmg"
-        },
-        {
-          "id": "hYgo2OqQfUk",
-          "title": "#рек #@nikamoiseeva #стрим #стримерша #music",
-          "type": "shorts",
-          "duration_sec": 15,
-          "published_at": "2026-10-03T06:48:23Z",
-          "views": 26,
-          "likes": 2,
-          "url": "https://www.youtube.com/shorts/hYgo2OqQfUk"
         },
         {
           "id": "6Rzm6oCSiAM",
@@ -8814,6 +8864,16 @@
           "url": "https://www.youtube.com/shorts/6Rzm6oCSiAM"
         },
         {
+          "id": "dcQeIl3v2DQ",
+          "title": "#музыка #стрим #@nikamoiseeva #рекомендации #стримерша",
+          "type": "shorts",
+          "duration_sec": 49,
+          "published_at": "2026-10-19T17:31:30Z",
+          "views": 25,
+          "likes": 2,
+          "url": "https://www.youtube.com/shorts/dcQeIl3v2DQ"
+        },
+        {
           "id": "oVD-P-Bx_Jc",
           "title": "#музыка #рек #никамоисеева #cat #song #youtuber #@nikamoiseeva",
           "type": "shorts",
@@ -8822,16 +8882,6 @@
           "views": 25,
           "likes": 2,
           "url": "https://www.youtube.com/shorts/oVD-P-Bx_Jc"
-        },
-        {
-          "id": "dcQeIl3v2DQ",
-          "title": "#музыка #стрим #@nikamoiseeva #рекомендации #стримерша",
-          "type": "shorts",
-          "duration_sec": 49,
-          "published_at": "2026-10-19T17:31:30Z",
-          "views": 24,
-          "likes": 2,
-          "url": "https://www.youtube.com/shorts/dcQeIl3v2DQ"
         },
         {
           "id": "ONqi1PDXdSo",
@@ -8864,14 +8914,14 @@
           "url": "https://www.youtube.com/shorts/nd22Q44TWSo"
         },
         {
-          "id": "7jZ0_6U9udY",
-          "title": "#музыка #рек #youtuber #никамоисеева #song",
+          "id": "S32d3QYeP0M",
+          "title": "#музыка #рек #стрим #стримерша #@nikamoiseeva",
           "type": "shorts",
-          "duration_sec": 25,
-          "published_at": "2026-02-12T22:40:16Z",
-          "views": 21,
-          "likes": 2,
-          "url": "https://www.youtube.com/shorts/7jZ0_6U9udY"
+          "duration_sec": 17,
+          "published_at": "2026-10-15T18:41:21Z",
+          "views": 20,
+          "likes": 1,
+          "url": "https://www.youtube.com/shorts/S32d3QYeP0M"
         },
         {
           "id": "fI-CG0FUcqw",
@@ -8924,16 +8974,6 @@
           "url": "https://www.youtube.com/shorts/x5UfPlF0zOY"
         },
         {
-          "id": "S32d3QYeP0M",
-          "title": "#музыка #рек #стрим #стримерша #@nikamoiseeva",
-          "type": "shorts",
-          "duration_sec": 17,
-          "published_at": "2026-10-15T18:41:21Z",
-          "views": 16,
-          "likes": 1,
-          "url": "https://www.youtube.com/shorts/S32d3QYeP0M"
-        },
-        {
           "id": "SZVZSi7hViw",
           "title": "#музыка #music #стрим #@nikamoiseeva #стримерша",
           "type": "shorts",
@@ -8949,7 +8989,7 @@
           "type": "shorts",
           "duration_sec": 17,
           "published_at": "2026-10-22T21:19:27Z",
-          "views": 11,
+          "views": 12,
           "likes": 1,
           "url": "https://www.youtube.com/shorts/tNmhFM2rNfo"
         }
@@ -8966,10 +9006,10 @@
         "total_videos": 200,
         "shorts_count": 200,
         "horizontal_count": 0,
-        "total_views": 118366,
-        "total_likes": 1415,
-        "shorts_views": 118366,
-        "shorts_likes": 1415,
+        "total_views": 119025,
+        "total_likes": 1413,
+        "shorts_views": 119025,
+        "shorts_likes": 1413,
         "horizontal_views": 0,
         "horizontal_likes": 0
       },
@@ -9000,7 +9040,7 @@
           "type": "shorts",
           "duration_sec": 17,
           "published_at": "2026-09-07T17:29:43Z",
-          "views": 2175,
+          "views": 2176,
           "likes": 30,
           "url": "https://www.youtube.com/shorts/muABKjgWTHg"
         },
@@ -9120,7 +9160,7 @@
           "type": "shorts",
           "duration_sec": 16,
           "published_at": "2026-11-16T13:40:42Z",
-          "views": 1278,
+          "views": 1279,
           "likes": 10,
           "url": "https://www.youtube.com/shorts/8dx3k6-Deao"
         },
@@ -9200,7 +9240,7 @@
           "type": "shorts",
           "duration_sec": 25,
           "published_at": "2026-11-24T15:15:15Z",
-          "views": 1184,
+          "views": 1186,
           "likes": 12,
           "url": "https://www.youtube.com/shorts/itufbqww2tg"
         },
@@ -9230,9 +9270,19 @@
           "type": "shorts",
           "duration_sec": 46,
           "published_at": "2026-11-18T17:11:14Z",
-          "views": 1167,
+          "views": 1170,
           "likes": 27,
           "url": "https://www.youtube.com/shorts/lhf4vOWCM2I"
+        },
+        {
+          "id": "wK5X8P2uks0",
+          "title": "@nikamoiseeva #певица #песни #кавер #music #love #shorts #top #hit #youtubeshorts #trending",
+          "type": "shorts",
+          "duration_sec": 44,
+          "published_at": "2026-11-25T17:41:26Z",
+          "views": 1161,
+          "likes": 29,
+          "url": "https://www.youtube.com/shorts/wK5X8P2uks0"
         },
         {
           "id": "ViF0HVt9-Do",
@@ -9263,16 +9313,6 @@
           "views": 1148,
           "likes": 10,
           "url": "https://www.youtube.com/shorts/SKJkB97rc8U"
-        },
-        {
-          "id": "wK5X8P2uks0",
-          "title": "@nikamoiseeva #певица #песни #кавер #music #love #shorts #top #hit #youtubeshorts #trending",
-          "type": "shorts",
-          "duration_sec": 44,
-          "published_at": "2026-11-25T17:41:26Z",
-          "views": 1146,
-          "likes": 28,
-          "url": "https://www.youtube.com/shorts/wK5X8P2uks0"
         },
         {
           "id": "TmauBOxZqIU",
@@ -9360,7 +9400,7 @@
           "type": "shorts",
           "duration_sec": 12,
           "published_at": "2026-11-24T15:23:36Z",
-          "views": 1105,
+          "views": 1107,
           "likes": 9,
           "url": "https://www.youtube.com/shorts/QxPdTNJtnWA"
         },
@@ -9440,7 +9480,7 @@
           "type": "shorts",
           "duration_sec": 25,
           "published_at": "2026-11-26T13:56:29Z",
-          "views": 1059,
+          "views": 1062,
           "likes": 8,
           "url": "https://www.youtube.com/shorts/vkLwZzPUEp0"
         },
@@ -9490,7 +9530,7 @@
           "type": "shorts",
           "duration_sec": 23,
           "published_at": "2026-08-21T15:03:23Z",
-          "views": 1041,
+          "views": 1042,
           "likes": 10,
           "url": "https://www.youtube.com/shorts/XkOTs2xsEfQ"
         },
@@ -9730,7 +9770,7 @@
           "type": "shorts",
           "duration_sec": 25,
           "published_at": "2026-11-05T13:25:05Z",
-          "views": 940,
+          "views": 941,
           "likes": 9,
           "url": "https://www.youtube.com/shorts/49cs2On8qw4"
         },
@@ -9780,7 +9820,7 @@
           "type": "shorts",
           "duration_sec": 15,
           "published_at": "2026-10-14T13:58:56Z",
-          "views": 881,
+          "views": 882,
           "likes": 6,
           "url": "https://www.youtube.com/shorts/2Sj7E6GDPWI"
         },
@@ -9830,8 +9870,8 @@
           "type": "shorts",
           "duration_sec": 25,
           "published_at": "2026-10-26T12:35:15Z",
-          "views": 761,
-          "likes": 13,
+          "views": 766,
+          "likes": 14,
           "url": "https://www.youtube.com/shorts/1YO7X3MMINs"
         },
         {
@@ -9883,6 +9923,16 @@
           "views": 608,
           "likes": 9,
           "url": "https://www.youtube.com/shorts/5_hCMnI8IHs"
+        },
+        {
+          "id": "btXUpHXcs-E",
+          "title": "@nikamoiseeva #певица #песни #авторская #music #love #shorts #top #hit #youtubeshorts #trending",
+          "type": "shorts",
+          "duration_sec": 10,
+          "published_at": "2026-11-27T17:07:39Z",
+          "views": 607,
+          "likes": 3,
+          "url": "https://www.youtube.com/shorts/btXUpHXcs-E"
         },
         {
           "id": "IA8JvhaiZr4",
@@ -10385,6 +10435,16 @@
           "url": "https://www.youtube.com/shorts/5vlJu6DO5bI"
         },
         {
+          "id": "R2qcLWPtRq0",
+          "title": "@nikamoiseeva #певица #песни #авторская #music #love #shorts #top #hit #youtubeshorts #trending",
+          "type": "shorts",
+          "duration_sec": 13,
+          "published_at": "2026-11-28T14:00:21Z",
+          "views": 80,
+          "likes": 3,
+          "url": "https://www.youtube.com/shorts/R2qcLWPtRq0"
+        },
+        {
           "id": "f_ruyte149w",
           "title": "@nikamoiseeva #певица #песни #авторская #music #love #shorts #top #hit #youtubeshorts #trending",
           "type": "shorts",
@@ -10413,16 +10473,6 @@
           "views": 62,
           "likes": 2,
           "url": "https://www.youtube.com/shorts/yJQTFNDTC9w"
-        },
-        {
-          "id": "MFetv918oKc",
-          "title": "@nikamoiseeva #певица #песни #казачка #music #love #shorts #top #hit #youtubeshorts #trending",
-          "type": "shorts",
-          "duration_sec": 11,
-          "published_at": "2026-08-18T15:19:35Z",
-          "views": 46,
-          "likes": 8,
-          "url": "https://www.youtube.com/shorts/MFetv918oKc"
         },
         {
           "id": "BJnxlIriShk",
@@ -10480,7 +10530,7 @@
           "type": "shorts",
           "duration_sec": 23,
           "published_at": "2026-11-05T14:55:09Z",
-          "views": 26,
+          "views": 27,
           "likes": 5,
           "url": "https://www.youtube.com/shorts/-18AuhehSHc"
         },
@@ -10855,16 +10905,6 @@
           "url": "https://www.youtube.com/shorts/1iuTJvnLlhc"
         },
         {
-          "id": "rgNt8gxENGk",
-          "title": "@nikamoiseeva #певица #песни #казачка #music #love #shorts #top #hit #youtubeshorts #trending",
-          "type": "shorts",
-          "duration_sec": 16,
-          "published_at": "2026-08-18T15:24:45Z",
-          "views": 10,
-          "likes": 3,
-          "url": "https://www.youtube.com/shorts/rgNt8gxENGk"
-        },
-        {
           "id": "YNL-TM10jZo",
           "title": "@nikamoiseeva #певица #песни #авторская #music #love #shorts #top #hit #youtubeshorts #trending",
           "type": "shorts",
@@ -10925,16 +10965,6 @@
           "url": "https://www.youtube.com/shorts/u8cEEqZYk6E"
         },
         {
-          "id": "tfae7D2AWVU",
-          "title": "@nikamoiseeva #певица #песни #казачка #music #love #shorts #top #hit #youtubeshorts #trending",
-          "type": "shorts",
-          "duration_sec": 23,
-          "published_at": "2026-08-17T16:16:52Z",
-          "views": 8,
-          "likes": 0,
-          "url": "https://www.youtube.com/shorts/tfae7D2AWVU"
-        },
-        {
           "id": "JoJYgsPitUs",
           "title": "@nikamoiseeva #певица #песни #авторская #music #love #shorts #top #hit #youtubeshorts #trending",
           "type": "shorts",
@@ -10973,6 +11003,16 @@
           "views": 5,
           "likes": 2,
           "url": "https://www.youtube.com/shorts/DSwqdlTAQTk"
+        },
+        {
+          "id": "gam6G3PpzBs",
+          "title": "@nikamoiseeva #певица #песни #авторская #music #love #shorts #top #hit #youtubeshorts #trending",
+          "type": "shorts",
+          "duration_sec": 10,
+          "published_at": "2026-11-28T14:14:18Z",
+          "views": 0,
+          "likes": 1,
+          "url": "https://www.youtube.com/shorts/gam6G3PpzBs"
         }
       ]
     }
